@@ -3,11 +3,111 @@
     height: 100vh;
 }
 
+:root{
+    --portrait-width: 20vh;
+}
+
 #vinyl {
     position: absolute;
     top: 50%;
     left: 60%;
     transform: translate(-50%, -50%);
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     border-radius: 100%;
+}
+
+#vinylform {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    width: 78vh;
+    height: 78vh;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #d9d9d9, 
+             -20px -20px 60px #ffffff;
+    border-radius: 100%;
+}
+
+#vinylInnerForm {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    width: 73vh;
+    height: 73vh;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    box-shadow:  inset 20px 20px 60px #d9d9d9, 
+                inset -20px -20px 60px #ffffff;
+    border-radius: 100%;
+}
+
+#portrait {
+    position: absolute;
+    top: 15%;
+    left: 85%;
+    font-family: 'MuseoModerno', cursive, sans-serif;
+}
+
+.outerForm {
+    width: var(--portrait-width);
+    height: var(--portrait-width);
+    background: #ffffff;
+    box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+    border-radius: 100%;
+}
+
+.innerForm {
+    width: calc(var(--portrait-width) * 0.9);
+    height: calc(var(--portrait-width) * 0.9);
+    background: #ffffff;
+    box-shadow:  inset 10px 10px 30px #d9d9d9, 
+                inset -10px -10px 30px #ffffff;
+    border-radius: 100%;
+}
+
+
+#myPicture {
+    width: calc(var(--portrait-width) * 0.85);
+    height: calc(var(--portrait-width) * 0.85);
+    background-image: url("./pictures/mypicture.png");
+    background-size: cover;
+    border-radius: 100%;
+}
+
+.outerFormButton {
+    width: var(--portrait-width);
+    height: calc(var(--portrait-width) * 0.3);
+    background: #ffffff;
+    box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+}
+
+.innerFormButton {
+    width: calc(var(--portrait-width) * 0.9);
+    height: calc(var(--portrait-width) * 0.2);
+    background: #ffffff;
+    box-shadow:  inset 10px 10px 30px #d9d9d9, 
+                inset -10px -10px 30px #ffffff;
+}
+
+.aboutButton{
+    width: calc(var(--portrait-width) * 0.85 / 2);
+    height: calc(var(--portrait-width) * 0.15);
+    font-size: 0.8vw;
+    outline: none;
+}
+
+.aboutOn{
+    background-color: rgba(211, 248, 48, 0.603);
+}
+
+.aboutOff{
+    background-color: rgba(57, 188, 240, 0.603);
+}
+
+#portrait>p{
+    font-size: 1.4vw;
+    margin: 10px 0 0 0;
 }
