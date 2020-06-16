@@ -15,6 +15,10 @@ export default function ContactMe(){
         setClassContact("showContact");
     }, [])
 
+    const sendData = () => {
+        console.log("H");
+    }
+
     return(
         <div id="contactMeVinyl" className={classContact}>
             <div id="contactForm" className="outerContactForm flex">
@@ -22,11 +26,12 @@ export default function ContactMe(){
                     <textarea placeholder="Write about anything you want! Projects, games, suggestions, greedings, up to you!" onChange={e => setTextArea(e.target.value)}></textarea>
                 </div>
             </div>
-            <div id="headlineContact">
+            <div id="headlineContact" onClick={sendData}>
                 <p>Write me!</p>
                 <p>Click &amp; Send</p>
             </div>            
-            <canvas id="contactCanvas" ref={vinylContact}></canvas>
+            <div className="picker" id="picker1"></div>
+            <canvas id="contactCanvas" ref={vinylContact} onClick={sendData}></canvas>
         </div>
     )
 }

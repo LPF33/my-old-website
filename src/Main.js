@@ -3,6 +3,7 @@ import "./Main.css";
 import paintVinylClock from "./vinylClockCanvasJS.js";
 import {BrowserRouter, Route, Link} from "react-router-dom";
 import ContactMe from "./ContactMe";
+import Games from "./Games";
 
 export default function App() {
     const vinylClock = useRef();
@@ -24,6 +25,7 @@ export default function App() {
                     exact path = "/contactMe"
                     component = {ContactMe}
                 />
+                <Games />
                 <div id="welcome">Hey, I'm Lars!</div>
                 <div id="vinylform"></div>
                 <div id="vinylInnerForm"></div>
@@ -50,7 +52,7 @@ export default function App() {
                     </div> 
                     <div id="githubLink" className={`${clickGithub} flex`} onClick={() => {if(clickGithub==="githubLinkOuterClick"){setClickGithub("githubLinkOuter")}else{setClickGithub("githubLinkOuterClick")}}}>
                         <div id="githubLinkInner" className="flex">
-                            <a  target="_blank" rel="noreferrer" href="https://github.com/LPF33" ><div id="github" ></div></a>
+                            <a  target="_blank" rel="noopener noreferrer" href="https://github.com/LPF33" ><div id="github" ></div></a>
                         </div>
                     </div>         
                 </div>
