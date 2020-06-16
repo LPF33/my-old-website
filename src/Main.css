@@ -1,10 +1,25 @@
 #main {
     width: 100vw;
     height: 100vh;
+    font-family: 'MuseoModerno', cursive, sans-serif;
 }
 
 :root{
     --portrait-width: 20vh;
+}
+
+#welcome {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    font-size:2vw;
+    text-shadow: 1px 0px 1px #eee, 0px 1px 1px #ccc,
+    2px 1px 1px #eee, 1px 2px 1px #ccc,
+    3px 2px 1px #eee, 2px 3px 1px #ccc,
+    4px 3px 1px #eee, 3px 4px 1px #ccc,
+    5px 4px 1px #eee, 4px 5px 1px #ccc,
+    6px 5px 1px #eee, 5px 6px 1px #ccc,
+    6px 6px 1px #eee;
 }
 
 #vinyl {
@@ -46,7 +61,6 @@
     position: absolute;
     top: 15%;
     left: 85%;
-    font-family: 'MuseoModerno', cursive, sans-serif;
 }
 
 .outerForm {
@@ -96,6 +110,8 @@
     width: calc(var(--portrait-width) * 0.85 / 2);
     height: calc(var(--portrait-width) * 0.15);
     font-size: 0.8vw;
+    text-decoration: none;
+    color: black;
     outline: none;
 }
 
@@ -104,10 +120,108 @@
 }
 
 .aboutOff{
-    background-color: rgba(57, 188, 240, 0.603);
+    background-color: rgba(230, 149, 124, 0.603);
+}
+
+.contactOn{
+    background-color: rgba(255, 52, 52, 0.603);
+}
+
+.contactOff{
+    background-color: rgba(230, 149, 124, 0.603);    
 }
 
 #portrait>p{
     font-size: 1.4vw;
     margin: 10px 0 0 0;
+}
+
+#githubLink{
+    width: calc(var(--portrait-width) * 0.4);
+    height: calc(var(--portrait-width) * 0.4);    
+    margin-top: 3vh;
+}
+
+.githubLinkOuter{
+    background: #ffffff;
+    box-shadow:  3px 3px 6px #d9d9d9, 
+             -3px -3px 6px #ffffff;
+    border-radius: 100%;
+}
+
+.githubLinkOuterClick{
+    background: #ffffff;
+    box-shadow:  inset 5px 5px 6px #d9d9d9, 
+             inset -5px -5px 6px #ffffff;
+    border-radius: 100%;
+}
+
+#githubLinkInner{
+    width: calc(var(--portrait-width) * 0.33);
+    height: calc(var(--portrait-width) * 0.33);
+    background: #ffffff;
+    box-shadow:  inset 3px 3px 6px #d9d9d9, 
+             inset -3px -3px 6px #ffffff;
+    border-radius: 100%;
+}
+
+#github {
+    width: calc(var(--portrait-width) * 0.25);
+    height: calc(var(--portrait-width) * 0.25);
+    background-image: url("./pictures/github.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+}
+
+#tonearm{
+    position: absolute;
+    top: 70%;
+    left: 55%;
+    width: 40vw;
+    height: calc(var(--portrait-width) * 0.6);
+}
+
+#holder {
+    position: relative;
+    right: calc(-40vw + var(--portrait-width) * 0.6);
+    width: calc(var(--portrait-width) * 0.6);
+    height: calc(var(--portrait-width) * 0.6);
+    background: #ffffff;
+    box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+    border-radius: 100%;
+}
+
+#arm{
+    position: absolute;
+    top: calc(var(--portrait-width) * 0.6 * 0.5);
+    transform: translateY(-50%) rotateZ(0deg);
+    width: 40vw;
+    height: calc(var(--portrait-width) * 0.2);
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom, grey 20%, black 70%);
+    z-index:3;
+}
+
+.moveArm{
+    animation: moveArm 4s linear 1 forwards;
+}
+
+@keyframes moveArm {
+    40%{
+        transform-origin: top right;
+        transform:  rotate(-10deg);
+        z-index:3;
+    }
+    60%{
+        transform-origin: top right;
+        transform:  rotate(-10deg);
+        z-index:3;
+    }
+    100%{
+        transform-origin: top right;
+        transform:  rotate(0deg);
+        z-index:3;
+    }
 }
