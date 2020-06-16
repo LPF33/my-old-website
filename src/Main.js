@@ -4,19 +4,41 @@ import paintVinylClock from "./vinylClockCanvasJS.js";
 import {BrowserRouter, Route, Link} from "react-router-dom";
 import ContactMe from "./ContactMe";
 import Games from "./Games";
+import {useSelector, useDispatch} from "react-redux";
+import {hideGameButton} from "./action";
 
 export default function App() {
     const vinylClock = useRef();
+    const dispatch = useDispatch();
 
     const [clickAbout, setClickAbout] = useState(["aboutOff","aboutOn"]);
     const [clickContact, setClickContact] = useState(["contactOff","contactOn"]);
     const [clickGithub, setClickGithub] = useState("githubLinkOuter");
-    const [moveArm, setMoveArm] = useState(null);
+    const [moveArm, setMoveArm] = useState("");
+    const [movePicker, setMovePicker] = useState("");
+
+    const armStatus = useSelector(state => state.arm);
 
     useEffect(() => {
         const vinylClockCanvas = vinylClock.current;
         paintVinylClock(vinylClockCanvas);
     }, []);
+
+    useEffect(() => {
+        if(movePicker==="picker2" || !movePicker){
+            setMovePicker("picker");
+        } else {
+            setMovePicker("picker2");
+        }  
+        
+        setMoveArm("moveArm");
+        setTimeout(()=>setMoveArm(null),4000);  
+          
+    },[armStatus])
+
+    const hideGames = value => {
+        dispatch(hideGameButton(value));
+    }
 
     return (
         <div id="main">
@@ -29,7 +51,7 @@ export default function App() {
                 <div id="welcome">Hey, I'm Lars!</div>
                 <div id="vinylform"></div>
                 <div id="vinylInnerForm"></div>
-                <canvas ref={vinylClock} id="vinyl"></canvas>
+                <canvas ref={vinylClock} id="vinyl" className="showClockVinyl"></canvas>
                 <div id="portrait">
                     <div className="outerForm flex">
                         <div className="innerForm flex">
@@ -46,8 +68,8 @@ export default function App() {
                     <p className="flex">Contact me</p>
                     <div className="outerFormButton flex">
                         <div className="innerFormButton flex">
-                            <Link to="/contactMe" className={`aboutButton flex ${clickContact[0]}`} onClick={()=>{if(clickContact[0]==="contactOff"){let changeAbout=[clickContact[1],clickContact[0]]; setClickContact(changeAbout); setMoveArm("moveArm");}}}>ON</Link>  
-                            <Link to="/" className={`aboutButton flex ${clickContact[1]}`} onClick={()=>{if(clickContact[1]==="contactOff"){let changeAbout=[clickContact[1],clickContact[0]]; setClickContact(changeAbout); setMoveArm(null);}}}>OFF</Link>
+                            <Link to="/contactMe" className={`aboutButton flex ${clickContact[0]}`} onClick={()=>{if(clickContact[0]==="contactOff"){let changeAbout=[clickContact[1],clickContact[0]]; setClickContact(changeAbout); setMoveArm("moveArm"); setMovePicker("picker"); hideGames(true);}}}>ON</Link>  
+                            <Link to="/" className={`aboutButton flex ${clickContact[1]}`} onClick={()=>{if(clickContact[1]==="contactOff"){let changeAbout=[clickContact[1],clickContact[0]]; setClickContact(changeAbout); setMoveArm(null); setMovePicker(null); hideGames(false);}}}>OFF</Link>
                         </div>                        
                     </div> 
                     <div id="githubLink" className={`${clickGithub} flex`} onClick={() => {if(clickGithub==="githubLinkOuterClick"){setClickGithub("githubLinkOuter")}else{setClickGithub("githubLinkOuterClick")}}}>
@@ -56,6 +78,7 @@ export default function App() {
                         </div>
                     </div>         
                 </div>
+                <div className={movePicker} id="picker"></div>
                 <div id="tonearm" className={moveArm}>
                     <div id="holder"></div>
                     <div id="arm"></div>

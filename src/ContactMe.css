@@ -59,33 +59,5 @@
     height: calc(70vh * 0.8);
     font-size: 0.9vw;
     font-family: 'MuseoModerno', cursive, sans-serif;
+    border: 2px solid black;
 }
-
-.picker{
-    width: 5vw;
-    height: 40vh;
-    background-image: radial-gradient(rgb(90, 86, 86) 10%, black 90%);
-    border-radius: 10px;
-}
-
-#picker1{
-    position: absolute;
-    left: 60%;
-    transform: translate(-50%, -50%);
-    animation: picker 3s linear 1 forwards;
-}
-
-@keyframes picker{
-    0%{
-        top:-50%;
-    }
-    66%{
-        top:0;
-    }
-    100%{
-        top:-50%;
-    }
-}
-
-
-

@@ -29,8 +29,7 @@ export default function ContactMe(){
             <div id="headlineContact" onClick={sendData}>
                 <p>Write me!</p>
                 <p>Click &amp; Send</p>
-            </div>            
-            <div className="picker" id="picker1"></div>
+            </div>  
             <canvas id="contactCanvas" ref={vinylContact} onClick={sendData}></canvas>
         </div>
     )

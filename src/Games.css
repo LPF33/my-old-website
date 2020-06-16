@@ -60,51 +60,37 @@
 #gamesVinyl{
     position: absolute;
     left: 60%;
-    transform: translate(-50%, -50%);
+    top: -70vh;
+    transform: translate(-50%,-50%);
     border-radius: 100%;
     z-index: 2;
 }
 
 .hideGames {
-    transition: ease-in 2s top;
-    top: -50%;
+    animation: hideGames 4s linear 1 forwards;
+}
+
+@keyframes hideGames{
+    0%{
+        top:50%;
+    }
+    30%{
+        top:50%;
+    }
+    100%{
+        top: -50%;
+    }
 }
 
 .showGames{
-    transition: ease-in 2s top;
-    top: 50%;
+    animation: showGames 2s linear 1 forwards;
 }
 
-#gamePicker{
-    width: 5vw;
-    height: 40vh;
-    background-image: radial-gradient(rgb(90, 86, 86) 10%, black 90%);
-    border-radius: 10px;
-}
-
-.gamepicker1{
-    position: absolute;
-    left: 60%;
-    transform: translate(-50%, -50%);
-    animation: gamepicker 3s linear 1 forwards;
-}
-
-.gamepicker2{
-    position: absolute;
-    left: 60%;
-    transform: translate(-50%, -50%);
-    animation: gamepicker 3s linear 1 forwards;
-}
-
-@keyframes gamepicker{
+@keyframes showGames{
     0%{
         top:-50%;
     }
-    66%{
-        top:0;
-    }
     100%{
-        top:-50%;
+        top: 50%;
     }
 }
-
