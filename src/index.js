@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
-import "./index.css";
-import Main from "./Main";
+import { BrowserRouter} from "react-router-dom";
+import "./App.css";
+import App from "./App";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
@@ -16,10 +16,7 @@ const store = createStore(
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
-            <Switch>
-                <Route exact path="/" component={Main} />
-                <Route render={() => <Redirect to="/" />} />
-            </Switch>
+            <App />
         </BrowserRouter>
     </Provider>,
     document.getElementById("root")

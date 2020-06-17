@@ -1,4 +1,4 @@
-body {
+* {
     margin: 0;
     padding: 0;
     border: 0;
@@ -9,4 +9,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+h1{
+    font-size: 1.7vw;
+}
+
+h2{
+    font-size: 1vw;
 }
