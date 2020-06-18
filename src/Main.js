@@ -39,6 +39,7 @@ export default function App() {
         if(contactStatus){
             let changeAbout=[clickContact[1],clickContact[0]]; 
             setClickContact(changeAbout);
+            dispatch(hideGameButton(true));
         }         
     },[contactStatus]);
 
