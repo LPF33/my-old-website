@@ -1,0 +1,97 @@
+.outerArticleButton {
+    position: absolute;
+    top: 9%;
+    left: 7%;
+    width: calc(var(--portrait-width) * 0.7);
+    height: calc(var(--portrait-width) * 0.7);
+    background: #ffffff;
+    box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+    border-radius: 100%;
+}
+
+.innerArticleButton {
+    width: calc(var(--portrait-width) * 0.6);
+    height: calc(var(--portrait-width) * 0.6);
+    background: #ffffff;
+    box-shadow:  inset 10px 10px 30px #d9d9d9, 
+                inset -10px -10px 30px #ffffff;
+    border-radius: 100%;
+}
+
+#showArticles{
+    width: calc(var(--portrait-width) * 0.5);
+    height: calc(var(--portrait-width) * 0.5);
+    background-color: #6ec7f086;
+    border: 1.2px solid black;
+    border-radius: 100%;
+    font-size: 1vw;
+    font-family: 'MuseoModerno', cursive, sans-serif;
+    cursor: pointer;
+    outline: none;
+}
+
+.outerSearchFrame {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    width: calc(var(--portrait-width) * 1.5);
+    height: calc(var(--portrait-width) * 0.3);
+    background: #ffffff;
+    box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+}
+
+.innerSearchFrame {
+    width: calc(var(--portrait-width) * 1.4);
+    height: calc(var(--portrait-width) * 0.2);
+    background: #ffffff;
+    box-shadow:  inset 10px 10px 30px #d9d9d9, 
+                inset -10px -10px 30px #ffffff;
+}
+
+#search {
+    font-size: 0.8vw;
+    font-weight: bold;
+    font-family: 'MuseoModerno', cursive, sans-serif;
+    background-color: rgba(255, 255, 255, 0);
+    outline: none;
+}
+
+#articleFrame{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    font-family: 'MuseoModerno', cursive, sans-serif;
+}
+
+.outerArticleFrame {
+    width: 60vh;
+    height: 60vh;
+    background: #ffffff;
+    box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+}
+
+.innerArticleFrame{
+    width: 55vh;
+    height: 55vh;
+    background: #ffffff;
+    box-shadow:  inset 10px 10px 30px #d9d9d9, 
+             inset -10px -10px 30px #ffffff;
+    padding: 10px;
+    overflow: auto;
+}
+
+#introduction h1,#introduction h2,#introduction p{
+    text-shadow: 1px 0px 1px #eee, 0px 1px 1px #ccc,
+    2px 1px 1px #eee, 1px 2px 1px #ccc,
+    3px 2px 1px #eee, 2px 3px 1px #ccc,
+    4px 3px 1px #eee, 3px 4px 1px #ccc,
+    5px 4px 1px #eee, 4px 5px 1px #ccc,
+    6px 5px 1px #eee, 5px 6px 1px #ccc,
+    6px 6px 1px #eee;
+    margin-top:10px;
+    text-align: center;
+}
+

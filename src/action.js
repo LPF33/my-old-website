@@ -19,3 +19,26 @@ export function sendLightMode(value){
         action : value
     }
 }
+
+export function deleteLightMode(){
+    return{
+        type: "deleteLightMode",
+        action : "delete"
+    }
+}
+
+export function getArticles(search){
+    return{
+        type: "getArticles",
+        action : search
+    }
+}
+
+export function contactMe(){
+    const num = Math.random()*1000;
+    
+    return{
+        type: "contactMe",
+        action: num
+    }
+}

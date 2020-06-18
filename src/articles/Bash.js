@@ -41,11 +41,11 @@ export default function Bash(){
                 <HighlightCommand value="cd"/>
                 <p className={colorLightMode}>
                     Very important to know is the command to <em>change directory</em>.<br/>
-                    <em>cd ~</em> is shorthand for going back to your home directory.<br/>
-                    <em>cd ..</em> stands for: "Go up to the parent directory".<br/>
-                    <em>cd (absolute path)</em>, than you go to your preferred directory<br/>
-                    <em>cd ./anyfile</em> "Go from your current directory to a child file etc. (relative path)".<br/>
-                    <em>cd ../..</em> With this you can jump through the levels of your directories.<br/>
+                    <strong>cd ~</strong> is shorthand for going back to your home directory.<br/>
+                    <strong>cd ..</strong> stands for: "Go up to the parent directory".<br/>
+                    <strong>cd (absolute path)</strong>, than you go to your preferred directory<br/>
+                    <strong>cd ./anyfile</strong> "Go from your current directory to a child file etc. (relative path)".<br/>
+                    <strong>cd ../..</strong> With this you jump 2 levels up.<br/>
                 </p>
                 <HighlightCommand value="clear"/>
                 <p className={colorLightMode}>clear the terminal screen</p>
@@ -54,7 +54,17 @@ export default function Bash(){
                 <HighlightCommand value="touch"/>
                 <p className={colorLightMode}>Okay, we start now to play around with files. With the command <em>touch</em> you create a new file and specify the name and type, like: touch hurra.js</p>
                 <HighlightCommand value="cat"/>
-                <p className={colorLightMode}> Read a file, the content will be printed to the terminal.</p>
+                <p className={colorLightMode}> 
+                    <strong>cat file </strong>Read a file, the content will be printed to the terminal.<br/>
+                    <strong>cat file file2</strong> That means: <em>Concatenate files, here the two files.</em><br/>
+                    <strong>cat &gt;&gt; file</strong> : Everything you type now in the terminal, will be saved in the file.<br/>
+                    <strong>cat &gt; file</strong> : Everything you type now in the terminal, will be saved in the file, but overwrite everything in the file.
+                </p>
+                <HighlightCommand value="echo"/>
+                <p className={colorLightMode}>
+                    <strong>echo Here I am!</strong> Prints "Here I am" to the terminal.<br/>
+                    <strong>echo Here I am! &gt; file</strong> Writes the text to a file.
+                </p>
                 <HighlightCommand value="nano"/>
                 <p className={colorLightMode}>
                     With the command <em>nano</em> and a file, a minimalistic text editor opens, which helps you to edit the file, if your up to.
@@ -68,7 +78,7 @@ export default function Bash(){
                 <HighlightCommand value="rm"/>
                 <p className={colorLightMode}>Delete a file or directory (<em>remove</em>)</p>
                 <HighlightCommand value="mv"/>
-                <p className={colorLightMode}><em>Move</em> a file to a different directory or rename a file: <strong>mv hurra.js /mnt/c/Users/whereever</strong> or <strong>mv hurra.js nohurra.js</strong></p>
+                <p className={colorLightMode}><em>Move</em> a file to a different directory <strong>mv hurra.js /mnt/c/Users/whereever</strong> or rename a file: <strong>mv hurra.js nohurra.js</strong></p>
                 <HighlightCommand value="cp"/>
                 <p className={colorLightMode}><em>Copy</em> a file: <strong>cp hurra.js hurry.js</strong></p>
                 <HighlightCommand value="code"/>
@@ -76,8 +86,8 @@ export default function Bash(){
                 <HighlightCommand value="grep"/>
                 <p className={colorLightMode}>
                     <em>g(lobal)r(egular)e(x)p(ression)</em>. With this you can do a global search for a specified file.
-                    I will rise this topic in a next article again, when I recap JavaScript. With a pattern you can search for a file.
-                    e.g.:*.[p]??, would return all files that have 3 letters as extension and start with a small p. 
+                    I will rise this topic in a next article again, when I recap JavaScript. With a string pattern you can search for a file.
+                    <strong>e.g.:*.[p]??</strong>, would return all files that have 3 letters as extension and start with a small p. 
                 </p>
                 <HighlightCommand value="history"/>
                 <p className={colorLightMode}>Very helpful to see all past commands.</p>

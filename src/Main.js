@@ -16,6 +16,7 @@ export default function App() {
     const [movePicker, setMovePicker] = useState("");
 
     const armStatus = useSelector(state => state.arm);
+    const contactStatus = useSelector(state => state.contact);
 
     useEffect(() => {
         const vinylClockCanvas = vinylClock.current;
@@ -32,7 +33,14 @@ export default function App() {
         setMoveArm("moveArm");
         setTimeout(()=>setMoveArm(null),4000);  
           
-    },[armStatus])
+    },[armStatus]);
+
+    useEffect(() => {
+        if(contactStatus){
+            let changeAbout=[clickContact[1],clickContact[0]]; 
+            setClickContact(changeAbout);
+        }         
+    },[contactStatus]);
 
     const hideGames = value => {
         dispatch(hideGameButton(value));
