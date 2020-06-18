@@ -2,7 +2,7 @@ import React from "react";
 import "./Introduction.css";
 import {Link} from "react-router-dom";
 
-export default function Introduction(){
+const Introduction = () => {
     return(
         <div id="introduction" className="outerIntroduction flex">
             <div className="innerIntroduction">
@@ -13,8 +13,10 @@ export default function Introduction(){
                 <p>The design of this website is not finished yet, but I'd like to start to fill my website with projects, articles, news and whatever I'm up to!</p>
                 <h2>So let's do it!</h2>
                 <h2>Happy Coding!</h2>
-                <Link to="/articles/git">First article</Link>
+                <Link to="/articles/bash">First article</Link>
             </div>
         </div>
     )
 }
+
+export default Introduction;

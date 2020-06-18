@@ -1,0 +1,78 @@
+#articleHeadline{
+    font-family: 'Roboto', sans-serif;
+    width: 700px;
+}
+
+.articleMenu{
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.articleLinks {
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px;
+    padding: 2px;
+}
+
+.articleLinksSun {
+    color: rgb(34, 28, 119);
+    border: 1px dotted black;
+}
+
+.articleLinksMoon {
+    color: rgb(187, 183, 241);
+    border: 1px dotted white;
+}
+
+.tags{
+    display: inline-block;
+    font-size: 14px;
+    background-color: rgb(240, 145, 145);
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+#articleMenuImg{
+    position: absolute;    
+    transform: translateX(-110%);
+    width: 90vh;
+    height: 90vh;
+    border-radius: 100%;
+    z-index:-1;
+}
+
+.lightMode {
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.headlineSunColor{
+    color: black;
+}
+
+.headlineMoonColor{
+    color: white;
+}
+
+.highlightCommandSun{
+    display: inline-block;
+    padding: 5px;
+    margin: 10px 0;
+    background-color: rgb(0, 238, 255);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.highlightCommandMoon{
+    display: inline-block;
+    padding: 5px;
+    margin: 10px 0;
+    background-color: rgb(251, 255, 0);
+    font-size: 18px;
+    font-weight: bold;
+}

@@ -12,3 +12,10 @@ export function hideGameButton(value){
         action : value
     }
 }
+
+export function sendLightMode(value){
+    return{
+        type: "lightMode",
+        action : value
+    }
+}

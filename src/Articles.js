@@ -1,8 +1,8 @@
 import React from "react";
 import {Route} from "react-router-dom";
 import "./Articles.css";
-import Git from "./Git";
-import Bash from "./Bash";
+import Git from "./articles/Git";
+import Bash from "./articles/Bash";
 
 export default function Articles(){
     return(

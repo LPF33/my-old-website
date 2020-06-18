@@ -16,5 +16,13 @@ export default function (state = {}, action) {
         };
     }
 
+    if(action.type === "lightMode"){
+
+        state= {
+            ...state,
+            lightMode : action.action
+        }
+    }
+
     return state;
 }
