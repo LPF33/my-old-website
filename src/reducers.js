@@ -51,5 +51,13 @@ export default function (state = {}, action) {
         }
     }
 
+    if(action.type === "tagSearch"){
+
+        state= {
+            ...state,
+            tagSearch : action.action
+        }
+    }
+
     return state;
 }

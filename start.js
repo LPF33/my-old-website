@@ -40,10 +40,28 @@ app.use(function(req, res, next){
 
 app.get("/allarticles", async(request, response) => {
     const articles = await database.getArticles();
+    response.json({
+        success : true,
+        data:articles.rows});
 });
 
+app.get("/searcharticles/:search", async(request, response) => {
+    const {search} = request.params; 
+    const articles = await database.searchArticles(search);
+    if(articles.rows && articles.rows.length>0){
+        response.json({
+            success : true,
+            data:articles.rows
+        });
+    } else {
+        response.json({
+            success: false
+        });
+    }    
+});
+/*
 app.get("*", (request, response) => {
     response.sendFile(__dirname + '/build/index.html');    
-});
+});*/
 
 app.listen(process.env.PORT || 8080);

@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import "./ArticleMenu.css";
 import axios from "./axios";
 import {useDispatch, useSelector} from "react-redux";
-import {getArticles} from "./action";
+import {getArticles, tagSearch} from "./action";
 
 const Introduction = () => {
     return(
@@ -22,18 +22,30 @@ const Introduction = () => {
 
 const SearchBar = () => {
 
+    const serverUrl = "http://localhost:8080";
+
     const [search, setSearch] = useState("");
     const dispatch = useDispatch();
+
+    const tagSearch = useSelector(state => state.tagSearch);
 
     useEffect(() => {
 
         let ignore = false;
 
         (async () => {
-            const result = await axios.get("/articles", {params: search});
+            let result;
+            if(!search){
+                result = await axios.get(`${serverUrl}/allarticles`);
+            }else {
+                result = await axios.get(`${serverUrl}/searcharticles/${search}`);
+            }
+
             if(!ignore && result.data.success){ 
-                dispatch(getArticles(result.data.users));
-            }                                 
+                  dispatch(getArticles(result.data.data));
+              } else {
+                  dispatch(getArticles(""));
+              }                              
         })();
 
         return () => {
@@ -41,6 +53,12 @@ const SearchBar = () => {
         };         
 
     },[search]);
+
+    useEffect(() => {
+        if(tagSearch){
+            setSearch(tagSearch);
+        }
+    },[tagSearch]);
 
     return (
         <div className="outerSearchFrame flex">
@@ -50,6 +68,7 @@ const SearchBar = () => {
                     id="search" 
                     placeholder="Search my articles"
                     onChange={e => setSearch(e.target.value)}
+                    value={search}
                 />
             </div>
         </div>
@@ -58,9 +77,23 @@ const SearchBar = () => {
 
 export default function ArticleMenu(){
 
+    const dispatch = useDispatch();
+
     const [showArticles, setShowArticles] = useState(false);
 
     const foundArticles = useSelector(state => state.articles || "");
+
+    const startTagSearch = tag => {
+        dispatch(tagSearch(tag));
+    };
+
+    const getDate = date => {
+        const newDate = new Date(date);
+        const year = newDate.getFullYear();
+        const month = newDate.getMonth();
+        const day = newDate.getDate();
+        return `${day}.${month+1}.${year}`;
+    };
 
     return (
         <div>
@@ -77,7 +110,17 @@ export default function ArticleMenu(){
                     {!showArticles &&    <Introduction />}
                     {showArticles && foundArticles.length>0 && 
                     <ul>
-                        {foundArticles.map((item,index) => <li key={index}>{item}</li>)}
+                        {foundArticles.map((item,index) =>                         
+                        <li key={index} className="searchArticle">
+                            <Link to={item.url} className="linkArticles">
+                                <h6>{getDate(item.created_at)}</h6>
+                                <h1>{item.topic}</h1> 
+                            </Link>                          
+                            <div>
+                                {item.tags.split(",").map((item,index) => 
+                                    <div key={index} onClick={()=>startTagSearch(item)} className="tagButton">{item}</div>)}
+                            </div>                             
+                        </li>)}
                     </ul>}
                     {showArticles && !foundArticles.length && <div>No articles found!</div>}
                 </div>

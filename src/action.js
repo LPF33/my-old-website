@@ -42,3 +42,10 @@ export function contactMe(){
         action: num
     }
 }
+
+export function tagSearch(tag){    
+    return{
+        type: "tagSearch",
+        action: tag
+    }
+}

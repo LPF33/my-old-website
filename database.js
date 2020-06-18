@@ -1,5 +1,5 @@
 var spicedPg = require("spiced-pg");
-var dbUrl = process.env.DATABASE_URL || "postgres:lars:lars@localhost:5432/image";
+var dbUrl = process.env.DATABASE_URL || "postgres:lars:lars@localhost:5432/mywebsite";
 var db = spicedPg(dbUrl);
 
 exports.getArticles = () => {
