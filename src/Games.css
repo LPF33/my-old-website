@@ -1,62 +1,3 @@
-.outerGamesButton {
-    position: absolute;
-    top: 5%;
-    left: 35%;
-    width: var(--portrait-width);
-    height: var(--portrait-width);
-    background: #ffffff;
-    box-shadow:  10px 10px 30px #d9d9d9, 
-             -10px -10px 30px #ffffff;
-    border-radius: 100%;
-}
-
-.innerGamesButton {
-    width: calc(var(--portrait-width) * 0.9);
-    height: calc(var(--portrait-width) * 0.9);
-    background: #ffffff;
-    box-shadow:  inset 10px 10px 30px #d9d9d9, 
-                inset -10px -10px 30px #ffffff;
-    border-radius: 100%;
-}
-
-#startGames{
-    width: calc(var(--portrait-width) * 0.8);
-    height: calc(var(--portrait-width) * 0.8);
-    background-color: #f06e6e86;
-    border: 2px solid black;
-    border-radius: 100%;
-    font-size: 1.5vw;
-    font-family: 'MuseoModerno', cursive, sans-serif;
-    cursor: pointer;
-    outline: none;
-}
-
-#aLetter{
-    position: relative;
-    animation: jump 2s linear infinite;
-    color: rgb(95, 111, 255);
-}
-
-@keyframes jump{
-    0%{
-        top:0;
-    }
-    30%{
-        top:-2vh;
-        transform: rotate(360deg);
-    }
-    60%{
-        top:0; 
-        transform: rotate(0deg);       
-    }
-    80%{
-        top:-1vh;
-    }
-    100%{
-        top:0;
-    }
-}
-
 #gamesVinyl{
     position: absolute;
     left: 60%;
@@ -64,22 +5,6 @@
     transform: translate(-50%,-50%);
     border-radius: 100%;
     z-index: 2;
-}
-
-.hideGames {
-    animation: hideGames 4s linear 1 forwards;
-}
-
-@keyframes hideGames{
-    0%{
-        top:50%;
-    }
-    30%{
-        top:50%;
-    }
-    100%{
-        top: -50%;
-    }
 }
 
 .showGames{

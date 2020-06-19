@@ -15,25 +15,13 @@ export default function App() {
     const [moveArm, setMoveArm] = useState("");
     const [movePicker, setMovePicker] = useState("");
 
-    const armStatus = useSelector(state => state.arm);
     const contactStatus = useSelector(state => state.contact);
+    const armStatus = useSelector(state => state.arm);
 
     useEffect(() => {
         const vinylClockCanvas = vinylClock.current;
         paintVinylClock(vinylClockCanvas);
     }, []);
-
-    useEffect(() => {
-        if(movePicker==="picker2" || !movePicker){
-            setMovePicker("picker");
-        } else {
-            setMovePicker("picker2");
-        }  
-        
-        setMoveArm("moveArm");
-        setTimeout(()=>setMoveArm(null),4000);  
-          
-    },[armStatus]);
 
     useEffect(() => {
         if(contactStatus){
@@ -43,16 +31,18 @@ export default function App() {
         }         
     },[contactStatus]);
 
-    const hideGames = value => {
-        dispatch(hideGameButton(value));
-    }
+    useEffect(() => {
+        if(armStatus){
+            setMoveArm(null);
+        }
+    },[armStatus])
 
     return (
         <div id="main">
             <div id="welcome">Hey, I'm Lars!</div>
             <div id="vinylform"></div>
             <div id="vinylInnerForm"></div>
-            <canvas ref={vinylClock} id="vinyl" className="showClockVinyl"></canvas>
+            <canvas ref={vinylClock} id="vinyl"></canvas>
             <div id="portrait">
                 <div className="outerForm flex">
                     <div className="innerForm flex">
@@ -66,6 +56,7 @@ export default function App() {
                             if(clickAbout[0]==="aboutOff"){
                                 let changeAbout=[clickAbout[1],clickAbout[0]]; 
                                 setClickAbout(changeAbout)
+                                moveArm==="moveArm2" ? setMoveArm("moveArm") : setMoveArm("moveArm2"); 
                                 }}}>ON</div>  
                         <div className={`aboutButton flex ${clickAbout[1]}`} onClick={()=>{
                             if(clickAbout[1]==="aboutOff"){
@@ -77,25 +68,25 @@ export default function App() {
                 <p className="flex">Contact me</p>
                 <div className="outerFormButton flex">
                     <div className="innerFormButton flex">
-                        <Link to="/contactMe" className={`aboutButton flex ${clickContact[0]}`} onClick={()=>{
+                        <Link to="/contactMe" className={`aboutButton flex ${clickContact[0]}`} 
+                        onClick={()=>{
                             if(clickContact[0]==="contactOff"){
                                 let changeAbout=[clickContact[1],clickContact[0]]; 
                                 setClickContact(changeAbout); 
-                                setMoveArm("moveArm"); 
+                                moveArm==="" ? setMoveArm("moveArm") : setMoveArm("moveArm2"); 
                                 if(movePicker==="picker2" || !movePicker){
                                     setMovePicker("picker");
                                 } else {
                                     setMovePicker("picker2");
                                 } 
-                                hideGames(true);
                                 }}}>ON</Link>  
-                        <Link to="/" className={`aboutButton flex ${clickContact[1]}`} onClick={()=>{
+                        <Link to="/" className={`aboutButton flex ${clickContact[1]}`} 
+                        onClick={()=>{
                             if(clickContact[1]==="contactOff"){
                                 let changeAbout=[clickContact[1],clickContact[0]]; 
                                 setClickContact(changeAbout); 
                                 setMoveArm(null); 
-                                setMovePicker(null); 
-                                hideGames(false);
+                                setMovePicker(null);
                                 }}}>OFF</Link>
                     </div>                        
                 </div> 
@@ -118,6 +109,24 @@ export default function App() {
             <div id="tonearm" className={moveArm}>
                 <div id="holder"></div>
                 <div id="arm"></div>
+            </div>
+
+            <div className="outerGamesButton flex">
+                <div className="innerGamesButton flex">
+                    <Link to="/Games" id="startGames" className="flex" 
+                    onClick={()=>{
+                        if(clickContact[0]==="contactOn"){
+                            let changeAbout=[clickContact[1],clickContact[0]]; 
+                            setClickContact(changeAbout); 
+                        }
+                        moveArm==="moveArm2" ? setMoveArm("moveArm") : setMoveArm("moveArm2");  
+                        if(movePicker==="picker2" || !movePicker){
+                            setMovePicker("picker");
+                        } else {
+                            setMovePicker("picker2");
+                        }}}
+                    ><div>G</div><div className="aLetter">a</div><div>mes</div></Link>
+                </div>
             </div>
         </div>
     );

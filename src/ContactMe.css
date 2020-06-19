@@ -1,19 +1,23 @@
 #contactMeVinyl{
     position: absolute;
     left: 60%;
+    top: -70vh;
     transform: translate(-50%, -50%);
     border-radius: 100%;
     z-index: 2;
 }
 
-.hideContact {
-    transition: ease-in 2s top;
-    top: -50%;
+.showContact{
+    animation: showContact 2s linear 1 forwards;
 }
 
-.showContact{
-    transition: ease-in 2s top;
-    top: 50%;
+@keyframes showContact{
+    0%{
+        top:-50%;
+    }
+    100%{
+        top: 50%;
+    }
 }
 
 #contactCanvas{

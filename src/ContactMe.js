@@ -9,7 +9,6 @@ export default function ContactMe(){
 
     const vinylContact = useRef();
 
-    const [classContact, setClassContact] = useState("hideContact");
     const [textArea, setTextArea] = useState("");
     const [statusMail, setStatusMail] = useState("Write me!");
     const [charactersCount, setCharactersCount] = useState(1000);
@@ -18,7 +17,6 @@ export default function ContactMe(){
     useEffect(() => {
         const vinylContactCanvas = vinylContact.current;
         paintVinylContact(vinylContactCanvas);
-        setClassContact("showContact");
     }, [])
 
     const message = "Your message was sent successfully! Have a nice day!";
@@ -42,7 +40,7 @@ export default function ContactMe(){
     };
 
     return(
-        <div id="contactMeVinyl" className={classContact}>
+        <div id="contactMeVinyl" className="showContact">
             <div id="contactForm" className="outerContactForm flex">
                 <div className="innerContactForm flex">
                     <textarea placeholder="Write about anything you want! Projects, games, suggestions, greedings, up to you!" 

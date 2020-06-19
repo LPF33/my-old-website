@@ -14,9 +14,9 @@ export default function App() {
         <div>      
             <Main />
             <ArticleMenu />
-            <Games />
             <Switch>
                 <Route exact path = "/contactMe" component = {ContactMe} />
+                <Route exact path = "/games" component = {Games} />
                 <Route path = "/articles/:article" component = {Articles} />
             </Switch>
         </div>
