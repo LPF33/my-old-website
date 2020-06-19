@@ -19,3 +19,131 @@
         top: 50%;
     }
 }
+
+.outerPlayButton {
+    position: absolute;
+    top:2vh;
+    left:60%;
+    transform: translateX(-50%);
+    width: calc(var(--portrait-width) * 0.7);
+    height: calc(var(--portrait-width) * 0.3);
+    background: #ffffff;
+    box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+}
+
+.innerPlayButton {
+    width: calc(var(--portrait-width) * 0.6);
+    height: calc(var(--portrait-width) * 0.2);
+    background: #ffffff;
+    box-shadow:  inset 10px 10px 30px #d9d9d9, 
+                inset -10px -10px 30px #ffffff;
+}
+
+#playGames{
+    width: calc(var(--portrait-width) * 0.55);
+    height: calc(var(--portrait-width) * 0.15);
+    background-color: rgb(245, 186, 168);
+    font-size: 0.9vw;
+    font-family: var(--main-font);
+    cursor: pointer;
+    outline: none;
+}
+
+#playGames:hover{
+    background-color: rgb(240, 228, 62);
+}
+
+#iframe{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height: 100vh;
+    z-index:20;
+}
+
+#iframeX{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 2vw;
+    font-size: 1.8vw;
+    text-align: center;
+    background-color: white;
+    border-radius: 100%;
+    z-index:20;
+    cursor: pointer;
+}
+
+#gametitle{
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: var(--main-font);
+}
+
+#gameinfo{
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 25px;
+    height: 25px;
+    font-family: var(--main-font);
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    text-align: center;
+    padding: 2px;
+}
+
+#gameinfo:hover{
+    border: 1px dotted black;
+    border-radius: 100%;
+}
+
+#info{
+    position: absolute;
+    top:5vw;
+    width: 40vw;
+    height: 80vh;
+    transition: ease-in 1s left;
+    left:-40vw;
+    background-color: white;
+    background: #ffffff;
+    box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+}
+
+.infoInner{
+    width: 30vw;
+    height: 70vh;
+    background: #ffffff;
+    box-shadow:  inset 10px 10px 30px #d9d9d9, 
+                inset -10px -10px 30px #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#info h1, #info p{
+    text-shadow: 1px 0px 1px #eee, 0px 1px 1px #ccc,
+    2px 1px 1px #eee, 1px 2px 1px #ccc,
+    3px 2px 1px #eee, 2px 3px 1px #ccc,
+    4px 3px 1px #eee, 3px 4px 1px #ccc,
+    5px 4px 1px #eee, 4px 5px 1px #ccc,
+    6px 5px 1px #eee, 5px 6px 1px #ccc,
+    6px 6px 1px #eee;
+    margin: 5px;
+}
+
+#info img{
+    width: 20vw;
+}
+
+#info.showInfo{
+    transition: ease-in 1s left;
+    left:0;
+}

@@ -26,7 +26,7 @@
     border: 1.2px solid black;
     border-radius: 100%;
     font-size: 1vw;
-    font-family: 'MuseoModerno', cursive, sans-serif;
+    font-family: var(--main-font);
     cursor: pointer;
     outline: none;
 }
@@ -53,7 +53,7 @@
 #search {
     font-size: 0.8vw;
     font-weight: bold;
-    font-family: 'MuseoModerno', cursive, sans-serif;
+    font-family: var(--main-font);
     background-color: rgba(255, 255, 255, 0);
     outline: none;
 }
@@ -62,7 +62,7 @@
     position: absolute;
     top: 30%;
     left: 5%;
-    font-family: 'MuseoModerno', cursive, sans-serif;
+    font-family: var(--main-font);
 }
 
 .outerArticleFrame {

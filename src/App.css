@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+:root{
+    --portrait-width: 20vh;
+    --main-font: 'MuseoModerno', cursive, sans-serif;
+}
+
 .flex {
     display: flex;
     align-items: center;

@@ -1,11 +1,7 @@
 #main {
     width: 100vw;
     height: 100vh;
-    font-family: 'MuseoModerno', cursive, sans-serif;
-}
-
-:root{
-    --portrait-width: 20vh;
+    font-family: var(--main-font);
 }
 
 #welcome {
@@ -324,7 +320,7 @@
     border: 2px solid black;
     border-radius: 100%;
     font-size: 1.5vw;
-    font-family: 'MuseoModerno', cursive, sans-serif;
+    font-family: var(--main-font);
     cursor: pointer;
     outline: none;
     text-decoration: none;

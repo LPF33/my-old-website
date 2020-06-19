@@ -14,8 +14,8 @@ export default function paintVinylGames(canvas) {
 
         //rotate Vinyl
         ctx.translate(canvas.width/2,canvas.height/2);
-        ctx.rotate(degree*Math.PI/180);
-
+        ctx.rotate(degree*Math.PI/180);       
+        
         //black background
         const blackCircleWidth = canvas.width * (0.5-0.15);
         const blackBackground = () => {
@@ -29,7 +29,7 @@ export default function paintVinylGames(canvas) {
         blackBackground();
 
         //inner white circle
-        const innerWhiteCircleWidth = canvas.width * (0.16-0.015); 
+        const innerWhiteCircleWidth = canvas.width * (0.16-0.015);
         const innerWhiteCircle = () => {
             ctx.beginPath();
             ctx.strokeStyle = "rgb(243, 243, 93)";
@@ -37,8 +37,8 @@ export default function paintVinylGames(canvas) {
             ctx.arc(0, 0,canvas.width*0.015+innerWhiteCircleWidth/2,0,2*Math.PI);
             ctx.stroke();
             ctx.closePath();
-        }        
-        innerWhiteCircle(); 
+        }   
+        innerWhiteCircle();     
 
         //groovings of vinyl 
         const trace = (blackCircleWidth * 0.7) / grooving;
@@ -52,7 +52,7 @@ export default function paintVinylGames(canvas) {
                 ctx.closePath();
             }
             
-        } 
+        }        
         
     }
 
