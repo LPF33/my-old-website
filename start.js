@@ -30,13 +30,13 @@ const cookieSessionMiddleware = cookieSession({
     secure : false
 });
 app.use( cookieSessionMiddleware);
-
+/*
 app.use(csurf());
 
 app.use(function(req, res, next){
     res.cookie('mytoken', req.csrfToken());
     next();
-});
+});*/
 
 app.get("/allarticles", async(request, response) => {
     const articles = await database.getArticles();
@@ -59,6 +59,18 @@ app.get("/searcharticles/:search", async(request, response) => {
         });
     }    
 });
+
+app.post("/sendmail", async(request, response) => {
+    const {textArea} = request.body; 
+    const mail = textArea.replace(/<\/?[^>]+(>|$)/g, "");
+    try{
+        ses.contactMail(mail);
+        response.json({success:true});
+    } catch{
+        response.json({success:false});
+    }
+});
+
 /*
 app.get("*", (request, response) => {
     response.sendFile(__dirname + '/build/index.html');    

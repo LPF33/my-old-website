@@ -15,7 +15,7 @@ const ses = new aws.SES({
 
 exports.contactMail = (topic) => {
     return ses.sendEmail({
-        Source: 'Email from my Website', 
+        Source: 'MyWebsite <gameslpf0@gmail.com>', 
         Destination: {
             ToAddresses: ["gameslpf0@gmail.com"]
         },

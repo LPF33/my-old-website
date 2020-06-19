@@ -7,6 +7,6 @@ exports.getArticles = () => {
 }
 
 exports.searchArticles = search => {
-    return db.query('SELECT * FROM articles WHERE tags ILIKE $1;',
+    return db.query('SELECT * FROM articles WHERE tags ILIKE $1 OR topic ILIKE $1;',
     ['%'+search+'%']);
 }

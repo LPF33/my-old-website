@@ -62,3 +62,22 @@
     font-family: 'MuseoModerno', cursive, sans-serif;
     border: 2px solid black;
 }
+
+.fingerpoint{
+    position: absolute;
+    left: 50%;
+    transform: scale(1.5) translateX(-50%);
+    animation: finger 1.5s linear infinite forwards;
+}
+
+@keyframes finger{
+    0%{
+        bottom:-20px;
+    }
+    50%{
+        bottom:0;
+    }
+    100%{
+        bottom:-20px;
+    }
+}

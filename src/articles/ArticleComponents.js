@@ -36,7 +36,7 @@ const Headline = props => {
             <div className="articleMenu">
                 <img  src={imgSource} alt="mainVinyl" id="articleMenuImg"/>
                 <Link to="/" onClick={nullLightMode} className={`articleLinks ${colorLinks}`}>Main</Link>
-                <Link to="/articles" onClick={nullLightMode} className={`articleLinks ${colorLinks}`}>Articles</Link>
+                <Link to="/games" onClick={nullLightMode} className={`articleLinks ${colorLinks}`}>Games</Link>
                 <Link to="/contactMe" onClick={() => {nullLightMode(); clickContact();}} className={`articleLinks ${colorLinks}`}>Contact me</Link>
                 {lightMode==="moon" && <img src={sun} alt="sunIcon" className="lightMode" onClick={() => {setLigthMode("sun"); changeLightMode();}}/>}
                 {lightMode==="sun" && <img src={moon} alt="moonIcon" className="lightMode" onClick={() => {setLigthMode("moon"); changeLightMode();}}/>}

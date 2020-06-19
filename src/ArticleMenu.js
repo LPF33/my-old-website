@@ -110,7 +110,9 @@ export default function ArticleMenu(){
                     {!showArticles &&    <Introduction />}
                     {showArticles && foundArticles.length>0 && 
                     <ul>
-                        {foundArticles.map((item,index) =>                         
+                        {foundArticles.sort((a,b) => {
+                            return Date.parse(b.created_at)-Date.parse(a.created_at);
+                        }).map((item,index) =>                         
                         <li key={index} className="searchArticle">
                             <Link to={item.url} className="linkArticles">
                                 <h6>{getDate(item.created_at)}</h6>
