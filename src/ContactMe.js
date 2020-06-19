@@ -12,6 +12,8 @@ export default function ContactMe(){
     const [classContact, setClassContact] = useState("hideContact");
     const [textArea, setTextArea] = useState("");
     const [statusMail, setStatusMail] = useState("Write me!");
+    const [charactersCount, setCharactersCount] = useState(1000);
+    const [countSend, setCountSend] = useState(0);
 
     useEffect(() => {
         const vinylContactCanvas = vinylContact.current;
@@ -19,33 +21,44 @@ export default function ContactMe(){
         setClassContact("showContact");
     }, [])
 
+    const message = "Your message was sent successfully! Have a nice day!";
+
     const sendData = async() => {
-        if(textArea){
+        if(textArea && !textArea.includes(message) && textArea.length>19 && textArea.length<=1000 && countSend<1){
             const status = await axios.post(`${serverUrl}/sendmail`,{textArea}); 
-            console.log(status);
             if(status.data.success){
-                setTextArea("Your message was sent successfully! Have a nice day!");
+                setTextArea(message);
                 setStatusMail("Thank you!");
+                setCountSend(1);
             } else {
                 setStatusMail("Error!");
             }
-        }    
+        }   
     }
+
+    const countCharacters = num => {
+        const charactersLeft = 1000-num.length;
+        setCharactersCount(charactersLeft);
+    };
 
     return(
         <div id="contactMeVinyl" className={classContact}>
             <div id="contactForm" className="outerContactForm flex">
                 <div className="innerContactForm flex">
                     <textarea placeholder="Write about anything you want! Projects, games, suggestions, greedings, up to you!" 
-                    onChange={e => setTextArea(e.target.value)}
+                    onChange={e => {setTextArea(e.target.value);countCharacters(e.target.value);}}
                     value={textArea} 
-                    onKeyDown={e=>{if(e.key==="Enter"){sendData()}}}></textarea>                    
-                </div>
+                    maxLength="1000"></textarea>                    
+                </div>                
+                <div id="charactersCount">
+                    {charactersCount>980 && <div id="minCharacters">At least 20 characters </div>}
+                    {charactersCount} characters left</div>
             </div>
             <div id="headlineContact" onClick={sendData}>
                 <p>{statusMail}</p>
-                <p>Click &amp; Send</p>
-            <span role="img" aria-label="FingerPointing" className="fingerpoint">👆🏻</span>
+                {countSend===0 && <p>Click &amp; Send</p>}
+                {countSend===1 && <p>See you!</p>}
+                {countSend===0 && <span role="img" aria-label="FingerPointing" className="fingerpoint">👆🏻</span>}
             </div>  
             <canvas id="contactCanvas" ref={vinylContact} onClick={sendData}></canvas>
         </div>

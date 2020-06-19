@@ -63,12 +63,16 @@ app.get("/searcharticles/:search", async(request, response) => {
 app.post("/sendmail", async(request, response) => {
     const {textArea} = request.body; 
     const mail = textArea.replace(/<\/?[^>]+(>|$)/g, "");
-    try{
-        ses.contactMail(mail);
-        response.json({success:true});
-    } catch{
+    if(mail && mail.length>=20 && mail.length<=1000){
+        try{
+            ses.contactMail(mail);
+            response.json({success:true});
+        } catch{
+            response.json({success:false});
+        }
+    }else{
         response.json({success:false});
-    }
+    }    
 });
 
 /*
