@@ -27,7 +27,7 @@ const Introduction = () => {
                 <p>I treat this website like a notebook and playground.</p>
                 <p>Browse through my articles and games.</p>
                 <h1>Happy Coding!</h1>
-                <h2>Go to last article:</h2> 
+                <h2>Go to latest article:</h2> 
                 <Link to={lastArticle.url} className="flex lastArticle"><h2>{lastArticle.topic}</h2></Link>               
         </div>
     )

@@ -5,7 +5,7 @@ export default function paintVinylGames(canvas) {
 
     const ctx = canvas.getContext("2d");
     
-    const grooving = 4;
+    const grooving = 60;
     let degree = 0;
 
     const createVinyl = () => {
@@ -14,8 +14,8 @@ export default function paintVinylGames(canvas) {
 
         //rotate Vinyl
         ctx.translate(canvas.width/2,canvas.height/2);
-        ctx.rotate(degree*Math.PI/180);       
-        
+        ctx.rotate(degree*Math.PI/180);
+
         //black background
         const blackCircleWidth = canvas.width * (0.5-0.15);
         const blackBackground = () => {
@@ -29,25 +29,24 @@ export default function paintVinylGames(canvas) {
         blackBackground();
 
         //inner white circle
-        const innerWhiteCircleWidth = canvas.width * (0.16-0.015);
+        const innerWhiteCircleWidth = canvas.width * (0.16-0.015); 
         const innerWhiteCircle = () => {
             ctx.beginPath();
-            ctx.strokeStyle = "rgb(243, 243, 93)";
+            ctx.strokeStyle = "rgb(243,243,93";
             ctx.lineWidth = innerWhiteCircleWidth;
             ctx.arc(0, 0,canvas.width*0.015+innerWhiteCircleWidth/2,0,2*Math.PI);
             ctx.stroke();
             ctx.closePath();
-        }   
-        innerWhiteCircle();     
+        }        
+        innerWhiteCircle(); 
 
         //groovings of vinyl 
-        const trace = (blackCircleWidth * 0.7) / grooving;
-        for(let i=0;i<grooving;i++){
+        for(let i=0;i<=grooving;i++){
             if(canvas.width * 0.21 + 3 * i<canvas.width*0.49){
                 ctx.beginPath();
-                ctx.strokeStyle = "rgb(37, 37, 37)";
-                ctx.lineWidth = trace;
-                ctx.arc( 0 , 0, canvas.width * 0.21 + trace * i, 0, 2 * Math.PI);
+                ctx.strokeStyle = "rgb(66, 60, 60)";
+                ctx.lineWidth = 1.7;
+                ctx.arc( 0 , 0, canvas.width * 0.21 + 3 * i, 0, 2 * Math.PI);
                 ctx.stroke();
                 ctx.closePath();
             }
@@ -56,7 +55,24 @@ export default function paintVinylGames(canvas) {
         
     }
 
+    //play Vinyl when typing into textarea
+    const prevButton = document.querySelector("#prevButton");
+    const nextButton = document.querySelector("#nextButton");
+    const gametitle  = document.querySelector("#gametitle");
+    
+    const playVinyl = () => {
+
+        degree += 2;
+        createVinyl();        
+        gametitle.style.transform = `rotate(${degree}deg)`;
+
+        setTimeout(playVinyl,100);
+    }
+
+    prevButton.addEventListener("mouseover", playVinyl);
+
     window.addEventListener("resize", createVinyl, false);
 
-    createVinyl();      
+    setTimeout(playVinyl,2500); 
+    createVinyl();    
 }
