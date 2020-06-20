@@ -17,6 +17,8 @@ export default function Games(){
     const [games, setGames] = useState([]);
     const [currentGame, setCurrentGame] = useState("");
     let [switchGame, setSwitchGame] = useState(1);
+    const [hiddenClassNext, setHiddenClassNext] = useState("");
+    const [hiddenClassPrev, setHiddenClassPrev] = useState("");
     
     useEffect(()=> {
         const vinylGamesCanvas = vinylGames.current;
@@ -42,11 +44,20 @@ export default function Games(){
             setCurrentGame(games[change]);
             setSwitchGame(change);
         }
+
+        if(switchGame===games.length-1){
+            setHiddenClassNext("hidden");
+        } else if (!switchGame){
+            setHiddenClassPrev("hidden");
+        } else{
+            setHiddenClassNext("");
+            setHiddenClassPrev("");
+        }
     }
 
     return(
         <div>
-            <div className="outerGamesButton flex">
+            <div className="outerGamesButton flex" >
                 <div className="innerGamesButton flex">
                     <Link to="/" id="startGames" className="flex" onClick={armStatus}>
                     <div>M</div><div className="aLetter">a</div><div>in</div></Link>
@@ -55,8 +66,7 @@ export default function Games(){
 
             <div id="nextPlayButton">
 
-                {switchGame!==0 &&
-                <div className="outerSwitchButton flex" id="prevButton">
+                <div className={`outerSwitchButton flex ${hiddenClassPrev}`} id="prevButton">
                     <div className="innerSwitchButton flex">
                         <img src="/triangle.png" alt="prevButton"
                         onClick={()=> {
@@ -65,7 +75,6 @@ export default function Games(){
                         />
                     </div>
                 </div>
-                }
 
                 <div className="outerPlayButton flex">
                     <div className="innerPlayButton flex">
@@ -73,8 +82,7 @@ export default function Games(){
                     </div>
                 </div>
 
-                {switchGame!==games.length-1 &&
-                <div className="outerSwitchButton flex" id="nextButton">
+                <div className={`outerSwitchButton flex ${hiddenClassNext}`} id="nextButton">
                     <div className="innerSwitchButton flex">
                         <img src="/triangle2.png" alt="nextButton"
                         onClick={()=> {
@@ -83,7 +91,6 @@ export default function Games(){
                         />
                     </div>
                 </div>
-                }
 
             </div>
             
@@ -96,7 +103,9 @@ export default function Games(){
             
             
             <div id="gamesVinyl" className="showGames">  
-                <h1 id="gametitle">{currentGame.game}</h1>                
+                <div id="gametitle">
+                    <h1 >{currentGame.game}</h1> 
+                </div>           
                 <canvas id="gamesCanvas" ref={vinylGames} ></canvas>
             </div> 
 

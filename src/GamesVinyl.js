@@ -7,6 +7,19 @@ export default function paintVinylGames(canvas) {
     
     const grooving = 60;
     let degree = 0;
+    const innerParts = 40;
+    let colorArray = [];
+
+    //change Color 
+    const changeColor = innerParts => {
+        const randomGreen = () => Math.floor(Math.random()*255);
+        const randomBlue = () => Math.floor(Math.random()*70);
+        for(let i = 0; i<innerParts; i++){
+            colorArray.push(`rgb(255,${randomGreen()},${randomBlue()})`);
+        }
+    }
+
+    changeColor(innerParts);    
 
     const createVinyl = () => {
         canvas.width = window.innerHeight * 0.7;
@@ -30,13 +43,18 @@ export default function paintVinylGames(canvas) {
 
         //inner white circle
         const innerWhiteCircleWidth = canvas.width * (0.16-0.015); 
+        const steps = 2 / innerParts;
+
         const innerWhiteCircle = () => {
-            ctx.beginPath();
-            ctx.strokeStyle = "rgb(243,243,93";
-            ctx.lineWidth = innerWhiteCircleWidth;
-            ctx.arc(0, 0,canvas.width*0.015+innerWhiteCircleWidth/2,0,2*Math.PI);
-            ctx.stroke();
-            ctx.closePath();
+            for(let i = 0; i<innerParts; i++){
+                ctx.beginPath();
+                ctx.strokeStyle = colorArray[i];
+                ctx.lineWidth = innerWhiteCircleWidth;
+                ctx.arc(0, 0,canvas.width*0.015+innerWhiteCircleWidth/2,i*steps*Math.PI,(i+1)*steps*Math.PI);
+                ctx.stroke();
+                ctx.closePath();
+            }
+            
         }        
         innerWhiteCircle(); 
 
@@ -56,23 +74,33 @@ export default function paintVinylGames(canvas) {
     }
 
     //play Vinyl when typing into textarea
+    let timeoutID;
     const prevButton = document.querySelector("#prevButton");
     const nextButton = document.querySelector("#nextButton");
+    const playButton = document.querySelector("#playGames");
     const gametitle  = document.querySelector("#gametitle");
     
-    const playVinyl = () => {
+    const playVinyl = (num=1) => {
 
-        degree += 2;
+        if(timeoutID){
+            clearTimeout(timeoutID);
+        }
+
+        degree = num ? degree+2 : degree-2;
         createVinyl();        
-        gametitle.style.transform = `rotate(${degree}deg)`;
+        gametitle.style.transform = `translate(-50%,-50%) rotate(${degree}deg)`;
 
-        setTimeout(playVinyl,100);
+        timeoutID = setTimeout(() => playVinyl(num),100);
     }
 
-    prevButton.addEventListener("mouseover", playVinyl);
+    prevButton.addEventListener("mouseover", () => playVinyl(0));
+    nextButton.addEventListener("mouseover", () => playVinyl(1));
+    playButton.addEventListener("click", () => {
+        clearTimeout(timeoutID);
+    });
 
-    window.addEventListener("resize", createVinyl, false);
+    window.addEventListener("resize", playVinyl, false);
 
-    setTimeout(playVinyl,2500); 
+    setTimeout(playVinyl,4200); 
     createVinyl();    
 }

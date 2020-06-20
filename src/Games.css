@@ -38,7 +38,11 @@
 #nextButton{
     position: absolute;
     left: 50%;
-    transform: translateX(100%);
+    transform: translateX(100%);  
+}
+
+.hidden{
+    visibility: hidden;
 }
 
 .outerSwitchButton{
@@ -119,11 +123,17 @@
 
 #gametitle{
     position: absolute;
-    top: 43%;
+    top: 50%;
     left: 50%;
+    height: 7vw;
     transform: translate(-50%,-50%);
+}
+
+#gametitle h1{
     font-family: var(--main-font);
     font-size: 1.3vw;
+    color: white;
+    text-shadow: 2px 2px 1px black, -2px -2px 1px black, 2px -2px 1px black, -2px 2px 1px black;
 }
 
 #gameInfoOuter{
