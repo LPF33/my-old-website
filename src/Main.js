@@ -2,12 +2,10 @@ import React, { useRef, useEffect, useState } from "react";
 import "./Main.css";
 import paintVinylClock from "./vinylClockCanvasJS.js";
 import {Link} from "react-router-dom";
-import {useSelector, useDispatch} from "react-redux";
-import {hideGameButton} from "./action";
+import {useSelector} from "react-redux";
 
 export default function App() {
     const vinylClock = useRef();
-    const dispatch = useDispatch();
 
     const [clickAbout, setClickAbout] = useState(["aboutOff","aboutOn"]);
     const [clickContact, setClickContact] = useState(["contactOff","contactOn"]);
@@ -15,21 +13,12 @@ export default function App() {
     const [moveArm, setMoveArm] = useState("");
     const [movePicker, setMovePicker] = useState("");
 
-    const contactStatus = useSelector(state => state.contact);
     const armStatus = useSelector(state => state.arm);
 
     useEffect(() => {
         const vinylClockCanvas = vinylClock.current;
         paintVinylClock(vinylClockCanvas);
     }, []);
-
-    useEffect(() => {
-        if(contactStatus){
-            let changeAbout=[clickContact[1],clickContact[0]]; 
-            setClickContact(changeAbout);
-            dispatch(hideGameButton(true));
-        }         
-    },[contactStatus]);
 
     useEffect(() => {
         if(armStatus){
@@ -61,7 +50,11 @@ export default function App() {
                                     setMovePicker("picker");
                                 } else {
                                     setMovePicker("picker2");
-                                }  
+                                } 
+                                if(clickContact[0]==="contactOn"){
+                                    let changeAbout=[clickContact[1],clickContact[0]]; 
+                                    setClickContact(changeAbout); 
+                                } 
                                 }}}>ON</Link>  
                         <Link to="/" className={`aboutButton flex ${clickAbout[1]}`} onClick={()=>{
                             if(clickAbout[1]==="aboutOff"){
@@ -86,6 +79,10 @@ export default function App() {
                                 } else {
                                     setMovePicker("picker2");
                                 } 
+                                if(clickAbout[0]==="aboutOn"){
+                                    let changeAbout=[clickAbout[1],clickAbout[0]]; 
+                                    setClickAbout(changeAbout); 
+                                }
                                 }}}>ON</Link>  
                         <Link to="/" className={`aboutButton flex ${clickContact[1]}`} 
                         onClick={()=>{
@@ -125,6 +122,10 @@ export default function App() {
                         if(clickContact[0]==="contactOn"){
                             let changeAbout=[clickContact[1],clickContact[0]]; 
                             setClickContact(changeAbout); 
+                        }
+                        if(clickAbout[0]==="aboutOn"){
+                            let changeAbout=[clickAbout[1],clickAbout[0]]; 
+                            setClickAbout(changeAbout); 
                         }
                         moveArm==="moveArm2" ? setMoveArm("moveArm") : setMoveArm("moveArm2");  
                         if(movePicker==="picker2" || !movePicker){

@@ -5,21 +5,10 @@ export default function paintVinylAboutMe(canvas) {
 
     const ctx = canvas.getContext("2d");
     
-    const grooving = 60;
+    const grooving = 6;
+    const rings = 2;
     let degree = 0;
-    const innerParts = 40;
-    let colorArray = [];
-
-    //change Color 
-    const changeColor = innerParts => {
-        const randomGreen = () => Math.floor(Math.random()*255);
-        const randomBlue = () => Math.floor(Math.random()*70);
-        for(let i = 0; i<innerParts; i++){
-            colorArray.push(`rgb(255,${randomGreen()},${randomBlue()})`);
-        }
-    }
-
-    changeColor(innerParts);    
+    const innerParts = 8;   
 
     const createVinyl = () => {
         canvas.width = window.innerHeight * 0.7;
@@ -48,9 +37,9 @@ export default function paintVinylAboutMe(canvas) {
         const innerWhiteCircle = () => {
             for(let i = 0; i<innerParts; i++){
                 ctx.beginPath();
-                ctx.strokeStyle = colorArray[i];
+                ctx.strokeStyle = "black";
                 ctx.lineWidth = innerWhiteCircleWidth;
-                ctx.arc(0, 0,canvas.width*0.015+innerWhiteCircleWidth/2,i*steps*Math.PI,(i+1)*steps*Math.PI);
+                ctx.arc(0, 0,canvas.width*0.015+innerWhiteCircleWidth/2,Math.PI*0.001+i*steps*Math.PI,(i+1)*steps*Math.PI);
                 ctx.stroke();
                 ctx.closePath();
             }
@@ -59,18 +48,19 @@ export default function paintVinylAboutMe(canvas) {
         innerWhiteCircle(); 
 
         //groovings of vinyl 
-        for(let i=0;i<=grooving;i++){
-            if(canvas.width * 0.21 + 3 * i<canvas.width*0.49){
-                ctx.beginPath();
-                ctx.strokeStyle = "rgb(66, 60, 60)";
-                ctx.lineWidth = 1.7;
-                ctx.arc( 0 , 0, canvas.width * 0.21 + 3 * i, 0, 2 * Math.PI);
-                ctx.stroke();
-                ctx.closePath();
-            }
-            
-        }        
-        
+        for(let j=0;j<=rings;j++){
+            for(let i=0;i<=grooving;i++){
+                if(canvas.width * 0.21 + 3 * i<canvas.width*0.49){
+                    ctx.beginPath();
+                    ctx.strokeStyle = "rgb(66, 60, 60)";
+                    ctx.lineWidth = 1.7;
+                    ctx.arc( 0 , 0, canvas.width * 0.21 + 6*grooving*j + 3 * i, 0, 2 * Math.PI);
+                    ctx.stroke();
+                    ctx.closePath();
+                }
+
+            } 
+        }   
     }
 
     window.addEventListener("resize", createVinyl, false);

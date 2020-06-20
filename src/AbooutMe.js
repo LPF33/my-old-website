@@ -19,6 +19,7 @@ export default function AboutMe(){
                 </div> 
                 <canvas ref={vinylAboutMe} id="canvasAboutMe"></canvas>
             </div>
+
             
         </div>
     );
