@@ -52,17 +52,24 @@ export default function App() {
                 <p className="flex">About me</p>
                 <div className="outerFormButton flex">
                     <div className="innerFormButton flex">
-                        <div className={`aboutButton flex ${clickAbout[0]}`} onClick={()=>{
+                        <Link to="/aboutme" className={`aboutButton flex ${clickAbout[0]}`} onClick={()=>{
                             if(clickAbout[0]==="aboutOff"){
                                 let changeAbout=[clickAbout[1],clickAbout[0]]; 
                                 setClickAbout(changeAbout)
-                                moveArm==="moveArm2" ? setMoveArm("moveArm") : setMoveArm("moveArm2"); 
-                                }}}>ON</div>  
-                        <div className={`aboutButton flex ${clickAbout[1]}`} onClick={()=>{
+                                moveArm==="" ? setMoveArm("moveArm") : setMoveArm("moveArm2"); 
+                                if(movePicker==="picker2" || !movePicker){
+                                    setMovePicker("picker");
+                                } else {
+                                    setMovePicker("picker2");
+                                }  
+                                }}}>ON</Link>  
+                        <Link to="/" className={`aboutButton flex ${clickAbout[1]}`} onClick={()=>{
                             if(clickAbout[1]==="aboutOff"){
                                 let changeAbout=[clickAbout[1],clickAbout[0]]; 
-                                setClickAbout(changeAbout)
-                                }}}>OFF</div>
+                                setClickAbout(changeAbout); 
+                                setMoveArm(null); 
+                                setMovePicker(null);
+                                }}}>OFF</Link>
                     </div>                        
                 </div>    
                 <p className="flex">Contact me</p>

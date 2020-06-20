@@ -1,0 +1,36 @@
+#aboutMeVinyl{
+    position: absolute;
+    left: 60%;
+    top: -70vh;
+    transform: translate(-50%,-50%);
+    border-radius: 100%;
+    z-index: 2;
+}
+
+.showAboutMe{
+    animation: showGames 2s linear 1 forwards;
+}
+
+@keyframes showAboutMe{
+    0%{
+        top:-50%;
+    }
+    100%{
+        top: 50%;
+    }
+}
+
+#aboutMeTitle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 7vw;
+    transform: translate(-50%,-50%);
+}
+
+#aboutMeTitle h1{
+    font-family: var(--main-font);
+    font-size: 1.3vw;
+    color: white;
+    text-shadow: 2px 2px 1px black, -2px -2px 1px black, 2px -2px 1px black, -2px 2px 1px black;
+}
