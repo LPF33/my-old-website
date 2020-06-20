@@ -6,23 +6,36 @@ import {useDispatch, useSelector} from "react-redux";
 import {getArticles, tagSearch} from "./action";
 
 const Introduction = () => {
+
+    const serverUrl = "http://127.0.0.1:8080";
+
+    const [lastArticle, setLastArticle] = useState("");
+
+    useEffect(()=> {
+        (async()=> {
+            const getLastArticle = await axios.get(`${serverUrl}/lastArticle`);
+            setLastArticle(getLastArticle.data.data);
+        })();
+    },[]);
+
     return(
         <div id="introduction">
                 <h1>All about learning to code</h1>
                 <h2>This Website is under construction!</h2>
+                <p>Welcome to my Website!</p>
                 <p>With this website I intend not only to introduce myself but also to test, record and repeat what I have learnt.</p>
                 <p>I treat this website like a notebook and playground.</p>
-                <p>The design of this website is not finished yet, but I'd like to start to fill my website with projects, articles, news and whatever I'm up to!</p>
-                <h2>So let's do it!</h2>
-                <h2>Happy Coding!</h2>
-                <Link to="/articles/bash">First article</Link>
+                <p>Browse through my articles and games.</p>
+                <h1>Happy Coding!</h1>
+                <h2>Go to last article:</h2> 
+                <Link to={lastArticle.url} className="flex lastArticle"><h2>{lastArticle.topic}</h2></Link>               
         </div>
     )
 };
 
 const SearchBar = () => {
 
-    const serverUrl = "http://localhost:8080";
+    const serverUrl = "http://127.0.0.1:8080";
 
     const [search, setSearch] = useState("");
     const dispatch = useDispatch();

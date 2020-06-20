@@ -46,7 +46,7 @@ export default function Games(){
             </div>
             
             <div id="gamesVinyl" className="showGames">  
-                <p id="gametitle">{currentGame.game}</p>
+                <h1 id="gametitle">{currentGame.game}</h1>
                 <div id="gameinfo" onMouseOver={() => setInfo("showInfo")} onMouseLeave={() => setInfo("")}>?</div>
                 <canvas id="gamesCanvas" ref={vinylGames} ></canvas>
             </div> 

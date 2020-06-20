@@ -107,7 +107,7 @@
     color: black;
 }
 
-.searchArticle h1:hover{
+.searchArticle h1:hover, .lastArticle h2:hover{
     color: rgb(68, 0, 255);
 }
 
@@ -132,6 +132,10 @@
 
 .tagButton:hover{
     background-color: rgba(255, 52, 52, 0.603);
+}
+
+.lastArticle{
+    text-decoration: none;
 }
 
 

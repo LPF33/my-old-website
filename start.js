@@ -60,6 +60,11 @@ app.get("/searcharticles/:search", async(request, response) => {
     }    
 });
 
+app.get("/lastarticle", async(request, response) => {
+    const article = await database.lastArticle();
+    response.json({data: article.rows[0]});
+});
+
 app.post("/sendmail", async(request, response) => {
     const {textArea} = request.body; 
     const mail = textArea.replace(/<\/?[^>]+(>|$)/g, "");
@@ -79,6 +84,7 @@ app.get("/games", async(request, response) => {
     const games = await database.getGames();
     response.json({data: games.rows});
 });
+
 
 /*
 app.get("*", (request, response) => {

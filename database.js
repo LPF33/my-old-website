@@ -11,6 +11,10 @@ exports.searchArticles = search => {
     ['%'+search+'%']);
 };
 
+exports.lastArticle = () => {
+    return db.query('SELECT url, topic FROM articles ORDER BY created_at DESC LIMIT 1;')
+}
+
 exports.getGames = () => {
     return db.query('SELECT * FROM games;');
 };
