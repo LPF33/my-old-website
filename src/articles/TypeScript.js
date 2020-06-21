@@ -33,7 +33,7 @@ export default function Bash(){
                 </p> 
                 <HighlightCommand value="tsc filename.ts"/>
                 <p className={colorLightMode}>
-
+                    
 
                 </p>
             </div>            

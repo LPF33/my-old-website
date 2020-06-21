@@ -108,6 +108,12 @@ export default function App() {
                                 setClickAbout(changeAbout); 
                                 setMoveArm(null); 
                                 setMovePicker(null);
+                                }
+                            if(clickContact[1]==="contactOff"){
+                                let changeAbout=[clickContact[1],clickContact[0]]; 
+                                setClickContact(changeAbout); 
+                                setMoveArm(null); 
+                                setMovePicker(null);
                                 }}}>OFF</Link>
                     </div>                        
                 </div>       
@@ -135,6 +141,12 @@ export default function App() {
                             if(clickContact[1]==="contactOff"){
                                 let changeAbout=[clickContact[1],clickContact[0]]; 
                                 setClickContact(changeAbout); 
+                                setMoveArm(null); 
+                                setMovePicker(null);
+                                }
+                            if(clickAbout[1]==="aboutOff"){
+                                let changeAbout=[clickAbout[1],clickAbout[0]]; 
+                                setClickAbout(changeAbout); 
                                 setMoveArm(null); 
                                 setMovePicker(null);
                                 }}}>OFF</Link>
