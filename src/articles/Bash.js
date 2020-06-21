@@ -14,8 +14,10 @@ export default function Bash(){
     const whichLightMode = useSelector(state => state.lightMode);
 
     useEffect(() => {
-        setLightMode(lightMode==="sunMode" ? "moonMode" : "sunMode");
-        setColorLightMode(colorLightMode==="colorMoonMode" ? "colorSunMode" : "colorMoonMode")
+        if(whichLightMode){
+            setLightMode(whichLightMode==="sun" ? "sunMode" : "moonMode");
+            setColorLightMode(whichLightMode==="sun" ? "colorSunMode" : "colorMoonMode")
+        }        
     },[whichLightMode]);
 
     return(

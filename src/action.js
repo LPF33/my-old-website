@@ -20,13 +20,6 @@ export function sendLightMode(value){
     }
 }
 
-export function deleteLightMode(){
-    return{
-        type: "deleteLightMode",
-        action : "delete"
-    }
-}
-
 export function getArticles(search){
     return{
         type: "getArticles",

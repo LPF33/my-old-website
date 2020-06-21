@@ -14,6 +14,7 @@ export default function App() {
     const [movePicker, setMovePicker] = useState("");
 
     const armStatus = useSelector(state => state.arm);
+    const contactStatus = useSelector(state => state.contact);
 
     useEffect(() => {
         const vinylClockCanvas = vinylClock.current;
@@ -25,6 +26,13 @@ export default function App() {
             setMoveArm(null);
         }
     },[armStatus])
+
+    useEffect(() => {
+        if(contactStatus && clickContact[0]==="contactOff"){
+            let changeContact=[clickContact[1],clickContact[0]]; 
+            setClickContact(changeContact);
+        }
+    },[contactStatus])
 
     return (
         <div id="main">
