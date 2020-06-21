@@ -13,6 +13,7 @@ export default function ContactMe(){
     const [statusMail, setStatusMail] = useState("Write me!");
     const [charactersCount, setCharactersCount] = useState(1000);
     const [countSend, setCountSend] = useState(0);
+    const [field, setField] = useState("");
 
     useEffect(() => {
         const vinylContactCanvas = vinylContact.current;
@@ -23,7 +24,7 @@ export default function ContactMe(){
 
     const sendData = async() => {
         if(textArea && !textArea.includes(message) && textArea.length>19 && textArea.length<=1000 && countSend<1){
-            const status = await axios.post(`${serverUrl}/sendmail`,{textArea}); 
+            const status = await axios.post(`${serverUrl}/sendmail`,{textArea, field}); 
             if(status.data.success){
                 setTextArea(message);
                 setStatusMail("Thank you!");
@@ -47,7 +48,8 @@ export default function ContactMe(){
                     <textarea placeholder="Write about anything you want! Projects, games, suggestions, greedings, up to you!" 
                     onChange={e => {setTextArea(e.target.value);countCharacters(e.target.value);}}
                     value={textArea} 
-                    maxLength="1000"></textarea>                    
+                    maxLength="1000"></textarea>       
+                    <input class="wwwebsite" type="text" name="wwwebsite" value={field} onChange={e=> setField(e.target.value)}/>            
                 </div>                
                 <div id="charactersCount">
                     {charactersCount>980 && <div id="minCharacters">At least 20 characters </div>}

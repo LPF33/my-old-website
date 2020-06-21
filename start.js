@@ -38,6 +38,14 @@ app.use(function(req, res, next){
     next();
 });
 
+app.use((request, response, next) => {
+    if(!request.session.time){
+        const start = Date.now();
+        request.session.time = start;
+    }  
+    next();
+});
+
 app.get("/allarticles", async(request, response) => {
     const articles = await database.getArticles();
     response.json({
@@ -66,31 +74,37 @@ app.get("/lastarticle", async(request, response) => {
 });
 
 app.post("/sendmail", async(request, response) => {
-    const {textArea} = request.body; 
+    const {textArea, field} = request.body; 
     const mail = textArea.replace(/<\/?[^>]+(>|$)/g, "");
     if(!request.session.mailcount){
         request.session.mailcount = 1;
     } else {
         request.session.mailcount = request.session.mailcount === 1 ? 2 : "stop";
     }
-    if(mail && mail.length>=20 && mail.length<=1000 && request.session.mailcount!=="stop"){
-        try{
-            ses.contactMail(mail);
-            response.json({success:true});
-        } catch{
+    const difference = Date.now() - request.session.time;
+    
+    if(!field && difference/1000 > 10){
+        if(mail && mail.length>=20 && mail.length<=1000 && request.session.mailcount!=="stop"){
+            try{
+                ses.contactMail(mail);
+                response.json({success:true});
+            } catch{
+                response.json({
+                    success:false,
+                    error: "Error",
+                    text: "Something went wrong! I'm sorry! Try it again!"
+                });
+            }
+        }else{
             response.json({
                 success:false,
-                error: "Error",
-                text: "Something went wrong! I'm sorry! Try it again!"
+                error: "Stop",
+                text : "You can only write me twice! Have a nice day!"
             });
         }
     }else{
-        response.json({
-            success:false,
-            error: "Stop",
-            text : "You can only write me twice! Have a nice day!"
-        });
-    }    
+        response.json({success:true});
+    }        
 });
 
 app.get("/games", async(request, response) => {
