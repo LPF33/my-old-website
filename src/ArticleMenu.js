@@ -7,7 +7,7 @@ import {getArticles, tagSearch} from "./action";
 
 const Introduction = () => {
 
-    const serverUrl = "http://127.0.0.1:8080";
+    const serverUrl = process.env.NODE_ENV === "development" ? "http://127.0.0.1:8080" : "https://mywebsite.herokuapp.com";
 
     const [lastArticle, setLastArticle] = useState("");
 
@@ -35,7 +35,7 @@ const Introduction = () => {
 
 const SearchBar = () => {
 
-    const serverUrl = "http://127.0.0.1:8080";
+    const serverUrl = process.env.NODE_ENV === "development" ? "http://127.0.0.1:8080" : "https://mywebsite.herokuapp.com";
 
     const [search, setSearch] = useState("");
     const dispatch = useDispatch();

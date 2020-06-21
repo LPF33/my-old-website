@@ -50,7 +50,7 @@ export default function paintVinylAboutMe(canvas) {
         //groovings of vinyl 
         for(let j=0;j<=rings;j++){
             for(let i=0;i<=grooving;i++){
-                if(canvas.width * 0.21 + 3 * i<canvas.width*0.49){
+                if(canvas.width * 0.21 + 6*grooving*j + 3 * i<canvas.width*0.49){
                     ctx.beginPath();
                     ctx.strokeStyle = "rgb(66, 60, 60)";
                     ctx.lineWidth = 1.7;

@@ -6,7 +6,6 @@ import {sendLightMode, deleteLightMode, contactMe} from "../action";
 
 const Headline = props => {
     const dispatch = useDispatch();
-    const whichLightMode = useSelector(state => state.lightMode);
 
     const {topic,date,tags} = props;
     const imgSource = "/mainVinyl.PNG";

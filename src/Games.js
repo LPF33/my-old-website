@@ -8,7 +8,9 @@ import axios from "./axios.js";
 
 export default function Games(){
 
-    const serverUrl = "http://127.0.0.1:8080";
+    const serverUrl = process.env.NODE_ENV === "development" ? "http://127.0.0.1:8080" : "https://mywebsite.herokuapp.com";
+
+    console.log(process.env);
 
     const vinylGames = useRef();
     const dispatch = useDispatch();
