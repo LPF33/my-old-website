@@ -13,12 +13,32 @@ export default function App() {
     const [moveArm, setMoveArm] = useState("");
     const [movePicker, setMovePicker] = useState("");
 
+    const serverUrl = process.env.NODE_ENV === "development" ? "http://127.0.0.1:3000" : "https://larspefe.herokuapp.com";
+
     const armStatus = useSelector(state => state.arm);
     const contactStatus = useSelector(state => state.contact);
+    const aboutStatus = useSelector(state => state.about);
+    const armPickerStatus = useSelector(state => state.armpicker);
 
     useEffect(() => {
         const vinylClockCanvas = vinylClock.current;
         paintVinylClock(vinylClockCanvas);
+        if(window.location.href.startsWith(`${serverUrl}/aboutme`) && clickAbout[0]==="aboutOff"){
+            let changeAbout=[clickAbout[1],clickAbout[0]]; 
+            setClickAbout(changeAbout);   
+        } else if(!window.location.href.startsWith(`${serverUrl}/aboutme`) && clickAbout[0]==="aboutOn"){
+            let changeAbout=[clickAbout[1],clickAbout[0]]; 
+            setClickAbout(changeAbout);
+        }
+        
+        if(window.location.href.startsWith(`${serverUrl}/contactMe`) && clickContact[0]==="contactOff"){
+            let changeAbout=[clickContact[1],clickContact[0]]; 
+            setClickContact(changeAbout);    
+        } else if(!window.location.href.startsWith(`${serverUrl}/contactMe`) && clickContact[0]==="contactOn"){
+            let help=[clickContact[1],clickContact[0]]; 
+            setClickContact(help); 
+        } 
+
     }, []);
 
     useEffect(() => {
@@ -33,6 +53,24 @@ export default function App() {
             setClickContact(changeContact);
         }
     },[contactStatus])
+
+    useEffect(() => {
+        if(aboutStatus && clickAbout[0]==="aboutOn"){
+            let changeAbout=[clickAbout[1],clickAbout[0]]; 
+            setClickAbout(changeAbout);
+        }
+    },[aboutStatus])
+
+    useEffect(() => {
+        if(armPickerStatus){
+            moveArm==="" ? setMoveArm("moveArm") : setMoveArm("moveArm2"); 
+            if(movePicker==="picker2" || !movePicker){
+                setMovePicker("picker");
+            } else {
+                setMovePicker("picker2");
+            } 
+        }
+    },[armPickerStatus])
 
     return (
         <div id="main">
@@ -53,7 +91,7 @@ export default function App() {
                             if(clickAbout[0]==="aboutOff"){
                                 let changeAbout=[clickAbout[1],clickAbout[0]]; 
                                 setClickAbout(changeAbout)
-                                moveArm==="" ? setMoveArm("moveArm") : setMoveArm("moveArm2"); 
+                                moveArm==="moveArm2" ? setMoveArm("moveArm") : setMoveArm("moveArm2"); 
                                 if(movePicker==="picker2" || !movePicker){
                                     setMovePicker("picker");
                                 } else {
@@ -72,7 +110,7 @@ export default function App() {
                                 setMovePicker(null);
                                 }}}>OFF</Link>
                     </div>                        
-                </div>    
+                </div>       
                 <p className="flex">Contact me</p>
                 <div className="outerFormButton flex">
                     <div className="innerFormButton flex">
@@ -81,7 +119,7 @@ export default function App() {
                             if(clickContact[0]==="contactOff"){
                                 let changeAbout=[clickContact[1],clickContact[0]]; 
                                 setClickContact(changeAbout); 
-                                moveArm==="" ? setMoveArm("moveArm") : setMoveArm("moveArm2"); 
+                                moveArm==="moveArm2" ? setMoveArm("moveArm") : setMoveArm("moveArm2"); 
                                 if(movePicker==="picker2" || !movePicker){
                                     setMovePicker("picker");
                                 } else {

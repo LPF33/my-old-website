@@ -8,6 +8,14 @@ export default function (state = {}, action) {
         };
     }
 
+    if(action.type === "moveArmPicker"){
+
+        state = {
+            ...state,
+            armpicker: action.armpicker
+        };
+    }
+
     if(action.type === "hideGames"){
 
         state = {
@@ -37,6 +45,14 @@ export default function (state = {}, action) {
         state= {
             ...state,
             contact : action.action
+        }
+    }
+
+    if(action.type === "aboutMe"){
+
+        state= {
+            ...state,
+            about : action.action
         }
     }
 

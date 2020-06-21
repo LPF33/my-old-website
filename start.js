@@ -68,15 +68,28 @@ app.get("/lastarticle", async(request, response) => {
 app.post("/sendmail", async(request, response) => {
     const {textArea} = request.body; 
     const mail = textArea.replace(/<\/?[^>]+(>|$)/g, "");
-    if(mail && mail.length>=20 && mail.length<=1000){
+    if(!request.session.mailcount){
+        request.session.mailcount = 1;
+    } else {
+        request.session.mailcount = request.session.mailcount === 1 ? 2 : "stop";
+    }
+    if(mail && mail.length>=20 && mail.length<=1000 && request.session.mailcount!=="stop"){
         try{
             ses.contactMail(mail);
             response.json({success:true});
         } catch{
-            response.json({success:false});
+            response.json({
+                success:false,
+                error: "Error",
+                text: "Something went wrong! I'm sorry! Try it again!"
+            });
         }
     }else{
-        response.json({success:false});
+        response.json({
+            success:false,
+            error: "Stop",
+            text : "You can only write me twice! Have a nice day!"
+        });
     }    
 });
 

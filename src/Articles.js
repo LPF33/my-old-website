@@ -3,6 +3,7 @@ import {Route} from "react-router-dom";
 import "./Articles.css";
 import Git from "./articles/Git";
 import Bash from "./articles/Bash";
+import TypeScript from "./articles/TypeScript";
 
 export default function Articles(){
     return(
@@ -14,7 +15,11 @@ export default function Articles(){
             <Route 
                 exact path = "/articles/bash"
                 component = {Bash}
-            />          
+            />     
+            <Route 
+                exact path = "/articles/typescript"
+                component = {TypeScript}
+            />      
         </div>        
     )
 }

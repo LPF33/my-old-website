@@ -6,6 +6,14 @@ export function moveArm(){
     }
 }
 
+export function moveArmPicker(){
+    const num = Math.random()*1000;
+    return{
+        type : "moveArmPicker",
+        armpicker : num
+    }
+}
+
 export function hideGameButton(value){
     return{
         type : "hideGames",
@@ -32,6 +40,15 @@ export function contactMe(){
     
     return{
         type: "contactMe",
+        action: num
+    }
+}
+
+export function aboutMe(){
+    const num = Math.random()*1000;
+    
+    return{
+        type: "aboutMe",
         action: num
     }
 }

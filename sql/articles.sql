@@ -9,3 +9,4 @@ CREATE TABLE articles(
 );
 
 Insert INTO articles (url,topic,tags,created_at) VALUES ('/articles/bash','Bash! Recap and still looking for a solution!','basic, commandline, bash','2020-06-18 10:00:00');
+Insert INTO articles (url,topic,tags,created_at) VALUES ('/articles/typescript','Typescript! Learn the basics!','basic, typescript, javascript','2020-06-21 10:00:00');

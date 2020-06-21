@@ -1,0 +1,1 @@
+Insert INTO articles (url,topic,tags) VALUES ('/articles/typescript','Typescript! Learn the basics!','basic, typescript, javascript');

@@ -29,7 +29,8 @@ export default function ContactMe(){
                 setStatusMail("Thank you!");
                 setCountSend(1);
             } else {
-                setStatusMail("Error!");
+                setStatusMail(status.data.error);
+                setTextArea(status.data.text);
             }
         }   
     }
