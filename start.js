@@ -83,7 +83,7 @@ app.post("/sendmail", async(request, response) => {
     }
     const difference = Date.now() - request.session.time;
     
-    if(!field && difference/1000 > 10){
+    if(!field && difference/1000 > 6){
         if(mail && mail.length>=20 && mail.length<=1000 && request.session.mailcount!=="stop"){
             try{
                 ses.contactMail(mail);
