@@ -5,7 +5,7 @@ import axios from "./axios.js";
 
 export default function ContactMe(){
 
-    const serverUrl = "http://127.0.0.1:8080";
+    const serverUrl = process.env.NODE_ENV === "development" ? "http://127.0.0.1:8080" : "https://mywebsite.herokuapp.com";
 
     const vinylContact = useRef();
 

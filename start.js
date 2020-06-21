@@ -86,9 +86,8 @@ app.get("/games", async(request, response) => {
 });
 
 
-/*
 app.get("*", (request, response) => {
     response.sendFile(__dirname + '/build/index.html');    
-});*/
+});
 
 app.listen(process.env.PORT || 8080);
