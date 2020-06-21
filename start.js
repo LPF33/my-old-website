@@ -30,13 +30,13 @@ const cookieSessionMiddleware = cookieSession({
     secure : false
 });
 app.use( cookieSessionMiddleware);
-/*
+
 app.use(csurf());
 
 app.use(function(req, res, next){
     res.cookie('mytoken', req.csrfToken());
     next();
-});*/
+});
 
 app.get("/allarticles", async(request, response) => {
     const articles = await database.getArticles();
