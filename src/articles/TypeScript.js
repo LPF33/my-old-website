@@ -86,7 +86,7 @@ export default function Bash(){
                 <HighlightCommand value="functions"/>
                 <p className={colorLightMode}>
                     In TypeScript you can specify the datatypes for the parameter, for the return statement and for the function itself.<br></br>
-                    Example: <br></br><br></br>
+                    Example: <br></br>
                     <div className={`${lightCode} code`}>
                         <code>
                             <span>const check = (a : number, b : number):number =&gt; return a*b;</span><br></br>
@@ -126,12 +126,12 @@ export default function Bash(){
                     With classes you can generate new instances, which defines a new Object, "instance of this class".<br></br>
                     <div className={`${lightCode} code`}>
                         class Square &#123;<br></br>
-                        <span className="pre-wrap">     width: number (declare before the constructor, not with this!</span><br></br>
-                        <span className="pre-wrap">     constructor(width)&#123;</span><br></br>
-                        <span className="pre-wrap">             this.width = width</span><br></br>
+                        <span className="pre-wrap">     width: number</span><br></br>
+                        <span className="pre-wrap">     constructor(width:number)&#123;</span><br></br>
+                        <span className="pre-wrap">             this.width = width;</span><br></br>
                         <span className="pre-wrap">     &#125;</span><br></br>
                         <span className="pre-wrap">     area()&#123;</span><br></br>
-                        <span className="pre-wrap">             return this.width * this.width</span><br></br>
+                        <span className="pre-wrap">             return this.width * this.width;</span><br></br>
                         <span className="pre-wrap">     &#125;</span><br></br>
                         &#125;
                         <br></br>
@@ -144,17 +144,24 @@ export default function Bash(){
                         &#125;
                         <br></br>
                         class Square implements SquareW &#123;<br></br>
-                        <span className="pre-wrap">     constructor(width)&#123;</span><br></br>
-                        <span className="pre-wrap">             this.width = width</span><br></br>
+                        <span className="pre-wrap">     width: number</span><br></br>
+                        <span className="pre-wrap">     constructor(width: number)&#123;</span><br></br>
+                        <span className="pre-wrap">             this.width = width;</span><br></br>
                         <span className="pre-wrap">     &#125;</span><br></br>
                         <span className="pre-wrap">     area()&#123;</span><br></br>
-                        <span className="pre-wrap">             return this.width * this.width</span><br></br>
+                        <span className="pre-wrap">             return this.width * this.width;</span><br></br>
                         <span className="pre-wrap">     &#125;</span><br></br>
                         &#125;
                         <br></br>
                         const square2 = new Square(2);
                     </div>
                     The class has to have all properties like the interface.
+                </p>
+                <HighlightCommand value="Access Modifiers"/>
+                <p className={colorLightMode}>
+                    <strong>public</strong>
+                    <strong>private</strong>
+                    <strong>protected</strong>
                 </p>
             </div>            
         </div>
