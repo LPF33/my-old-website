@@ -9,7 +9,7 @@
     flex-direction: column;
     background-color: white;
     z-index:10;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--article-font);
     padding: 20px 5px 5px 5px;
     overflow-x: hidden;
 }
@@ -33,4 +33,27 @@
 
 .colorMoonMode{
     color: white;
+}
+
+.code{
+    padding: 5px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    display: table;
+}
+
+code{
+    font-family: var(--article-font);
+}
+
+.pre-wrap{
+    white-space: pre-wrap;
+}
+
+.codeSun {
+    background-color: rgb(251, 255, 0);
+}
+
+.codeMoon {
+    background-color: rgb(0, 97, 187);   
 }
