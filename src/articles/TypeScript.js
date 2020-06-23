@@ -47,13 +47,15 @@ export default function Bash(){
                         let a: boolean = true;<br/>
                         let a: string = "okay";<br/>
                     </div>                    
-                    For an array:<br/>
+                    For an array:(explicit type)<br/>
                     <div className={`${lightCode} code`}>
                         let a: string[ ] = ["1","2","3"];<br/>
-                        let a: Array&lt;number&gt; = ["1","2","3"];<br/>
+                        let a: Array&lt;number&gt; = ["1","2","3"];<br/>                        
                     </div>                    
                     With <em>any</em> you can define different types or if you don't know the type:<br/>
                     <div className={`${lightCode} code`}>let a: Array&lt;any&gt; = ["string", 12, true]</div>
+                    Array and union type:<br/>
+                    <div className={`${lightCode} code`}>let a: (string | number | boolean)[ ] = ["string", 12, true]</div>
                 </p>
                 <HighlightCommand value="enum"/>
                 <p className={colorLightMode}>
