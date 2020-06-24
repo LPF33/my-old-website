@@ -222,9 +222,16 @@
     left:0;
 }
 
+@media screen and (max-width: 760px){
+    #gameInfoOuter{
+        left: 44%;
+        top: 8%;
+    }
+}
+
 @media screen and (width: 1024px) and (height:768px) {
     #gameInfoOuter{
-        left: 36%
+        left: 36%;
     }
 }
 

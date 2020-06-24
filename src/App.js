@@ -38,16 +38,15 @@ export default function App() {
                 <ArticleMenu />
             }             
             <DataPrivacy/>   
-            {orientation &&         
+                    
             <Switch>
-                <Route exact path = "/contactMe" component = {ContactMe} />
-                <Route exact path = "/games" component = {Games} />
-                <Route path = "/articles/:article" component = {Articles} />
-                <Route exact path = "/aboutme" component = {AboutMe}/>
+                {orientation && <Route exact path = "/contactMe" component = {ContactMe} />}
+                {orientation && <Route exact path = "/games" component = {Games} />}
+                {orientation && <Route path = "/articles/:article" component = {Articles} />}
+                {orientation && <Route exact path = "/aboutme" component = {AboutMe}/>  }              
                 <Route exact path = "/datenschutz" component = {DataPrivacyDE}/>
                 <Route exact path = "/datapolicy" component = {DataPrivacyEN}/>
-            </Switch>
-            }
+            </Switch>            
         </div>
     );
 }
