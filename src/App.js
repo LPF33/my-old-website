@@ -37,7 +37,8 @@ export default function App() {
             {orientation &&
                 <ArticleMenu />
             }             
-            <DataPrivacy/>            
+            <DataPrivacy/>   
+            {orientation &&         
             <Switch>
                 <Route exact path = "/contactMe" component = {ContactMe} />
                 <Route exact path = "/games" component = {Games} />
@@ -46,6 +47,7 @@ export default function App() {
                 <Route exact path = "/datenschutz" component = {DataPrivacyDE}/>
                 <Route exact path = "/datapolicy" component = {DataPrivacyEN}/>
             </Switch>
+            }
         </div>
     );
 }

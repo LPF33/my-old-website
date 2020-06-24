@@ -8,7 +8,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     font-family: var(--main-font);
     z-index:15;
     overflow: hidden;
