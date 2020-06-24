@@ -79,7 +79,7 @@ export default function App() {
             <div id="vinylInnerForm"></div>
             <canvas ref={vinylClock} id="vinyl"></canvas>
             <div id="portrait">
-                <div className="outerForm flex">
+                <div className="outerForm flex" id="self-portrait">
                     <div className="innerForm flex">
                         <div id="myPicture"></div>  
                     </div>                        

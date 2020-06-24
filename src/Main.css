@@ -344,11 +344,54 @@
     60%{
         top:0; 
         transform: rotate(0deg);       
+ 
     }
     80%{
         top:-1vh;
     }
     100%{
         top:0;
+    }
+}
+
+@media screen and (width: 1024px) and (height:768px) {
+    #welcome{
+        top: 10px;
+        left: 10%;
+    }
+
+    .outerGamesButton{
+        left: 20%;
+    }
+
+    #portrait{
+        top:0;
+    }
+
+    #self-portrait{
+        position: absolute;
+        top: 80%;
+        left: 50%;
+    }
+}
+
+@media screen and (width: 1366px) and (height:1024px) {
+    #welcome{
+        top: 10px;
+        left: 10%;
+    }
+
+    .outerGamesButton{
+        left: 20%;
+    }
+
+    #portrait{
+        top:0;
+    }
+
+    #self-portrait{
+        position: absolute;
+        top: 80%;
+        left: 50%;
     }
 }

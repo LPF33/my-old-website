@@ -1,5 +1,5 @@
 #articleHeadline{
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--article-font);
     width: 700px;
 }
 
@@ -76,4 +76,11 @@
     background-color: rgb(251, 255, 0);
     font-size: 18px;
     font-weight: bold;
+}
+
+@media screen and (max-width: 760px){
+    #articleHeadline{
+        width:100vw;
+        padding: 5px;
+    }
 }

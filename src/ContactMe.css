@@ -119,3 +119,37 @@
     font-size:0px;
     line-height:0px;
 }
+
+@media screen and (width: 1024px) and (height:768px) {
+    #contactForm{
+        transform: translate(-90%,20%);
+    }
+    .outerContactForm {
+        width: 35vw;
+    }
+    
+    .innerContactForm {
+        width: calc(30vw * 0.81);
+    }
+    
+    #contactForm textarea{
+        width: calc(30vw * 0.7);
+    }
+}
+
+@media screen and (width: 1366px) and (height:1024px) {
+    #contactForm{
+        transform: translate(-90%,20%);
+    }
+    .outerContactForm {
+        width: 35vw;
+    }
+    
+    .innerContactForm {
+        width: calc(30vw * 0.81);
+    }
+    
+    #contactForm textarea{
+        width: calc(30vw * 0.7);
+    }    
+}

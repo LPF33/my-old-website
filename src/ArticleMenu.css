@@ -138,4 +138,39 @@
     text-decoration: none;
 }
 
+@media screen and (max-width: 760px){
+    #articleFrame{
+        left: 1%;
+    }
 
+    .tagButton{
+        font-size: 7px;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (width: 1024px) and (height:768px) {
+    #articleFrame{
+        left: 1%;
+    }
+    .outerArticleFrame {
+        width: 30vw;
+    }
+    
+    .innerArticleFrame {
+        width: 25vw;
+    } 
+}
+
+@media screen and (width: 1366px) and (height:1024px) {
+    #articleFrame{
+        left: 1%;
+    }
+    .outerArticleFrame {
+        width: 30vw;
+    }
+    
+    .innerArticleFrame {
+        width: 25vw;
+    }    
+}

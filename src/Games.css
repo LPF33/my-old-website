@@ -218,3 +218,15 @@
     transition: ease-in 1s left;
     left:0;
 }
+
+@media screen and (width: 1024px) and (height:768px) {
+    #gameInfoOuter{
+        left: 36%
+    }
+}
+
+@media screen and (width: 1366px) and (height:1024px) {
+    #gameInfoOuter{
+        left: 36%
+    }
+}

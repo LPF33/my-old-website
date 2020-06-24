@@ -9,6 +9,7 @@
     --portrait-width: 20vh;
     --main-font: 'MuseoModerno', cursive, sans-serif;
     --article-font: 'Roboto', sans-serif;
+    --font-size: 1vw;
 }
 
 .flex {
@@ -23,4 +24,26 @@ h1{
 
 h2{
     font-size: 20px;
+}
+
+
+@media screen and (max-width: 760px) and (orientation: portrait){
+    :root{
+        --portrait-width: 30vw;
+        --font-size: 1vh;
+    }
+}
+
+@media screen and (max-width: 760px){
+    h1{
+        font-size: 12px;
+    }
+    
+    h2{
+        font-size: 8px;
+    }
+
+    h6{
+        font-size: 5px;
+    }
 }

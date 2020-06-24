@@ -27,20 +27,20 @@ export default function Bash(){
         <div className={`articlePage ${lightMode}`}>
             <Headline topic={topic} date={date} tags={tags}/>
             <div className="paragraph">
-                <p className={colorLightMode}>
+                <div className={colorLightMode}>
                     TypeScript is a programming language, which is based upon JavaScript and extends JavaScript with some
                     new Features, as the word says it enables a strong typification. It was developed by Microsoft.
                     First of all, we have to install the TypeScript-Compiler, (npm install -g typescript), 
                     so we can transpile TypeScript to JavaScript and now the file runs in any browser.                    
                     The command for the compiling is: 
-                </p> 
+                </div> 
                 <HighlightCommand value="tsc filename.ts"/>
-                <p className={colorLightMode}>
+                <div className={colorLightMode}>
                     TypeScript has the same basic datatypes: boolean, string, number, Object, null, undefined, symbol, bigint.
                     And some more: Tuple, Enum, Any, Void, Never!
-                </p>
+                </div>
                 <HighlightCommand value="type annotation"/>
-                <p className={colorLightMode}>
+                <div className={colorLightMode}>
                     You have the option to assign a datatype like this:<br/>
                     <div className={`${lightCode} code`}>
                         let a: number = 1000;<br/>
@@ -56,9 +56,9 @@ export default function Bash(){
                     <div className={`${lightCode} code`}>let a: Array&lt;any&gt; = ["string", 12, true]</div>
                     Array and union type:<br/>
                     <div className={`${lightCode} code`}>let a: (string | number | boolean)[ ] = ["string", 12, true]</div>
-                </p>
+                </div>
                 <HighlightCommand value="enum"/>
-                <p className={colorLightMode}>
+                <div className={colorLightMode}>
                     In JavaScript you would do something like this:<br></br>
                     <div className={`${lightCode} code`}>const numZero = 0;<br></br>
                         const numOne = 1;<br></br>
@@ -84,9 +84,9 @@ export default function Bash(){
                         <br></br>
                         var firstNum = num.Zero;
                     </div>
-                </p>
+                </div>
                 <HighlightCommand value="functions"/>
-                <p className={colorLightMode}>
+                <div className={colorLightMode}>
                     In TypeScript you can specify the datatypes for the parameter, for the return statement and for the function itself.<br></br>
                     Example: <br></br>
                     <div className={`${lightCode} code`}>
@@ -96,9 +96,9 @@ export default function Bash(){
                             <span>Argument of type "3" is not assignable to parameter of type 'number'.</span>
                         </code>
                     </div>
-                </p>
+                </div>
                 <HighlightCommand value="Interface"/>
-                <p className={colorLightMode}>
+                <div className={colorLightMode}>
                     With interfaces you can declare the shape or structure of Objects.<br></br>
                     <div className={`${lightCode} code`}>
                         <span>interface Dog &#123;</span><br></br>
@@ -122,9 +122,9 @@ export default function Bash(){
                     </div>
                     With Interfaces it is also possible to control the requirements of a function parameter:<br></br> 
                     <div className={`${lightCode} code`}>const petsAge = (pet:Dog) =&gt; 2020-pet.born;</div>
-                </p>
+                </div>
                 <HighlightCommand value="Classes"/>
-                <p className={colorLightMode}>
+                <div className={colorLightMode}>
                     With classes you can generate new instances, which defines a new Object, "instance of this class".<br></br>
                     <div className={`${lightCode} code`}>
                         class Square &#123;<br></br>
@@ -158,13 +158,13 @@ export default function Bash(){
                         const square2 = new Square(2);
                     </div>
                     The class has to have all properties like the interface.
-                </p>
+                </div>
                 <HighlightCommand value="Access Modifiers"/>
-                <p className={colorLightMode}>
+                <div className={colorLightMode}>
                     <strong>public</strong>
                     <strong>private</strong>
                     <strong>protected</strong>
-                </p>
+                </div>
             </div>            
         </div>
     );
