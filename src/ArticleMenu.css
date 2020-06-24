@@ -144,6 +144,13 @@
         font-size: 7px;
         border-radius: 5px;
     }
+    .outerArticleFrame {
+        width: 30vw;
+    }
+    
+    .innerArticleFrame {
+        width: 25vw;
+    }
 }
 
 @media screen and (min-width: 768px){
