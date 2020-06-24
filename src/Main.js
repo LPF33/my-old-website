@@ -9,7 +9,6 @@ export default function App() {
 
     const [clickAbout, setClickAbout] = useState(["aboutOff","aboutOn"]);
     const [clickContact, setClickContact] = useState(["contactOff","contactOn"]);
-    const [clickGithub, setClickGithub] = useState("githubLinkOuter");
     const [moveArm, setMoveArm] = useState("");
     const [movePicker, setMovePicker] = useState("");
 
@@ -151,26 +150,17 @@ export default function App() {
                                 setMovePicker(null);
                                 }}}>OFF</Link>
                     </div>                        
-                </div> 
-                <div id="githubLink" 
-                className={`${clickGithub} flex`}                 
-                onClick={() => {
-                        if(clickGithub==="githubLinkOuterClick"){
-                            setClickGithub("githubLinkOuter")
-                        }else{
-                            setClickGithub("githubLinkOuterClick")
-                        }
-                    }
-                }>
-                    <div id="githubLinkInner" className="flex">
-                        <a  target="_blank" rel="noopener noreferrer" href="https://github.com/LPF33" ><div id="github" ></div></a>
-                    </div>
                 </div>         
             </div>
+
             <div className={movePicker} id="picker"></div>
             <div id="tonearm" className={moveArm}>
                 <div id="holder"></div>
                 <div id="arm"></div>
+            </div>
+
+            <div className="github-link-main">
+                <Github />
             </div>
 
             <div className="outerGamesButton flex">
@@ -196,4 +186,26 @@ export default function App() {
             </div>
         </div>
     );
+}
+
+export function Github(){
+
+    const [clickGithub, setClickGithub] = useState("githubLinkOuter");
+
+    return(
+        <div id="githubLink" 
+                className={`${clickGithub} flex`}                 
+                onClick={() => {
+                        if(clickGithub==="githubLinkOuterClick"){
+                            setClickGithub("githubLinkOuter")
+                        }else{
+                            setClickGithub("githubLinkOuterClick")
+                        }
+                    }
+                }>
+            <div id="githubLinkInner" className="flex">
+                <a  target="_blank" rel="noopener noreferrer" href="https://github.com/LPF33" ><div id="github" ></div></a>
+            </div>
+        </div> 
+    )
 }

@@ -49,7 +49,7 @@ export default function ContactMe(){
                     onChange={e => {setTextArea(e.target.value);countCharacters(e.target.value);}}
                     value={textArea} 
                     maxLength="1000"></textarea>       
-                    <input class="wwwebsite" type="text" name="wwwebsite" value={field} onChange={e=> setField(e.target.value)}/>            
+                    <input className="wwwebsite" type="text" name="wwwebsite" value={field} onChange={e=> setField(e.target.value)}/>            
                 </div>                
                 <div id="charactersCount">
                     {charactersCount>980 && <div id="minCharacters">At least 20 characters </div>}

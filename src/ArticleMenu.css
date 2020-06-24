@@ -1,7 +1,7 @@
 .outerArticleButton {
     position: absolute;
-    top: 9%;
-    left: 7%;
+    top: 6%;
+    left: 6%;
     width: calc(var(--portrait-width) * 0.7);
     height: calc(var(--portrait-width) * 0.7);
     background: #ffffff;

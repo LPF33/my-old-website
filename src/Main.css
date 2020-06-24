@@ -132,10 +132,15 @@
     margin: 10px 0 0 0;
 }
 
+.github-link-main{
+    position: absolute;
+    right: 10%;
+    top: 85%;
+}
+
 #githubLink{
     width: calc(var(--portrait-width) * 0.4);
-    height: calc(var(--portrait-width) * 0.4);    
-    margin-top: 3vh;
+    height: calc(var(--portrait-width) * 0.4);  
 }
 
 .githubLinkOuter{
@@ -355,11 +360,6 @@
 }
 
 @media screen and (max-width:760px){
-    #githubLink{
-        position: absolute;
-        top: 150%;
-        left: -10%;
-    }
     .outerGamesButton{
         left: 30%;
     }
@@ -384,8 +384,8 @@
 
     #self-portrait{
         position: absolute;
-        top: 80%;
-        left: 50%;
+        top: 110%;
+        left: 30%;
     }
 }
 
@@ -405,7 +405,7 @@
 
     #self-portrait{
         position: absolute;
-        top: 80%;
-        left: 50%;
+        top: 110%;
+        left: 30%;
     }
 }
