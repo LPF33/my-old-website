@@ -33,8 +33,8 @@
 
 .outerSearchFrame {
     position: absolute;
-    top: 20%;
-    left: 15%;
+    top: 23%;
+    left: 8%;
     width: calc(var(--portrait-width) * 1.5);
     height: calc(var(--portrait-width) * 0.3);
     background: #ffffff;
@@ -135,11 +135,10 @@
     text-decoration: none;
 }
 
-@media screen and (max-width: 760px){
+@media screen and (max-width: 768px){
     #articleFrame{
         left: 1%;
     }
-
     .tagButton{
         font-size: 7px;
         border-radius: 5px;
@@ -150,6 +149,13 @@
     
     .innerArticleFrame {
         width: 25vw;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .tagButton{
+        font-size: 9px;
+        border-radius: 5px;
     }
 }
 

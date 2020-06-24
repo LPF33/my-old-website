@@ -365,7 +365,7 @@
     } 
 }
 
-@media screen and (min-width: 1280px) and (min-height:680px){
+@media screen and (min-width: 1280px) and (min-height:578px){
     .outerGamesButton{
         left: 35%;
     }
@@ -382,8 +382,8 @@
 
 @media screen and (width: 1024px) and (height:768px) {
     #welcome{
-        top: 10px;
-        left: 10%;
+        top: 9px;
+        left: 5%;
     }
 
     .outerGamesButton{
@@ -404,7 +404,7 @@
 @media screen and (width: 1366px) and (height:1024px) {
     #welcome{
         top: 10px;
-        left: 10%;
+        left: 6%;
     }
 
     .outerGamesButton{
