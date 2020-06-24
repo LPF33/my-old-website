@@ -120,9 +120,9 @@
     line-height:0px;
 }
 
-@media screen and (max-width: 760px){
+@media screen and (max-width: 990px){
     #contactForm{
-        transform: translate(-110%,26%);
+        transform: translate(-110%,23%);
     }
 
     #charactersCount{
