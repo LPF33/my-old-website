@@ -36,14 +36,14 @@ h2{
 
 @media screen and (max-width: 760px){
     h1{
-        font-size: 12px;
+        font-size: 17px;
     }
     
     h2{
-        font-size: 8px;
+        font-size: 10px;
     }
 
     h6{
-        font-size: 5px;
+        font-size: 7px;
     }
 }

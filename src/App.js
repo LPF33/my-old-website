@@ -42,7 +42,7 @@ export default function App() {
             <Switch>
                 {orientation && <Route exact path = "/contactMe" component = {ContactMe} />}
                 {orientation && <Route exact path = "/games" component = {Games} />}
-                {orientation && <Route path = "/articles/:article" component = {Articles} />}
+                <Route path = "/articles/:article" component = {Articles} />
                 {orientation && <Route exact path = "/aboutme" component = {AboutMe}/>  }              
                 <Route exact path = "/datenschutz" component = {DataPrivacyDE}/>
                 <Route exact path = "/datapolicy" component = {DataPrivacyEN}/>
