@@ -10,7 +10,7 @@
     justify-content: center;
     background-color: white;
     font-family: var(--main-font);
-    z-index:40;
+    z-index:15;
     overflow: hidden;
 }
 

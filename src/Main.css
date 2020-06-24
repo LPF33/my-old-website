@@ -354,6 +354,13 @@
     }
 }
 
+@media screen and (max-width:760px){
+    #githubLink{
+        position: absolute;
+        bottom: 0;
+    }
+}
+
 @media screen and (width: 1024px) and (height:768px) {
     #welcome{
         top: 10px;

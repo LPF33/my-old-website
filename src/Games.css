@@ -27,18 +27,21 @@
     transform: translateX(-50%);
     width: calc(var(--portrait-width) * 1.7);
     display: flex;
+    z-index:3;
 }
 
 #prevButton{
     position: absolute;
     left: 50%;
     transform: translateX(-200%);
+    z-index:3;
 }
 
 #nextButton{
     position: absolute;
     left: 50%;
     transform: translateX(100%);  
+    z-index:3;
 }
 
 .hidden{

@@ -24,7 +24,7 @@ export default function Games(){
         const vinylGamesCanvas = vinylGames.current;
         paintVinylGames(vinylGamesCanvas);
         (async()=> {
-            const loadGames = await axios.get(`${serverUrl}/games`);
+            const loadGames = await axios.get(`${serverUrl}/loadgames`);
             setGames(loadGames.data.data);
             setCurrentGame(loadGames.data.data[1]);
         })();

@@ -1,5 +1,5 @@
 #data-button-outer{
-    position: absolute;
+    position: fixed;
     bottom: 1vh;
     left: 70%;
     width: calc(var(--portrait-width) * 0.9);
@@ -7,7 +7,7 @@
     background: #ffffff;
     box-shadow:  10px 10px 30px #d9d9d9, 
              -10px -10px 30px #ffffff;
-    z-index:49;
+    z-index:15;
 }
 
 #data-button-inner{

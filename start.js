@@ -107,7 +107,7 @@ app.post("/sendmail", async(request, response) => {
     }        
 });
 
-app.get("/games", async(request, response) => {
+app.get("/loadgames", async(request, response) => {
     const games = await database.getGames();
     response.json({data: games.rows});
 });
