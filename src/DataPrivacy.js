@@ -27,7 +27,7 @@ export function DataPrivacyDE(){
             <h3>I. Informationen über uns als Verantwortliche</h3>
             <p>Verantwortlicher Anbieter dieses Internetauftritts im datenschutzrechtlichen Sinne ist:</p>
             <p><span className="address">Lars-Peter Feigl<br></br>Fliederbusch 54<br></br>52355 Düren<br></br>Deutschland</span></p>
-            <p><span className="address">Telefon: 0176-619 905 97<br></br>E-Mail: gameslpf0@gmail.com</span></p>
+            <p><span className="address">Telefon: <br></br>E-Mail: gameslpf0@gmail.com</span></p>
             <p>Datenschutzbeauftragte/r beim Anbieter ist:</p>
             <p><span className="address">Lars-Peter Feigl</span></p>
             <h3>II. Rechte der Nutzer und Betroffenen</h3>
@@ -110,7 +110,7 @@ export function DataPrivacyEN(){
             <h3>I. Information about us as controllers of your data</h3>
             <p>The party responsible for this website (the "controller") for purposes of data protection law is:</p>
             <p><span className="address">Lars-Peter Feigl</span><br></br><span className="address">Fliederbusch 54</span><br></br><span className="address">52355 Düren</span><br></br><span className="address">Germany</span></p>
-            <p><span className="address">Telephone: 0176 619 905 97</span><br></br><span className="address">Email: gameslpf0@gmail.com</span></p>
+            <p><span className="address">Telephone: </span><br></br><span className="address">Email: gameslpf0@gmail.com</span></p>
             <p>The controller's data protection officer is:</p>
             <p><span className="address">Lars-Peter Feigl</span></p>
             <h3>II. The rights of users and data subjects</h3>
