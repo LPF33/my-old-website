@@ -11,6 +11,7 @@
     font-family: var(--article-font);
     padding: 20px 5px 5px 5px;
     overflow-x: hidden;
+    z-index:20;
 }
 
 .paragraph{
