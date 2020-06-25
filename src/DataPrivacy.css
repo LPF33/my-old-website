@@ -22,9 +22,9 @@
     width: calc(var(--portrait-width) * 0.75);
     height: calc(var(--portrait-width) * 0.20);
     font-family: var(--main-font);
-    font-size: var(--font-size);
     color: black;
     background-color: rgb(188, 241, 219);
+    font-size: 0.9em;
     padding: 1px;
     text-decoration: none;
 }
@@ -57,18 +57,7 @@
 
 @media screen and (max-width: 760px) and (orientation: portrait){
     #data-button-outer{
-        position: absolute;
         bottom: 2%;
         right: 2%;
-    }
-    #data-button{
-        width: calc(var(--portrait-width) * 0.75);
-        height: calc(var(--portrait-width) * 0.20);
-        font-family: var(--main-font);
-        font-size: calc(var(--font-size) * 1.5);
-        color: black;
-        background-color: rgb(188, 241, 219);
-        padding: 1px;
-        text-decoration: none;
     }
 }

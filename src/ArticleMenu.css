@@ -60,11 +60,13 @@
 
 #articleFrame{
     position: absolute;
+    left: 1%;
     top: 30%;
     font-family: var(--main-font);
 }
 
 .outerArticleFrame {
+    width: 30vw;
     height: 60vh;
     background: #ffffff;
     box-shadow:  10px 10px 30px #d9d9d9, 
@@ -72,6 +74,7 @@
 }
 
 .innerArticleFrame{
+    width: 25vw;
     height: 55vh;
     background: #ffffff;
     box-shadow:  inset 10px 10px 30px #d9d9d9, 
@@ -124,6 +127,8 @@
     background-color: rgb(147, 182, 248);
     border-radius: 10px;
     padding: 0 5px;
+    border-radius: 0.6em;
+    font-size: 0.8em;
     cursor: pointer;
 }
 
@@ -135,53 +140,9 @@
     text-decoration: none;
 }
 
-@media screen and (max-width: 768px){
-    #articleFrame{
-        left: 1%;
-    }
-    .tagButton{
-        font-size: 7px;
-        border-radius: 5px;
-    }
-    .outerArticleFrame {
-        width: 30vw;
-    }
-    
-    .innerArticleFrame {
-        width: 25vw;
-    }
-}
-
-@media screen and (max-width: 1000px){
-    .tagButton{
-        font-size: 9px;
-        border-radius: 5px;
-    }
-}
-
-@media screen and (min-width: 768px){
-    #articleFrame{
-        left: 1%;
-    }
-    .outerArticleFrame {
-        width: 30vw;
-    }
-    
-    .innerArticleFrame {
-        width: 25vw;
-    } 
-}
-
 @media screen and (min-width: 1280px) and (min-height:680px){
     #articleFrame{
         left: 5vw;
-    }
-    .outerArticleFrame {
-        width: 60vh;
-    }
-    
-    .innerArticleFrame {
-        width: 55vh;
     } 
 }
 

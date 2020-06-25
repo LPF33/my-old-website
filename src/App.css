@@ -9,7 +9,6 @@
     --portrait-width: 20vh;
     --main-font: 'MuseoModerno', cursive, sans-serif;
     --article-font: 'Roboto', sans-serif;
-    --font-size: 1vw;
 }
 
 .flex {
@@ -18,32 +17,29 @@
     justify-content: center;
 }
 
-h1{
-    font-size: 25px;
+@media screen and (max-width: 767px){
+    html{
+        font-size: 0.5em;
+    }
+}
+@media screen and (min-width: 768px){
+    html{
+        font-size: 0.8em;
+    }
+}
+@media screen and (min-width: 992px){
+    html{
+        font-size: 1em;
+    }
+}
+@media screen and (min-width: 1600px){
+    html{
+        font-size: 1.3em;
+    }
 }
 
-h2{
-    font-size: 20px;
-}
-
-
-@media screen and (max-width: 760px) and (orientation: portrait){
+@media screen and (max-width: 992px) and (orientation: portrait){
     :root{
         --portrait-width: 30vw;
-        --font-size: 1vh;
-    }
-}
-
-@media screen and (max-width: 1000px){
-    h1{
-        font-size: 15px;
-    }
-    
-    h2{
-        font-size: 10px;
-    }
-
-    h6{
-        font-size: 7px;
     }
 }

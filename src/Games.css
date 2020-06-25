@@ -138,8 +138,8 @@
 
 #gameInfoOuter{
     position: absolute;
-    top: 10%;
-    left: 46%;
+    bottom: 5%;
+    left: 40%;
     width: calc(var(--portrait-width) * 0.3);
     height: calc(var(--portrait-width) * 0.3); 
     background: #ffffff;
@@ -154,7 +154,7 @@
     width: calc(var(--portrait-width) * 0.2);
     height: calc(var(--portrait-width) * 0.2);  
     font-family: var(--main-font);
-    font-size: 1.1vw;
+    font-size: 1vw;
     font-weight: bold;
     border-radius: 100%;
     background: #ffffff;
@@ -185,6 +185,7 @@
     background: #ffffff;
     box-shadow:  10px 10px 30px #d9d9d9, 
              -10px -10px 30px #ffffff;
+    z-index:4;
 }
 
 .infoInner{
@@ -217,23 +218,4 @@
 #info.showInfo{
     transition: ease-in 1s left;
     left:0;
-}
-
-@media screen and (max-width: 760px){
-    #gameInfoOuter{
-        left: 44%;
-        top: 8%;
-    }
-}
-
-@media screen and (width: 1024px) and (height:768px) {
-    #gameInfoOuter{
-        left: 36%;
-    }
-}
-
-@media screen and (width: 1366px) and (height:1024px) {
-    #gameInfoOuter{
-        left: 36%
-    }
 }

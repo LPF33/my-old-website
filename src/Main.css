@@ -299,7 +299,7 @@
 
 .outerGamesButton {
     position: absolute;
-    top: 5%;
+    top: 4%;
     width: var(--portrait-width);
     height: var(--portrait-width);
     background: #ffffff;
@@ -358,27 +358,22 @@
     }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (max-width:1279px){
     .outerGamesButton{
         left: 20%;
-        top: 3%;
-    } 
-}
-
-@media screen and (min-width: 1280px) and (min-height:578px){
-    .outerGamesButton{
-        left: 35%;
-    }
-}
-
-@media screen and (max-width:760px){
-    .outerGamesButton{
-        left: 30%;
     }
     #portrait>p{
         margin:5px 0 0 0 ;
     }
 }
+
+@media screen and (min-width: 1280px) and (min-height:578px){
+    .outerGamesButton{
+        left: 30%;
+    }
+}
+
+
 
 @media screen and (width: 1024px) and (height:768px) {
     #welcome{

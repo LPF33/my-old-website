@@ -129,7 +129,7 @@ export default function ArticleMenu(){
                         <li key={index} className="searchArticle">
                             <Link to={item.url} className="linkArticles">
                                 <h6>{getDate(item.created_at)}</h6>
-                                <h1>{item.topic}</h1> 
+                                <h2>{item.topic}</h2> 
                             </Link>                          
                             <div>
                                 {item.tags.split(",").map((item,index) => 
