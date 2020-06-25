@@ -63,6 +63,21 @@ export default function paintVinylAboutMe(canvas) {
         }   
     }
 
+    //play Vinyl when typing into textarea
+    const text = document.querySelector("#aboutMeText");
+    const headlineAbout  = document.querySelector("#aboutMeTitle");
+    let currentScrollTop = 0;
+    
+    const playVinyl = e => {
+
+        currentScrollTop<e.target.scrollTop ? degree += 2 : degree -= 2;
+        currentScrollTop = e.target.scrollTop;
+        createVinyl();
+        headlineAbout.style.transform = `translate(-50%,-50%) rotate(${degree}deg)`;
+    }
+
+    text.addEventListener("scroll", playVinyl);
+
     window.addEventListener("resize", createVinyl, false);
     createVinyl();    
 }

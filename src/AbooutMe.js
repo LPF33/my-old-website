@@ -20,8 +20,8 @@ export default function AboutMe(){
                 <canvas ref={vinylAboutMe} id="canvasAboutMe"></canvas>
             </div>      
             <div id="about-me-frame" className="outerAboutFrame flex">
-                <div className="innerAboutFrame">
-                    <div>
+                <div className="innerAboutFrame" id="aboutMeText">
+                    <div >
                         <em>How my journey began?</em>
                         <p>Last year in December, I got fascinated by Web Coding. I wanted to change my career and above all I 
                             was searching for something, that I do with passion. <br></br>I luckily found it! <br></br>
