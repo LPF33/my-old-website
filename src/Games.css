@@ -140,8 +140,8 @@
     position: absolute;
     bottom: 5%;
     left: 40%;
-    width: calc(var(--portrait-width) * 0.3);
-    height: calc(var(--portrait-width) * 0.3); 
+    width: calc(var(--portrait-width) * 0.35);
+    height: calc(var(--portrait-width) * 0.35); 
     background: #ffffff;
     box-shadow:  3px 3px 6px #d9d9d9, 
              -3px -3px 6px #ffffff; 
@@ -151,8 +151,8 @@
 
 
 #gameinfo{
-    width: calc(var(--portrait-width) * 0.2);
-    height: calc(var(--portrait-width) * 0.2);  
+    width: calc(var(--portrait-width) * 0.25);
+    height: calc(var(--portrait-width) * 0.25);  
     font-family: var(--main-font);
     font-size: 1vw;
     font-weight: bold;
@@ -163,11 +163,12 @@
 }
 
 #gameinfo>p{
-    width: calc(var(--portrait-width) * 0.15);
-    height: calc(var(--portrait-width) * 0.15); 
+    width: calc(var(--portrait-width) * 0.2);
+    height: calc(var(--portrait-width) * 0.2); 
     border-radius: 100%;
     background-color: rgb(245, 186, 168);
     border: 1px solid black;
+    font-size: 1.5em;
 }
 
 #gameinfo>p:hover{
