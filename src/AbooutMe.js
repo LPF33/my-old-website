@@ -22,7 +22,7 @@ export default function AboutMe(){
             <div id="about-me-frame" className="outerAboutFrame flex">
                 <div className="innerAboutFrame">
                     <div>
-                        <em>How it started?</em>
+                        <em>How my journey began?</em>
                         <p>Last year in December, I got fascinated by Web Coding. I wanted to change my career and above all I 
                             was searching for something, that I do with passion. <br></br>I luckily found it! <br></br>
                             To deepen my knowledge I made one of my best
@@ -45,6 +45,28 @@ export default function AboutMe(){
                         <br></br>
                         <em>Stack</em>
                         <p>JS ES6, TypeScript(starting), HTML5, CSS3, SQL, Node.js, React, Angular(starting), Vue, jQuery, PostgreSQL, Git</p>
+                        <br></br>
+                        <em>What I do next to coding?</em>
+                        <p>
+                            <span role="img" aria-label="present">🎁</span>
+                            <br></br>
+                            Love to spend my time with my girlfriend. 
+                            <br></br>
+                            <br></br>
+                            <span role="img" aria-label="bike">🚲</span>
+                            <br></br>
+                            Feel the freedom while I ride my bike! 
+                            <br></br>                            
+                            <br></br>
+                            <span role="img" aria-label="bike">📴📖</span>
+                            <br></br>
+                            Reading a great book can cheer me up! 
+                            <br></br>
+                            <br></br>
+                            <span role="img" aria-label="tree">🌲🌞</span>
+                            <br></br>
+                            Enjoy the sun in nature while walking!                             
+                        </p>
                     </div>
                 </div>
             </div>           
