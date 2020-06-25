@@ -36,9 +36,14 @@
 #device-inner{
     width: 35vw;
     height: 32vh;
-    background-image: url("./pictures/website.PNG");
-    background-repeat: no-repeat;
-    background-size: cover;
+    object-fit: cover;
+}
+
+#device-inner img{
+    width: 35vw;
+    height: 32vh;
+    object-fit: cover;
+    object-position: 0% 0%;
 }
 
 #device-touch{
