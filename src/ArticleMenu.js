@@ -21,10 +21,9 @@ const Introduction = () => {
     return(
         <div id="introduction">
                 <h1>All about learning to code</h1>
-                <h2>This Website is under construction!</h2>
-                <p>Welcome to my Website!</p>
-                <p>With this website I intend not only to introduce myself but also to test, record and repeat what I have learnt.</p>
-                <p>I treat this website like a notebook and playground.</p>
+                <h2>Welcome to my Website!</h2>
+                <p>This Website is under construction!</p>
+                <p>This website I treat like a playground, where I can test, record and repeat what I have learnt.</p>
                 <p>Browse through my articles and games.</p>
                 <h1>Happy Coding!</h1>
                 <h2>Go to latest article:</h2> 
