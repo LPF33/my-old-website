@@ -10,7 +10,9 @@ export default function MobileOrientation(){
                     <div id="device-inner" >
                         <img src="/website.png" alt="nextButton" />
                     </div>                    
-                    <div id="device-touch"></div>
+                    <div id="device-touch" className="flex">
+                        <div id="device-touch-inner"></div>
+                    </div>
                 </div>
             </div>
             <h1>Welcome to my Website!</h1>

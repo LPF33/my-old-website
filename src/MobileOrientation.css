@@ -56,3 +56,10 @@
     left:50%;
     transform: translateX(-50%);    
 }
+
+#device-touch-inner{
+    width: 1.5vh;
+    height: 1.5vh;
+    border-radius: 100%;
+    background-color: black;
+}
