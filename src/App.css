@@ -9,6 +9,7 @@
     --portrait-width: 20vh;
     --main-font: 'MuseoModerno', cursive, sans-serif;
     --article-font: 'Roboto', sans-serif;
+    --play-button: 20vh;
 }
 
 .flex {

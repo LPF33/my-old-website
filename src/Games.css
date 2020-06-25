@@ -25,7 +25,7 @@
     top:2vh;
     left:60%;
     transform: translateX(-50%);
-    width: calc(var(--portrait-width) * 1.7);
+    width: calc(var(--play-button) * 1.7);
     display: flex;
 }
 
@@ -46,23 +46,23 @@
 }
 
 .outerSwitchButton{
-    width: calc(var(--portrait-width) * 0.4);
-    height: calc(var(--portrait-width) * 0.3);
+    width: calc(var(--play-button) * 0.4);
+    height: calc(var(--play-button) * 0.3);
     background: #ffffff;
     box-shadow:  10px 10px 30px #d9d9d9, 
              -10px -10px 30px #ffffff;
 }
 
 .innerSwitchButton{
-    width: calc(var(--portrait-width) * 0.3);
-    height: calc(var(--portrait-width) * 0.2);
+    width: calc(var(--play-button) * 0.3);
+    height: calc(var(--play-button) * 0.2);
     background: #ffffff;
     box-shadow:  inset 10px 10px 30px #d9d9d9, 
                 inset -10px -10px 30px #ffffff;
 }
 
 .innerSwitchButton>img{
-    width: calc(var(--portrait-width) * 0.2);
+    width: calc(var(--play-button) * 0.2);
     cursor: pointer;
 }
 
@@ -70,24 +70,24 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: calc(var(--portrait-width) * 0.7);
-    height: calc(var(--portrait-width) * 0.3);
+    width: calc(var(--play-button) * 0.7);
+    height: calc(var(--play-button) * 0.3);
     background: #ffffff;
     box-shadow:  10px 10px 30px #d9d9d9, 
              -10px -10px 30px #ffffff;
 }
 
 .innerPlayButton {
-    width: calc(var(--portrait-width) * 0.6);
-    height: calc(var(--portrait-width) * 0.2);
+    width: calc(var(--play-button) * 0.6);
+    height: calc(var(--play-button) * 0.2);
     background: #ffffff;
     box-shadow:  inset 10px 10px 30px #d9d9d9, 
                 inset -10px -10px 30px #ffffff;
 }
 
 #playGames{
-    width: calc(var(--portrait-width) * 0.55);
-    height: calc(var(--portrait-width) * 0.15);
+    width: calc(var(--play-button) * 0.55);
+    height: calc(var(--play-button) * 0.15);
     background-color: rgb(245, 186, 168);
     font-size: 0.9vw;
     font-family: var(--main-font);
@@ -218,4 +218,10 @@
 #info.showInfo{
     transition: ease-in 1s left;
     left:0;
+}
+
+@media screen and (max-width: 992px){
+    #nextPlayButton{
+        top:0.1vh;
+    }
 }
