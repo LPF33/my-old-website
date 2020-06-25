@@ -44,28 +44,33 @@
 
 #contactForm{
     position: absolute;
-    transform: translate(-110%,20%);
+    left: 1%;
+    top: 100vh;
+    transform: translateY(-110%);
+    font-family: var(--main-font);
 }
 
 .outerContactForm {
-    width: 35vw;
-    height: 65vh;
+    width: 30vw;
+    height: 60vh;
     background: #ffffff;
     box-shadow:  10px 10px 30px #d9d9d9, 
              -10px -10px 30px #ffffff;
 }
 
 .innerContactForm {
-    width: calc(35vw * 0.81);
-    height: calc(65vh * 0.81);
+    width: 25vw;
+    height: 49vh;
     background: #ffffff;
     box-shadow:  inset 10px 10px 30px #d9d9d9, 
-                inset -10px -10px 30px #ffffff;
+             inset -10px -10px 30px #ffffff;
+    padding: 10px;
+    overflow: auto;
 }
 
 #contactForm textarea{
-    width: calc(30vw * 0.8);
-    height: calc(63vh * 0.8);
+    width: 24vw;
+    height: 46vh;
     font-size: 0.9vw;
     font-family: var(--main-font);
     border: 2px solid black;
@@ -121,45 +126,40 @@
 }
 
 @media screen and (max-width: 990px){
-    #contactForm{
-        transform: translate(-110%,23%);
-    }
-
     #charactersCount{
         font-size: 9px;
     }
 }
 
+@media screen and (min-width: 1280px) and (min-height:680px){
+    #contactForm{
+        left: 5vw;
+    } 
+}
+
+
 @media screen and (width: 1024px) and (height:768px) {
     #contactForm{
-        transform: translate(-90%,20%);
+        left: 1%;
     }
-    .outerContactForm {
-        width: 35vw;
-    }
-    
-    .innerContactForm {
-        width: calc(30vw * 0.81);
+    .outerContactFrame {
+        width: 30vw;
     }
     
-    #contactForm textarea{
-        width: calc(30vw * 0.7);
-    }
+    .innerContactFrame {
+        width: 25vw;
+    } 
 }
 
 @media screen and (width: 1366px) and (height:1024px) {
     #contactForm{
-        transform: translate(-90%,20%);
+        left: 1%;
     }
-    .outerContactForm {
-        width: 35vw;
-    }
-    
-    .innerContactForm {
-        width: calc(30vw * 0.81);
+    .outerContactFrame {
+        width: 30vw;
     }
     
-    #contactForm textarea{
-        width: calc(30vw * 0.7);
+    .innerContactFrame {
+        width: 25vw;
     }    
 }

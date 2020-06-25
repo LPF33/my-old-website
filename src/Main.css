@@ -134,7 +134,7 @@
 
 .github-link-main{
     position: absolute;
-    right: 10%;
+    right: 15%;
     top: 85%;
 }
 
@@ -369,7 +369,7 @@
 
 @media screen and (min-width: 1280px) and (min-height:578px){
     .outerGamesButton{
-        left: 30%;
+        left: 25%;
     }
 }
 

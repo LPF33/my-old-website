@@ -42,26 +42,33 @@ export default function ContactMe(){
     };
 
     return(
-        <div id="contactMeVinyl" className="showContact">
+        <div>
+
             <div id="contactForm" className="outerContactForm flex">
                 <div className="innerContactForm flex">
                     <textarea placeholder="Write about anything you want! Projects, games, suggestions, greedings, up to you!" 
-                    onChange={e => {setTextArea(e.target.value);countCharacters(e.target.value);}}
-                    value={textArea} 
-                    maxLength="1000"></textarea>       
-                    <input className="wwwebsite" type="text" name="wwwebsite" value={field} onChange={e=> setField(e.target.value)}/>            
-                </div>                
-                <div id="charactersCount">
-                    {charactersCount>980 && <div id="minCharacters">At least 20 characters </div>}
-                    {charactersCount} characters left</div>
-            </div>
-            <div id="headlineContact" onClick={sendData}>
-                <p>{statusMail}</p>
-                {countSend===0 && <p>Click &amp; Send</p>}
-                {countSend===1 && <p>See you!</p>}
-                {countSend===0 && <span role="img" aria-label="FingerPointing" className="fingerpoint">👆🏻</span>}
+                        onChange={e => {setTextArea(e.target.value);countCharacters(e.target.value);}}
+                        value={textArea} 
+                        maxLength="1000">
+                    </textarea>       
+                    <input className="wwwebsite" type="text" name="wwwebsite" value={field} onChange={e=> setField(e.target.value)}/> 
+
+                    <div id="charactersCount">
+                        {charactersCount>980 && <div id="minCharacters">At least 20 characters </div>}
+                        {charactersCount} characters left
+                    </div>
+                </div>
             </div>  
-            <canvas id="contactCanvas" ref={vinylContact} onClick={sendData}></canvas>
+
+            <div id="contactMeVinyl" className="showContact"> 
+                <div id="headlineContact" onClick={sendData}>
+                    <p>{statusMail}</p>
+                    {countSend===0 && <p>Click &amp; Send</p>}
+                    {countSend===1 && <p>See you!</p>}
+                    {countSend===0 && <span role="img" aria-label="FingerPointing" className="fingerpoint">👆🏻</span>}
+                </div>  
+                <canvas id="contactCanvas" ref={vinylContact} onClick={sendData}></canvas>
+            </div>
         </div>
     )
 }

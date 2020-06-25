@@ -22,7 +22,7 @@
 
 #nextPlayButton{
     position: absolute;
-    top:2vh;
+    top: 92vh;
     left:60%;
     transform: translateX(-50%);
     width: calc(var(--play-button) * 1.7);
@@ -218,10 +218,4 @@
 #info.showInfo{
     transition: ease-in 1s left;
     left:0;
-}
-
-@media screen and (max-width: 992px){
-    #nextPlayButton{
-        top:0.1vh;
-    }
 }

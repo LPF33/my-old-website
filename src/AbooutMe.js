@@ -18,6 +18,11 @@ export default function AboutMe(){
                     <h1>About me</h1> 
                     </div> 
                 <canvas ref={vinylAboutMe} id="canvasAboutMe"></canvas>
+            </div>      
+            <div id="about-me-frame" className="outerAboutFrame flex">
+                <div className="innerAboutFrame">
+                    Missing!
+                </div>
             </div>           
         </div>
     );

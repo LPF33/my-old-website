@@ -34,3 +34,62 @@
     color: white;
     text-shadow: 2px 2px 1px black, -2px -2px 1px black, 2px -2px 1px black, -2px 2px 1px black;
 }
+
+#about-me-frame{
+    position: absolute;
+    left: 1%;
+    top: 100vh;
+    transform: translateY(-110%);
+    font-family: var(--main-font);
+}
+
+.outerAboutFrame {
+    width: 30vw;
+    height: 60vh;
+    background: #ffffff;
+    box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+}
+
+.innerAboutFrame{
+    width: 25vw;
+    height: 55vh;
+    background: #ffffff;
+    box-shadow:  inset 10px 10px 30px #d9d9d9, 
+             inset -10px -10px 30px #ffffff;
+    padding: 10px;
+    overflow: auto;
+}
+
+@media screen and (min-width: 1280px) and (min-height:680px){
+    #about-me-frame{
+        left: 5vw;
+    } 
+}
+
+
+@media screen and (width: 1024px) and (height:768px) {
+    #about-me-frame{
+        left: 1%;
+    }
+    .outerAboutFrame {
+        width: 30vw;
+    }
+    
+    .innerAboutFrame {
+        width: 25vw;
+    } 
+}
+
+@media screen and (width: 1366px) and (height:1024px) {
+    #about-me-frame{
+        left: 1%;
+    }
+    .outerAboutFrame {
+        width: 30vw;
+    }
+    
+    .innerAboutFrame {
+        width: 25vw;
+    }    
+}
