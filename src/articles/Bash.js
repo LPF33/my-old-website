@@ -89,7 +89,7 @@ export default function Bash(){
                 <p className={colorLightMode}>
                     <em>g(lobal)r(egular)e(x)p(ression)</em>. With this you can do a global search for a specified file.
                     I will rise this topic in a next article again, when I recap JavaScript. With a string pattern you can search for a file.
-                    <strong>e.g.:*.[p]??</strong>, would return all files that have 3 letters as extension and start with a small p. 
+                    <strong>e.g.: * . [p]??</strong>, would return all files that have 3 letters as extension and start with a lowercase p. 
                 </p>
                 <HighlightCommand value="history"/>
                 <p className={colorLightMode}>Very helpful to see all past commands.</p>

@@ -21,7 +21,31 @@ export default function AboutMe(){
             </div>      
             <div id="about-me-frame" className="outerAboutFrame flex">
                 <div className="innerAboutFrame">
-                    Missing!
+                    <div>
+                        <em>How it started?</em>
+                        <p>Last year in December, I got fascinated by Web Coding. I wanted to change my career and above all I 
+                            was searching for something, that I do with passion. <br></br>I luckily found it! <br></br>
+                            To deepen my knowledge I made one of my best
+                            decisions in my life: <br></br>I've registered for a 3-month Bootcamp with <a href="https://www.spiced-academy.com/">Spiced Academy</a>.<br></br>
+                            There is no other possiblity out there expect for autodidaction to learn soooooo fast so many skills. Great experience! I finished this Bootcamp in May, 
+                            now I code and deepen my knowledge. 
+                        </p>
+                        <br></br>
+                        <em>What I do at the moment?</em>
+                        <p>Learn TypeScript, try to get into Angular, build this website with React &amp; do some brain training 
+                            on <a href="https://www.codewars.com">CodeWars</a>. Try to get a routine to write some articles about
+                            current projects or to repeat what I've learnt.
+                        </p>
+                        <br></br>
+                        <em>Coming next:</em>
+                        <p>
+                            A lot! <span role="img" aria-label="laughing">😁</span><br></br>
+                            Battleship Game + Testing (Jest, Supertest)!
+                        </p>
+                        <br></br>
+                        <em>Stack</em>
+                        <p>JS ES6, TypeScript(starting), HTML5, CSS3, SQL, Node.js, React, Angular(starting), Vue, jQuery, PostgreSQL, Git</p>
+                    </div>
                 </div>
             </div>           
         </div>

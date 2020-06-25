@@ -161,10 +161,11 @@ export default function Bash(){
                 </div>
                 <HighlightCommand value="Access Modifiers"/>
                 <div className={colorLightMode}>
-                    <strong>public</strong>
-                    <strong>private</strong>
-                    <strong>protected</strong>
+                    <strong>public</strong><br></br>
+                    <strong>private</strong><br></br>
+                    <strong>protected</strong><br></br>
                 </div>
+                <h2 className={colorLightMode}><strong>Article not finished yet!</strong></h2>
             </div>            
         </div>
     );

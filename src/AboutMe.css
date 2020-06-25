@@ -61,6 +61,18 @@
     overflow: auto;
 }
 
+#about-me-frame em{
+    color: rgb(9, 124, 177);
+    text-shadow: 1px 0px 1px #eee, 0px 1px 1px #ccc,
+    2px 1px 1px #eee, 1px 2px 1px #ccc,
+    3px 2px 1px #eee, 2px 3px 1px #ccc,
+    4px 3px 1px #eee, 3px 4px 1px #ccc;
+}
+
+#about-me-frame a{
+    color: black;
+}
+
 @media screen and (min-width: 1280px) and (min-height:680px){
     #about-me-frame{
         left: 5vw;
