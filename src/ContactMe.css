@@ -71,7 +71,7 @@
 #contactForm textarea{
     width: 24vw;
     height: 46vh;
-    font-size: 0.9vw;
+    font-size: 1em;
     font-family: var(--main-font);
     border: 2px solid black;
 }
@@ -81,6 +81,7 @@
     bottom: 1vh;
     right: 10px;
     font-family: var(--main-font);
+    font-size: 1.8vh;
 }
 
 #minCharacters{
@@ -125,9 +126,21 @@
     line-height:0px;
 }
 
-@media screen and (max-width: 990px){
+@media screen and (min-width: 675px){
     #charactersCount{
         font-size: 9px;
+    }
+}
+
+@media screen and (min-width: 1150px){
+    #charactersCount{
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width: 1300px){
+    #charactersCount{
+        font-size: 16px;
     }
 }
 
