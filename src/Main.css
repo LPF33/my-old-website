@@ -331,6 +331,10 @@
     color: black;
 }
 
+#startGames:hover{
+    background-color: rgb(240, 228, 62);
+}
+
 .aLetter{
     position: relative;
     animation: jump 2s linear infinite;

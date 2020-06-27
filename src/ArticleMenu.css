@@ -31,6 +31,10 @@
     outline: none;
 }
 
+#showArticles:hover{
+    background-color: rgb(240, 228, 62);
+}
+
 .outerSearchFrame {
     position: absolute;
     top: 25%;

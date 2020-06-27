@@ -29,7 +29,8 @@ export default function Bash(){
             <div className="paragraph">
                 <div className={colorLightMode}>
                     TypeScript is a programming language, which is based upon JavaScript and extends JavaScript with some
-                    new Features, as the word says it enables a strong typification. It was developed by Microsoft.
+                    new Features, as the word says it enables a strong typification. Debug work is much easier, because
+                    errors are caught at compile time instead at run time with JS. It was developed by Microsoft.
                     First of all, we have to install the TypeScript-Compiler, (npm install -g typescript), 
                     so we can transpile TypeScript to JavaScript and now the file runs in any browser.                    
                     The command for the compiling is: 
@@ -50,7 +51,7 @@ export default function Bash(){
                     For an array:(explicit type)<br/>
                     <div className={`${lightCode} code`}>
                         let a: string[ ] = ["1","2","3"];<br/>
-                        let a: Array&lt;number&gt; = ["1","2","3"];<br/>                        
+                        let a: Array&lt;number&gt; = [1,2,3];<br/>                        
                     </div>                    
                     With <em>any</em> you can define different types or if you don't know the type:<br/>
                     <div className={`${lightCode} code`}>let a: Array&lt;any&gt; = ["string", 12, true]</div>
@@ -84,6 +85,10 @@ export default function Bash(){
                         <br></br>
                         var firstNum = num.Zero;
                     </div>
+                </div>
+                <HighlightCommand value="Tuple"/>
+                <div className={colorLightMode}>
+                    
                 </div>
                 <HighlightCommand value="functions"/>
                 <div className={colorLightMode}>

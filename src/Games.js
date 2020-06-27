@@ -76,9 +76,11 @@ export default function Games(){
                     </div>
                 </div>
 
-                <div className="outerPlayButton flex">
+                <div className="outerPlayButton flex">                    
                     <div className="innerPlayButton flex">
-                        <button type="button" id="playGames" onClick={() => setShowIframe(currentGame)}>Play</button>
+                        <button type="button" id="playGames" 
+                        onClick={() => setShowIframe(currentGame)}                        
+                        >Play</button>
                     </div>
                 </div>
 
@@ -93,7 +95,6 @@ export default function Games(){
                 </div>
 
             </div>
-            
 
             <div id="gameInfoOuter" className="flex" onMouseOver={() => setInfo("showInfo")} onMouseLeave={() => setInfo("")}>
                 <div id="gameinfo" className="flex">
