@@ -74,7 +74,7 @@ body{
     align-items: center;
     position: absolute;
     top:50%;
-    left:2%;
+    left:2vw;
     transform: translateY(-50%);
 }
 
@@ -85,6 +85,13 @@ body{
     background-color: black;
     color: white;
     border-radius: 100%;
+}
+
+.buttons-landscape-right{
+    position: absolute;
+    display: flex;
+    left:96vw;
+    transform: translateX(-100%);
 }
 
 .touchButtonsPortrait{
@@ -99,9 +106,9 @@ body{
 }
 
 .touchButtonsPortrait button{
-    width: 6vh;
-    height: 6vh;
-    font-size: 3vw;
+    width: 8vh;
+    height: 8vh;
+    font-size: 4vw;
     background-color: black;
     color: white;
     border-radius: 100%;

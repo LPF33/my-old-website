@@ -5,6 +5,7 @@
     const endPoints = document.querySelector("#endPoints");
     const end = document.querySelector("#end");
     const touchButtons = document.querySelector("#touchButtons");
+    const buttonsLandscapeRight = document.querySelector("#buttons-landscape-right");
     const upButton = document.querySelector("#up");
     const leftButton = document.querySelector("#left");
     const rightButton = document.querySelector("#right");
@@ -21,10 +22,10 @@
 
     const blocks= 24;  
     
-    if(('ontouchstart' in window || navigator.msMaxTouchPoints) && window.innerWidth < 1200){
+    if(('ontouchstart' in window || navigator.msMaxTouchPoints) && window.innerWidth < 600){
         if(window.orientation === 0 ||  window.orientation === 180){
             canvas.width = 0.95 * window.innerWidth;
-            canvas.height = 0.95 * window.innerWidth;          
+            canvas.height = 0.95 * window.innerWidth;         
         } else {
             canvas.width = 0.95 * window.innerHeight;
             canvas.height =  0.95 * window.innerHeight;       
@@ -181,7 +182,8 @@
         if(window.orientation === 0 ||  window.orientation === 180){
             touchButtons.classList.add("touchButtonsPortrait");          
         } else {
-            touchButtons.classList.add("touchButtons");  
+            touchButtons.classList.add("touchButtons"); 
+            buttonsLandscapeRight.classList.add("buttons-landscape-right"); 
         }
     }else {
         touchButtons.style.display="none";
