@@ -1,0 +1,109 @@
+*{
+    padding:0;
+    margin:0;
+    border:0;
+}
+
+body{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(243, 241, 114);
+    width: 100vw;
+    height: 100vh;
+}
+
+#point-headline{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    height: 5vh;
+    background-color: rgb(255, 208, 0);
+    font-size: 5vh;
+}
+
+#point-headline img{
+    width: 5vh;
+    height: 5vh;
+}
+
+#points{
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+#board{
+    position: absolute;
+    top:5vh;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+#snake{
+    position: absolute;
+    top:5vh;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+#end{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.603);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#restart{
+    margin-top:10px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.touchButtons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:50%;
+    left:2%;
+    transform: translateY(-50%);
+}
+
+.touchButtons button{
+    width: 8vw;
+    height: 8vw;
+    font-size: 4vh;
+    background-color: black;
+    color: white;
+    border-radius: 100%;
+}
+
+.touchButtonsPortrait{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom:5%;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.touchButtonsPortrait button{
+    width: 6vh;
+    height: 6vh;
+    font-size: 3vw;
+    background-color: black;
+    color: white;
+    border-radius: 100%;
+}
+

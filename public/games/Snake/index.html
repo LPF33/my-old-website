@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="snake.css" rel="stylesheet" type="text/css">
+        <title>Snake</title>
+    </head>
+    <body>
+
+        <div id="point-headline">
+            <img src="fruit.png" alt="fruit">
+            <div id="points">0</div>
+        </div>
+        <canvas id="board" ></canvas>
+        <canvas id="snake" ></canvas>
+        <div id="end">
+            <h1>GAME OVER</h1>
+            <h1 id="endPoints"></h1>
+            <button type="button" id="restart"><h2>Restart</h2></button>
+        </div>
+
+        <div id="touchButtons">
+            <button type="button" id="up">up</button>
+            <div>
+                <button type="button" id="left">left</button>
+                <button type="button" id="right">right</button>
+            </div>     
+            <button type="button" id="down">down</button>
+        </div>
+
+        <script src="board.js" type="text/javascript" language="javascript"></script>
+        <script src="snake.js" type="text/javascript" language="javascript"></script>
+    </body>
+</html>
