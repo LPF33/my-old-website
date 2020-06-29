@@ -9,7 +9,7 @@
     const blocks= 24;    
     let colorOne = "white";
 
-    if(('ontouchstart' in window || navigator.msMaxTouchPoints) && window.innerWidth < 600){
+    if(('ontouchstart' in window || navigator.msMaxTouchPoints) && window.innerWidth < 1000){
         if(window.orientation === 0 ||  window.orientation === 180){
             canvas.width = 0.95 * window.innerWidth;
             canvas.height = 0.95 * window.innerWidth;
