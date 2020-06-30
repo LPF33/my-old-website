@@ -27,12 +27,12 @@ export default function AboutMe(){
                             was searching for something, that I do with passion. <br></br>I luckily found it! <br></br>
                             To deepen my knowledge I made one of my best
                             decisions in my life: <br></br>I've registered for a 3-month Bootcamp with <a href="https://www.spiced-academy.com/" target="_blank" rel="noopener noreferrer">Spiced Academy</a>.<br></br>
-                            There is no other possiblity out there expect for autodidaction to learn soooooo fast so many skills. Great experience! I finished this Bootcamp in May, 
+                            There is no other possiblity out there expect for autodidaction to learn so fast so many skills. Great experience! I finished this Bootcamp in May, 
                             now I code and deepen my knowledge. 
                         </p>
                         <br></br>
                         <em>What I do at the moment?</em>
-                        <p>Learn TypeScript, try to get into Angular, build this website with React &amp; do some brain training 
+                        <p>Learn TypeScript, try to get into PHP, build this website with React &amp; do some brain training 
                             on <a href="https://www.codewars.com" target="_blank" rel="noopener noreferrer">CodeWars</a>. Try to get a routine to write some articles about
                             current projects or to repeat what I've learnt.
                         </p>
