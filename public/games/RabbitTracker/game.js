@@ -5,7 +5,6 @@
     const beginner = $("#beginner");
     const advanced = $("#advanced");
     const master = $("#master");
-    const gameOverDiv = $("#gameOver");
 
     class Game{
         constructor(rabbit, rows, columns){
@@ -127,12 +126,10 @@
                                 }
                             })
             value ?
-                gameOverDiv
-                    .css("display" , "block")
+                scoreField
                     .text("You win!")
                     :
-                        gameOverDiv
-                        .css("display" , "block")
+                        scoreField
                         .text("You lose!")
         }
 
@@ -178,7 +175,6 @@
             clearTimeout(startGame.timeoutID);
         }
         target = e ? $(e.currentTarget) : beginner;
-        gameOverDiv.css("display","none");
         grid.html("");
         target.parent().children().removeClass("buttonColor");
         target.addClass("buttonColor");
