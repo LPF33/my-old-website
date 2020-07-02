@@ -40,10 +40,10 @@
 
         randomRabbit(){
             let arr = []
-            while(arr.length<=this.rabbits){
+            while(arr.length<=this.rabbits-1){
                 const randomCell = Math.floor(Math.random()*(this.gameRows*this.gameColumns));
                 arr.push(randomCell);
-                arr.filter((item,index)=> arr.indexOf(item)===index);
+                arr = arr.filter((item,index)=> arr.indexOf(item)===index);
             }            
             arr.forEach(item => $(".column.hidden").eq(item).addClass("rabbit"));
         }        
