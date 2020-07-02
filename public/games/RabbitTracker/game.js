@@ -85,7 +85,7 @@
             let counter =0;
             for(let i=-1; i<=1; i++){
                 for(let j=-1; j<=1; j++){               
-                    const cell = $(`.column.hidden[data-row=${r+i}][data-column=${c+j}]`)
+                    const cell = $(`.column.hidden[data-row=${r+i}][data-column=${c+j}]`);
                     if(cell && cell.hasClass("rabbit") ){
                         counter++;
                     }
@@ -110,20 +110,25 @@
                     .removeClass("hidden")
 
                     : 
-                        [...$(".column.hidden")]
-                            .forEach(i =>{
-                                const item = $(i);
-                                if(item.hasClass("rabbit")){
-                                    item.addClass("lost").append("<div class=\"lostAnimation\"></div>");
-                                    item.removeClass("hidden");
-                                    item.removeClass("cage");
+                        [[...$(".column.hidden").not(".rabbit")],[...$(".column.hidden.rabbit")]]
+                            .forEach((arr,index) =>{console.log(arr);
+                                if(index===0){
+                                    arr.forEach(i=>{
+                                        const item = $(i);
+                                        const row = item.data("row");
+                                        const column = item.data("column");
+                                        const rabbitCount = this.countRabbits(row,column);
+                                        item.text(rabbitCount);
+                                        item.removeClass("hidden")
+                                        item.removeClass("cage");
+                                    })
                                 }else{
-                                    const row = item.data("row");
-                                    const column = item.data("column");
-                                    const rabbitCount = this.countRabbits(row,column);
-                                    item.text(rabbitCount);
-                                    item.removeClass("hidden")
-                                    item.removeClass("cage");
+                                    arr.forEach(i=> {
+                                        const item = $(i);
+                                        item.addClass("lost").append("<div class=\"lostAnimation\"></div>");
+                                        item.removeClass("hidden");
+                                        item.removeClass("cage");
+                                    })
                                 }
                             })
             value ?
@@ -169,7 +174,7 @@
             if(('ontouchstart' in window || navigator.msMaxTouchPoints)){
                 scoreRabbit.removeClass("touch-rabbit2").addClass("touch-rabbit");
                 scoreRabbit.off("click");
-                scoreRabbit.on("click" , () => {console.log("hallo");
+                scoreRabbit.on("click" , () => {
                     scoreRabbit.hasClass("touch-rabbit") ? scoreRabbit.removeClass("touch-rabbit").addClass("touch-rabbit2") : scoreRabbit.removeClass("touch-rabbit2").addClass("touch-rabbit");
                     if(scoreRabbit.hasClass("touch-rabbit")){
                         grid.off("click");
