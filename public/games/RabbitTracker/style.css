@@ -61,10 +61,16 @@ button:hover{
     align-items: center;
     font-size: 2em;
     position: relative;
-    padding: 2px;
+    padding: 5px;
     background-color: rgb(0, 0, 0);
     color: white;
     height: 100%;
+}
+
+.container2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #score-rabbit{
@@ -75,6 +81,29 @@ button:hover{
 
 #score{
     display: inline-block;
+    margin-left: 5px;
+}
+
+.touch-rabbit{
+    border-radius: 100%;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.touch-rabbit2{
+    border-radius: 100%;
+    cursor: pointer;
+    border: 2px solid red;
+    animation: blink 2s linear infinite;
+}
+
+@keyframes blink{
+    0%{
+        background-color: black;
+    }
+    100%{
+        background-color: red;
+    }
 }
 
 #grid{

@@ -5,6 +5,7 @@
     const beginner = $("#beginner");
     const advanced = $("#advanced");
     const master = $("#master");
+    const scoreRabbit = $("#score-rabbit");
 
     class Game{
         constructor(rabbit, rows, columns){
@@ -157,7 +158,7 @@
         play(){
             this.paintGrid();
             grid.off("click");
-            grid.off("contextmenu");
+            grid.off("contextmenu");            
             grid.on("click", ".column.hidden", e => this.checkField(e.currentTarget));
             grid.on("contextmenu", e => {
                 e.preventDefault();
@@ -165,6 +166,20 @@
                     this.setCage(e);
                 }
             });
+            if(('ontouchstart' in window || navigator.msMaxTouchPoints)){
+                scoreRabbit.removeClass("touch-rabbit2").addClass("touch-rabbit");
+                scoreRabbit.off("click");
+                scoreRabbit.on("click" , () => {console.log("hallo");
+                    scoreRabbit.hasClass("touch-rabbit") ? scoreRabbit.removeClass("touch-rabbit").addClass("touch-rabbit2") : scoreRabbit.removeClass("touch-rabbit2").addClass("touch-rabbit");
+                    if(scoreRabbit.hasClass("touch-rabbit")){
+                        grid.off("click");
+                        grid.on("click", ".column.hidden", e => this.checkField(e.currentTarget));
+                    }else{
+                        grid.off("click");
+                        grid.on("click", e => this.setCage(e));
+                    }
+                });
+            }
             this.startTime();
         }
     }   
