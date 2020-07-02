@@ -6,6 +6,8 @@
     const advanced = $("#advanced");
     const master = $("#master");
     const scoreRabbit = $("#score-rabbit");
+    const help = $("#help");
+    const helper = $("#helper");
 
     class Game{
         constructor(rabbit, rows, columns){
@@ -207,5 +209,12 @@
     beginner.on("click", (e) => play(e,10,9,9));
     advanced.on("click", (e) => play(e,40,16,16));
     master.on("click", (e) => play(e,99,16,30)); 
+
+    help.on("focus", () => {
+        helper.css("display","block");
+    });
+    help.on("blur", ()=> {
+        helper.css("display","none");
+    });
 
 })();
