@@ -40,7 +40,7 @@
 
         randomRabbit(){
             let arr = []
-            while(arr.length<=this.rabbits-1){
+            while(arr.length<this.rabbits){
                 const randomCell = Math.floor(Math.random()*(this.gameRows*this.gameColumns));
                 arr.push(randomCell);
                 arr = arr.filter((item,index)=> arr.indexOf(item)===index);
