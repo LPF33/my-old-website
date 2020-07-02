@@ -17,6 +17,12 @@ body{
     background-color: cadetblue;
 }
 
+body>div:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h2{
     font-size:1em;
 }
@@ -46,6 +52,7 @@ button:hover{
 #container{
     margin-top: 5vh;
     border: 2px solid black;
+    width: fit-content;
 }
 
 #container>div:first-child{
@@ -73,8 +80,6 @@ button:hover{
 #grid{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     border-top: 2px solid black;
 }
 
