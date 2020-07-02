@@ -111,7 +111,7 @@
 
                     : 
                         [[...$(".column.hidden").not(".rabbit")],[...$(".column.hidden.rabbit")]]
-                            .forEach((arr,index) =>{console.log(arr);
+                            .forEach((arr,index) =>{
                                 if(index===0){
                                     arr.forEach(i=>{
                                         const item = $(i);
