@@ -49,6 +49,20 @@ export default function TriviaQuiz(){
                 <br></br>
                 <HighlightCommand value="Game"/>
                 <TriviaQuizApi />
+                <HighlightCommand value="Done"/>
+                <p className={colorLightMode}>
+                    I really enjoyed doing this! Because of React I got almost to a encrypt specialist. 
+                    When you pass HTML Codes in React into curly braces in a HTML tag, it won't be converted.
+                    So I had trouble with the right decoding of the JSON. Legacy URL or URL(RFC 3986) was no real fun or to much work around,
+                    so I did it with Base64. 
+                    <br></br>
+                    let buff = new Buffer(stringBase64, "base64")<br></br>
+                    return buff.toString("utf-8");<br></br>
+                    Quiet easy afterwards!
+                    There is still a problem when you play a category and for no repetition I send a token, so no question will be doubled.
+                    But I retrieve always 10 questions. So when there are only less than 10 questions left, I get an error. I could handle this,
+                    make my one memory, change than the URL query, but I want to start with one of the next projects. Great!
+                </p>
             </div>            
         </div>
     );

@@ -7,17 +7,17 @@ export default function TriviaQuizApi(){
 
     const [preGame, setPreGame] = useState(true);
     const [trivia, setTrivia] = useState({token:"", category:"",counter:"", questions:""});
-    const [user, setUser] = useState({category:"",type:"",difficulty:""});
+    const [user, setUser] = useState({category:"",type:"",difficulty:"", status:"Start Quiz", loading:""});
     const [error, setError] = useState("");
 
     useEffect(() => {
         (async function(){
             try{
-                //const getToken = await axios.get("https://opentdb.com/api_token.php?command=request");
+                const getToken = await axios.get("https://opentdb.com/api_token.php?command=request");
                 const getCategory = await axios.get("https://opentdb.com/api_category.php");
                 setUser({...user, category: getCategory.data.trivia_categories[0].id});
                 const newCounter = await countQuestion(getCategory.data.trivia_categories[0].id,0);
-                setTrivia({...trivia, token:/*getToken.data.token*/"", category:getCategory.data.trivia_categories, counter: newCounter});
+                setTrivia({...trivia, token:getToken.data.token, category:getCategory.data.trivia_categories, counter: newCounter});
             }catch(err){
                 setError(err);
             }            
@@ -41,21 +41,23 @@ export default function TriviaQuizApi(){
         }        
     }     
     
-    const startQuiz = async() => {        
-        const query = querystring.stringify({amount:10, difficulty:user.difficulty, type:user.type, category:user.category, encode:"base64"});
+    const startQuiz = async() => {   
+        setUser({...user, status:"Wait...", loading:"quiz-loading"});
+        const query = querystring.stringify({amount:10, token:trivia.token ,difficulty:user.difficulty, type:user.type, category:user.category, encode:"base64"});
         const getQuestions = await axios.get(`https://opentdb.com/api.php?${query}`);
         if(!getQuestions.data.response_code){
+            setError("");  
             setTrivia({...trivia, questions:getQuestions.data.results});            
             setPreGame(false);
+            setUser({...user, status:"Start Quiz", loading:""});
+        } else if(getQuestions.data.response_code===4){
+            setError("All possible questions for the specified query have been returned.");
+            setUser({...user, status:"Start Quiz", loading:""});
         }else{
-            setError("SHit");
+            setError(getQuestions.data.response_code);
+            setUser({...user, status:"Start Quiz", loading:""});
         }        
-    }
-
-    const decode = stringBase64 => {
-        let buff = new Buffer(stringBase64, "base64")
-        return buff.toString("ascii");
-    }
+    }    
 
     return(
         <div id="trivia-quiz">
@@ -76,7 +78,7 @@ export default function TriviaQuizApi(){
                                         } else{
                                             setUser({...user, difficulty:e.target.value});
                                         }}}>
-                    {trivia.counter && trivia.counter.map((item, index) => <option key={index} value={item.id}>{item.id}:{item.num} questions</option>)}
+                    {trivia.counter && trivia.counter.filter(item => item.num!==0).map((item, index) => <option key={index} value={item.id}>{item.id}:{item.num} questions</option>)}
                 </select>
             </div>
             }
@@ -90,31 +92,73 @@ export default function TriviaQuizApi(){
                 </select>
             </div>
             }
-            {preGame &&
-                <button type="button" onClick={startQuiz}>Start Quiz</button>
+            {preGame && trivia.category &&
+                <button type="button" onClick={startQuiz} className={user.loading}>{user.status}</button>
             }
-            {!preGame &&
-                <div>
-                    {trivia.questions && 
-                        <div>
-                            <h2>{decode(trivia.questions[0].question)}</h2>                      
-                            {decode(trivia.questions[0].type)==="multiple" &&
-                                <div className="quizflex">
-                                    <button type="button">{decode(trivia.questions[0].correct_answer)}</button>
-                                    <button type="button">{decode(trivia.questions[0].incorrect_answers[0])}</button>
-                                    <button type="button">{decode(trivia.questions[0].incorrect_answers[1])}</button>
-                                    <button type="button">{decode(trivia.questions[0].incorrect_answers[2])}</button>
-                                </div>
-                            }
-                            {decode(trivia.questions[0].type)==="boolean" &&
-                                <div className="quizflex">
-                                    <button type="button">True</button>
-                                    <button type="button">False</button>
-                                </div>
-                            }
-                        </div>
-                    }
+            {preGame && error && <h5>{error}: Try something different.</h5>}
+            {!preGame && <MainQuiz  questions={trivia.questions} setPreGame={setPreGame} /> }
+        </div>
+    )
+}
+
+function MainQuiz(props){
+
+    const {questions, setPreGame} = props;    
+
+    const mixAnswers = (num=0) => {
+        const answers = [];
+        questions[num].incorrect_answers.forEach(item => answers.push(item));
+        const randomNum = Math.floor(Math.random()*answers.length);
+        answers.splice(randomNum,0,questions[num].correct_answer);
+        return [answers,randomNum];
+    };
+
+    const decode = stringBase64 => {
+        let buff = new Buffer(stringBase64, "base64")
+        return buff.toString("utf-8");
+    };
+
+    const [currentAnswers, setCurrentAnswers] = useState(mixAnswers());
+    const [user, setUser] = useState({correct:0,question:0, showCorrect:"", end:false});
+    
+    const checkAnswer = userAnswer => {
+        setUser({...user, showCorrect:"correct"});
+
+        const next = (userAnswer) => {
+            if(user.question < questions.length-1){
+                if(userAnswer === questions[user.question].correct_answer){
+                    setUser({question:user.question +1, correct: user.correct +1});
+                    setCurrentAnswers(mixAnswers(user.question +1)) ;
+                }else {
+                    setUser({...user, question:user.question +1});
+                    setCurrentAnswers(mixAnswers(user.question +1)) ;
+                }
+            }else{
+                setUser({...user, end:true});
+            } 
+        }  
+        setTimeout(() => next(userAnswer), 1500);
+    }
+
+    return(
+        <div>
+            {questions && !user.end && 
+                <div className="quizflex">
+                    <h2>{decode(questions[user.question].question)}</h2>  
+                    {currentAnswers[0] && currentAnswers[0].map((item, index) => {
+                        if(index === currentAnswers[1]){
+                            return <button onClick={() => checkAnswer(item)}  className={user.showCorrect} key={index} type="button">{decode(item)}</button>
+                        }else{
+                            return <button onClick={() => checkAnswer(item)}  key={index} type="button">{decode(item)}</button>
+                        }                    
+                    })}
                 </div>
+            }
+            {user.end &&
+            <div className="quizflex">                
+                <h4 className="quiz-end">You answered {user.correct} questions correctly!</h4>
+                <button type="button" onClick={() => setPreGame(true)}>Restart</button>
+            </div>
             }
         </div>
     )
