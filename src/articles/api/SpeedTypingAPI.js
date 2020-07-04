@@ -51,7 +51,7 @@ export default function SpeedTyping(){
         if(timeoutId){
             clearTimeout(timeoutId.current);
         }    
-        const quoteJSON = await axios.get("http://api.quotable.io/random");
+        const quoteJSON = await axios.get("https://api.quotable.io/random");
         const {content, author, length} = quoteJSON.data;
         setQuote({content: content.split(""), author, averageTime: Math.floor(length/(300/60))});
         setTime(0);
