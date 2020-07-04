@@ -51,7 +51,7 @@ export default function TriviaQuiz(){
                 <TriviaQuizApi />
                 <HighlightCommand value="Done"/>
                 <p className={colorLightMode}>
-                    I really enjoyed doing this! Because of React I got almost to a encrypt specialist. 
+                    I really enjoyed doing this! Because of React I got almost to an encrypt specialist. 
                     When you pass HTML Codes in React into curly braces in a HTML tag, it won't be converted.
                     So I had trouble with the right decoding of the JSON. Legacy URL or URL(RFC 3986) was no real fun or to much work around,
                     so I did it with Base64. 
