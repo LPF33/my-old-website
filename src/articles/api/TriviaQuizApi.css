@@ -29,10 +29,6 @@
     outline: none;
 }
 
-#trivia-quiz button:hover{
-    background-color: rgb(247, 247, 26);
-}
-
 #trivia-quiz button.correct{
     background-color: rgb(0, 255, 13);
     border: 2px dotted black;

@@ -61,7 +61,7 @@ export default function TriviaQuiz(){
                     Quiet easy afterwards!
                     There is still a problem when you play a category and for no repetition I send a token, so no question will be doubled.
                     But I retrieve always 10 questions. So when there are only less than 10 questions left, I get an error. I could handle this,
-                    make my one memory, change than the URL query, but I want to start with one of the next projects. Great!
+                    make my own memory, change than the URL query, but I want to start with one of the next projects. Great!
                 </p>
             </div>            
         </div>
