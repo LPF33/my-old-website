@@ -4,6 +4,7 @@ import "./Articles.css";
 import Git from "./articles/Git";
 import Bash from "./articles/Bash";
 import TypeScript from "./articles/TypeScript";
+import TriviaQuiz from "./articles/TriviaQuiz";
 
 export default function Articles(){
     return(
@@ -19,7 +20,11 @@ export default function Articles(){
             <Route 
                 exact path = "/articles/typescript"
                 component = {TypeScript}
-            />      
+            />
+            <Route 
+                exact path = "/articles/triviaquiz"
+                component = {TriviaQuiz}
+            />               
         </div>        
     )
 }

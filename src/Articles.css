@@ -27,11 +27,11 @@
     background-color: black;
 }
 
-.colorSunMode {
+.colorSunMode, .paragraph a.colorSunMode {
     color: black;
 }
 
-.colorMoonMode{
+.colorMoonMode, .paragraph a.colorMoonMode{
     color: white;
 }
 
@@ -56,6 +56,10 @@ code{
 
 .codeMoon {
     background-color: rgb(0, 97, 187);   
+}
+
+ul{
+    list-style: inside;
 }
 
 @media screen and (max-width: 760px){   

@@ -43,7 +43,7 @@
             while(arr.length<this.rabbits){
                 const randomCell = Math.floor(Math.random()*(this.gameRows*this.gameColumns));
                 arr.push(randomCell);
-                arr = arr.filter((item,index)=> arr.indexOf(item)===index);
+                arr = arr.filter((item,index,a)=> a.indexOf(item)===index);
             }            
             arr.forEach(item => $(".column.hidden").eq(item).addClass("rabbit"));
         }        

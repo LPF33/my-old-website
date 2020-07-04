@@ -1,0 +1,36 @@
+#trivia-quiz{
+    background-color: rgb(10, 247, 215);
+    padding: 2px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#trivia-quiz select{
+    margin:10px 0px;
+    font-family: var(--article-font);
+    border: 2px solid black;
+    background-color: rgb(250, 250, 157);
+    font-weight: bold;
+}
+
+#trivia-quiz button{
+    display: block;
+    margin:10px 0px;
+    padding:5px;
+    font-family: var(--article-font);
+    font-size: large;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(250, 250, 157);
+}
+
+.quizflex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
