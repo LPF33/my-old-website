@@ -5,6 +5,7 @@ import Git from "./articles/Git";
 import Bash from "./articles/Bash";
 import TypeScript from "./articles/TypeScript";
 import TriviaQuiz from "./articles/TriviaQuiz";
+import SpeedTyping from "./articles/SpeedTyping";
 
 export default function Articles(){
     return(
@@ -24,7 +25,11 @@ export default function Articles(){
             <Route 
                 exact path = "/articles/triviaquiz"
                 component = {TriviaQuiz}
-            />               
+            /> 
+            <Route 
+                exact path = "/articles/speedtyping"
+                component = {SpeedTyping}
+            />              
         </div>        
     )
 }
