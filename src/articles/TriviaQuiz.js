@@ -45,7 +45,7 @@ export default function TriviaQuiz(){
                     I let the user select a category, difficulty and type(multiple choice, true/false);<br></br>
                 </p>
                 <HighlightCommand value="Go to Github for code"/><br></br>
-                <a className={colorLightMode} href="https://github.com/LPF33?tab=repositories" target="_blank" rel="noopener noreferrer">Link to code</a>
+                <a className={colorLightMode} href="https://github.com/LPF33/API/blob/master/TriviaQuizApi.js" target="_blank" rel="noopener noreferrer">Link to code</a>
                 <br></br>
                 <HighlightCommand value="Game"/>
                 <TriviaQuizApi />
