@@ -52,7 +52,7 @@
         paintSnake(){
             for(let i = 0; i<this.body.length; i++){
                 ctx.beginPath();
-                ctx.fillStyle= i === 0 ? "yellow" : "pink";
+                ctx.fillStyle= i === 0 ? "black" : "pink";
                 ctx.arc(this.body[i].x*block, this.body[i].y*block, block/2, 0, 2*Math.PI);
                 ctx.fill();
                 ctx.closePath();
