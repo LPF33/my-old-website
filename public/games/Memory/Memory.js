@@ -194,7 +194,7 @@
                 var numPair = new Number();
                 function numberPairs(){
                     function randomNum(){
-                        numPair = Math.floor(Math.random()*1000);
+                        numPair = Math.floor(Math.random()*100);
                     }
                     randomNum();
                                

@@ -32,8 +32,8 @@ export default function AboutMe(){
                         </p>
                         <br></br>
                         <em>What I do at the moment?</em>
-                        <p>Learn TypeScript, try to get into PHP, build this website with React &amp; do some brain training 
-                            on <a href="https://www.codewars.com" target="_blank" rel="noopener noreferrer">CodeWars</a>. Try to get a routine to write some articles about
+                        <p>Learn TypeScript, build this website with React, do some brain training 
+                            on <a href="https://www.codewars.com" target="_blank" rel="noopener noreferrer">CodeWars</a> &amp; code,code,code! Try to get a routine to write some articles about
                             current projects or to repeat what I've learnt.
                         </p>
                         <br></br>
