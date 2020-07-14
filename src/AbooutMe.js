@@ -44,7 +44,7 @@ export default function AboutMe(){
                         </p>
                         <br></br>
                         <em>Stack</em>
-                        <p>JavaScript ES6, TypeScript(starting), HTML5, CSS3, SQL, Node.js, React, Redux, Vue, jQuery, PostgreSQL, Git</p>
+                        <p>JavaScript ES6, TypeScript(starting), HTML5, CSS3, SASS, SQL, Node.js, React, Redux, Vue, jQuery, PostgreSQL, MongoDB, Git</p>
                         <br></br>
                         <em>What I do next to coding?</em>
                         <p>

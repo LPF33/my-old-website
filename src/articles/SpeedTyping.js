@@ -45,7 +45,7 @@ export default function TriviaQuiz(){
                 <HighlightCommand value="Done"/>
                 <p className={colorLightMode}>
                     Again, this more very simple task, I learnt more about React and it's behaviour.
-                    And useRef(), that it doesn't change it's value when the component is re-rendered. 
+                    And useRef() to store mutable variables, which won't re-render the component when current value changes. 
                     I used this for the timer. Because my first approach didn't work, which normally works in a "normal" JavaScript
                     file. useRef() helped to save the timeoutID and than to clear it. This was really not a waste of time.
                     <br></br>
