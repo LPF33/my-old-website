@@ -25,9 +25,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 const cookieSessionMiddleware = cookieSession({
     secret: "All about coding",
-    maxAge: 1000 * 60 * 60 * 24,
-    sameSite: "none",
-    secure : true
+    maxAge: 1000 * 60 * 60 * 24
 });
 app.use( cookieSessionMiddleware);
 
