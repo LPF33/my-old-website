@@ -70,6 +70,7 @@ export default function SpeechSynthesis(){
     };
 
     useEffect(() => {
+        changedVoices();
         utter.addEventListener("end", end);
         utter.addEventListener("boundary", boundary);       
         window.speechSynthesis.addEventListener("voiceschanged", changedVoices); 
