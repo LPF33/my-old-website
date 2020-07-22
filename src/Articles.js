@@ -6,6 +6,7 @@ import Bash from "./articles/Bash";
 import TypeScript from "./articles/TypeScript";
 import TriviaQuiz from "./articles/TriviaQuiz";
 import SpeedTyping from "./articles/SpeedTyping";
+import ComputerSpeaks from "./articles/ComputerSpeaks";
 
 export default function Articles(){
     return(
@@ -29,7 +30,11 @@ export default function Articles(){
             <Route 
                 exact path = "/articles/speedtyping"
                 component = {SpeedTyping}
-            />              
+            />    
+            <Route 
+                exact path = "/articles/computerspeaks"
+                component = {ComputerSpeaks}
+            />           
         </div>        
     )
 }

@@ -24,7 +24,8 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-promise": "^0.6.0",
-    "spiced-pg": "^1.0.0"
+    "spiced-pg": "^1.0.0",
+    "styled-components": "^5.1.1"
   },
   "scripts": {
     "start": "node start.js",
