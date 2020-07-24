@@ -40,7 +40,7 @@ export default function AboutMe(){
                         <em>Coming next:</em>
                         <p>
                             A lot! <span role="img" aria-label="laughing">😁</span><br></br>
-                            Battleship Game + Testing (Jest, Supertest)!
+                            TravelStories: StreetMap-App (Mapbox-API), Storyboard, MongoDB
                         </p>
                         <br></br>
                         <em>Stack</em>
