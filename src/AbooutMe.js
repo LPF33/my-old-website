@@ -23,12 +23,15 @@ export default function AboutMe(){
                 <div className="innerAboutFrame" id="aboutMeText">
                     <div >
                         <em>How my journey began?</em>
-                        <p>Last year in December, I got fascinated by Web Coding. I wanted to change my career and above all I 
-                            was searching for something, that I do with passion. <br></br>I luckily found it! <br></br>
-                            To deepen my knowledge I made one of my best
-                            decisions in my life: <br></br>I've registered for a 3-month Bootcamp with <a href="https://www.spiced-academy.com/" target="_blank" rel="noopener noreferrer">Spiced Academy</a>.<br></br>
+                        <p>Last year I jumped in at the deep end. I wanted to change my career and above all I 
+                            was searching for something, that I do with passion.                             
+                            <br></br>I luckily found it! <br></br>
+                            The trip was uncertain, first it got me back into a job in customs, but I didn't give up my search. 
+                            In short: Web Development, that's it!
+                            To deepen my knowledge and to get experienced, supportive help,  
+                            <br></br>I've registered for a 3-month Bootcamp with <a href="https://www.spiced-academy.com/" target="_blank" rel="noopener noreferrer">Spiced Academy</a>.<br></br>
                             There is no other possiblity out there expect for autodidaction to learn so fast so many skills. Great experience! I finished this Bootcamp in May, 
-                            now I code and deepen my knowledge. 
+                            it made me happy, now I deepen my skills and the only search that remains: I am looking for a job. 
                         </p>
                         <br></br>
                         <em>What I do at the moment?</em>
@@ -40,7 +43,7 @@ export default function AboutMe(){
                         <em>Coming next:</em>
                         <p>
                             A lot! <span role="img" aria-label="laughing">😁</span><br></br>
-                            TravelStories: StreetMap-App (Mapbox-API), Storyboard, MongoDB
+                            TravelStories: StreetMap-App (Mapbox-API), Storyboard, MongoDB, Testing
                         </p>
                         <br></br>
                         <em>Stack</em>
