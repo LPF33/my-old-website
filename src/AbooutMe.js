@@ -31,7 +31,7 @@ export default function AboutMe(){
                             To deepen my knowledge and to get experienced, supportive help,  
                             <br></br>I've registered for a 3-month Bootcamp with <a href="https://www.spiced-academy.com/" target="_blank" rel="noopener noreferrer">Spiced Academy</a>.<br></br>
                             There is no other possiblity out there expect for autodidaction to learn so fast so many skills. Great experience! I finished this Bootcamp in May, 
-                            now I deepen my skills and look for a Web Developer Job. 
+                            now I deepen my skills and I'm really happy about this career and life change. 
                         </p>
                         <br></br>
                         <em>What I do at the moment?</em>

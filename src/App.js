@@ -25,6 +25,8 @@ export default function App() {
         }
         window.addEventListener("resize", checkOrientation);  
         checkOrientation();
+
+        return () => window.removeEventListener("resize", checkOrientation);
     },[]);
     
 
