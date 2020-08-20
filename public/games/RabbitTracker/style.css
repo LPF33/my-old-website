@@ -2,7 +2,8 @@
     margin:0;
     padding:0;
     border:0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     font-family: 'Indie Flower', cursive;
 }
 
@@ -12,15 +13,26 @@
 }
 
 body{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     background-color: cadetblue;
 }
 
 body>div:first-child{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 h2{
@@ -28,9 +40,15 @@ h2{
 }
 
 #button-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-top:2vh;
     width: 100%;
 }
@@ -53,13 +71,21 @@ button:hover{
 #container{
     margin-top: 5vh;
     border: 2px solid black;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
 #container>div:first-child{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 2em;
     position: relative;
     padding: 5px;
@@ -68,9 +94,15 @@ button:hover{
 }
 
 .container2{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #score-rabbit{
@@ -94,7 +126,17 @@ button:hover{
     border-radius: 100%;
     cursor: pointer;
     border: 2px solid red;
-    animation: blink 2s linear infinite;
+    -webkit-animation: blink 2s linear infinite;
+            animation: blink 2s linear infinite;
+}
+
+@-webkit-keyframes blink{
+    0%{
+        background-color: black;
+    }
+    100%{
+        background-color: red;
+    }
 }
 
 @keyframes blink{
@@ -107,8 +149,13 @@ button:hover{
 }
 
 #grid{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     border-top: 2px solid black;
 }
 
@@ -153,7 +200,8 @@ button:hover{
     background-image: url("./images/rabbitWhite.png");
     background-repeat: no-repeat;
     background-size: cover;
-    animation: jumpRabbit 1s ease-in infinite alternate;
+    -webkit-animation: jumpRabbit 1s ease-in infinite alternate;
+            animation: jumpRabbit 1s ease-in infinite alternate;
 }
 
 #helper{
@@ -163,8 +211,25 @@ button:hover{
     left: 50%;
     background-color: black;
     color: white;
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
     padding: 2px;
+}
+
+@-webkit-keyframes jumpRabbit{
+    0%{
+        top:-5%;
+    }
+    50%{
+        -webkit-transform: rotateZ(-20deg);
+                transform: rotateZ(-20deg);
+    }
+    100%{
+        top:-10%;
+        -webkit-transform: rotateZ(20deg);
+                transform: rotateZ(20deg);
+    }
 }
 
 @keyframes jumpRabbit{
@@ -172,11 +237,13 @@ button:hover{
         top:-5%;
     }
     50%{
-        transform: rotateZ(-20deg);
+        -webkit-transform: rotateZ(-20deg);
+                transform: rotateZ(-20deg);
     }
     100%{
         top:-10%;
-        transform: rotateZ(20deg);
+        -webkit-transform: rotateZ(20deg);
+                transform: rotateZ(20deg);
     }
 }
 

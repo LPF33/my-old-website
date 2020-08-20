@@ -2,7 +2,8 @@
     margin:0;
     padding:0;
     border:0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 :root{
@@ -18,9 +19,15 @@ body {
 
 /* Start Page Styling */
 #startGame {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: absolute;
     top:0;
     left:0;
@@ -32,10 +39,13 @@ body {
 
 #startGrid {
     position: relative;
+    display: -ms-grid;
     display: grid;
     width: 396px;
     height: 396px;
-    grid-template: repeat(12, 30px) / repeat(12, 30px);
+    -ms-grid-rows:30px 10px 30px 10px 30px 10px 30px 10px 30px 10px 30px 10px 30px 10px 30px 10px 30px 10px 30px 10px 30px 10px 30px;
+    -ms-grid-columns:30px 10px 30px 10px 30px 10px 30px 10px 30px 10px 30px 10px 30px 10px 30px 10px 30px 10px 30px 10px 30px 10px 30px;
+        grid-template: repeat(12, 30px) / repeat(12, 30px);
     grid-gap: 10px;
     font-family: var(--font);
     font-size: 20px;
@@ -43,13 +53,16 @@ body {
 }
 
 .perspective {
-    perspective: 1000px;
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
 }
 
 .cube {
     width:30px;
-    transform-style: preserve-3d; 
-    transform: rotateX(-20deg) rotateY(20deg); 
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d; 
+    -webkit-transform: rotateX(-20deg) rotateY(20deg); 
+            transform: rotateX(-20deg) rotateY(20deg); 
 }
 
 .side {
@@ -58,34 +71,50 @@ body {
     height: 30px;
     background-color: rgba(253, 252, 173, 0.5);
     border: 2px solid rgba(253, 252, 173,0.3);
-    animation-name: cube;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
+    -webkit-animation-name: cube;
+            animation-name: cube;
+    -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
 }
 
 .front {
-    transform: translateZ(15px);
+    -webkit-transform: translateZ(15px);
+            transform: translateZ(15px);
 }
 .top {
-    transform: rotateX(90deg) translateZ(15px);
+    -webkit-transform: rotateX(90deg) translateZ(15px);
+            transform: rotateX(90deg) translateZ(15px);
 }
 .left {    
-    transform: rotateY(-90deg) translateZ(15px);
+    -webkit-transform: rotateY(-90deg) translateZ(15px);    
+            transform: rotateY(-90deg) translateZ(15px);
 }
 .right {
-    transform: rotateY(90deg) translateZ(15px);
+    -webkit-transform: rotateY(90deg) translateZ(15px);
+            transform: rotateY(90deg) translateZ(15px);
 }
 .back {
-    transform: translateZ(-15px);
+    -webkit-transform: translateZ(-15px);
+            transform: translateZ(-15px);
 }
 .bottom {
-    transform: rotateX(90deg) translateZ(-15px);
+    -webkit-transform: rotateX(90deg) translateZ(-15px);
+            transform: rotateX(90deg) translateZ(-15px);
 }
 .letter {
     position: absolute;
     width: 30px;
     height: 30px;
-    transform: translateZ(10px);
+    -webkit-transform: translateZ(10px);
+            transform: translateZ(10px);
+}
+
+@-webkit-keyframes cube {
+    50% {
+        background-color: rgba(206, 158, 174, 0.2);
+    }    
 }
 
 @keyframes cube {
@@ -95,15 +124,25 @@ body {
 }
 
 .position1 {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 4;
     grid-area: 5 / 2 / span 1  / span 4;
 }
 .position2 {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 4;
     grid-area: 5 / 7 / span 1 / span 4;
 }
 .cube1 {
     width:150px;
-    transform-style: preserve-3d; 
-    transform: rotateX(-20deg) rotateY(20deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d; 
+    -webkit-transform: rotateX(-20deg) rotateY(20deg); 
+            transform: rotateX(-20deg) rotateY(20deg);
 }
 
 .side1 {
@@ -112,19 +151,25 @@ body {
     height: 30px;
     background-color: rgba(253, 252, 173, 0.5);
     border: 2px solid rgba(253, 252, 173,0.3);
-    animation-name: cube;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-out;
+    -webkit-animation-name: cube;
+            animation-name: cube;
+    -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
 }
 
 .left1 {    
     width: 30px;
-    transform: rotateY(-90deg) translateZ(15px);
+    -webkit-transform: rotateY(-90deg) translateZ(15px);
+            transform: rotateY(-90deg) translateZ(15px);
 }
 .right1 {
     width: 30px;
-    transform: rotateY(90deg) translateZ(145px);
+    -webkit-transform: rotateY(90deg) translateZ(145px);
+            transform: rotateY(90deg) translateZ(145px);
 }
 #input1 {
     margin: auto 15px;
@@ -141,16 +186,25 @@ body {
     background-color:  rgba(253, 252, 173, 0);
 }
 .position3 {
+    -ms-grid-row: 7;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 4;
     grid-area: 7 / 5 / span 1  / span 4;
 }
 .position4 {
+    -ms-grid-row: 9;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 4;
     grid-area: 9 / 5 / span 1 / span 4;
 }
 .letter1 {
     position: absolute;
     width: 150px;
     height: 30px;
-    transform: translateZ(10px);
+    -webkit-transform: translateZ(10px);
+            transform: translateZ(10px);
 }
 
 /* Game Area Styling */
@@ -158,7 +212,11 @@ body {
     position: relative;
     top: 2vh;
     left:50%;
-    transform: translateX(-60%);
+    -webkit-transform: translateX(-60%);
+        -ms-transform: translateX(-60%);
+            transform: translateX(-60%);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 560px;
     height: 480px;
@@ -167,8 +225,10 @@ body {
 .box {
     width:80px;
     height: 80px;
-    transform-style: preserve-3d; 
-    transform: rotateX(10deg) rotateY(10deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d; 
+    -webkit-transform: rotateX(10deg) rotateY(10deg); 
+            transform: rotateX(10deg) rotateY(10deg);
     margin: 10px;
 }
 
@@ -181,22 +241,28 @@ body {
 }
 
 .frontGame {
-    transform: translateZ(40px);
+    -webkit-transform: translateZ(40px);
+            transform: translateZ(40px);
 }
 .topGame {
-    transform: rotateX(90deg) translateZ(40px);
+    -webkit-transform: rotateX(90deg) translateZ(40px);
+            transform: rotateX(90deg) translateZ(40px);
 }
 .leftGame {    
-    transform: rotateY(-90deg) translateZ(40px);
+    -webkit-transform: rotateY(-90deg) translateZ(40px);    
+            transform: rotateY(-90deg) translateZ(40px);
 }
 .rightGame {
-    transform: rotateY(90deg) translateZ(40px);
+    -webkit-transform: rotateY(90deg) translateZ(40px);
+            transform: rotateY(90deg) translateZ(40px);
 }
 .backGame {
-    transform: translateZ(-40px);
+    -webkit-transform: translateZ(-40px);
+            transform: translateZ(-40px);
 }
 .bottomGame {
-    transform: rotateX(90deg) translateZ(-40px) translateY(0px);
+    -webkit-transform: rotateX(90deg) translateZ(-40px) translateY(0px);
+            transform: rotateX(90deg) translateZ(-40px) translateY(0px);
 }
 
 .Coin {
@@ -205,7 +271,9 @@ body {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    transform: translate(30%,5%);    
+    -webkit-transform: translate(30%,5%);
+        -ms-transform: translate(30%,5%);
+            transform: translate(30%,5%);    
 }
 
 .active .sideGame {
@@ -213,14 +281,20 @@ body {
 }
 
 .Player1 .Coin{
+    background: -o-radial-gradient(circle,rgb(17, 133, 133), rgb(0, 0, 0)70%);
     background: radial-gradient(circle,rgb(17, 133, 133), rgb(0, 0, 0)70%);
     top:0;
+    -webkit-transition: top 0.4s linear;
+    -o-transition: top 0.4s linear;
     transition: top 0.4s linear;
 }
 
 .Player2 .Coin {
+    background: -o-radial-gradient(circle,rgb(255, 71, 71), rgb(0, 0, 0)70%);
     background: radial-gradient(circle,rgb(255, 71, 71), rgb(0, 0, 0)70%);
     top:0;
+    -webkit-transition: top 0.4s linear;
+    -o-transition: top 0.4s linear;
     transition: top 0.4s linear;
 }
 
@@ -238,20 +312,45 @@ body {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    background: -o-radial-gradient(circle,rgb(17, 133, 133), rgb(0, 0, 0)70%);
     background: radial-gradient(circle,rgb(17, 133, 133), rgb(0, 0, 0)70%);
-    animation-name: jump;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+    -webkit-animation-name: jump;
+            animation-name: jump;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
 }
 #player2Coin {
     position: relative;
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    background: -o-radial-gradient(circle,rgb(255, 71, 71), rgb(0, 0, 0)70%);
     background: radial-gradient(circle,rgb(255, 71, 71), rgb(0, 0, 0)70%);
     margin-top: 40px;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes jump {
+    0%{
+        top:0;
+    }
+    33%{
+        top:-40px;
+    }
+    50%{
+        top:0;
+    }
+    75%{
+        top:-25px;
+    }    
+    100%{
+        top:0;
+    }
 }
 
 @keyframes jump {
@@ -274,10 +373,20 @@ body {
 
 /* Win Message */
 .winClass .sideGame {    
-    animation-name: win;
-    animation-duration: 1s;
-    animation-iteration-count: 4;
-    animation-delay: 0.4s;
+    -webkit-animation-name: win;    
+            animation-name: win;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-iteration-count: 4;
+            animation-iteration-count: 4;
+    -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+}
+
+@-webkit-keyframes win {
+    0%{
+        background-color: rgba(211, 230, 41, 0.6);
+    }
 }
 
 @keyframes win {
@@ -287,9 +396,18 @@ body {
 }
 
 .winCoin {
-    animation: coinOut 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
+    -webkit-animation: coinOut 2s;
+            animation: coinOut 2s;
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes coinOut {
+    100% {
+        top:100vh;
+    }
 }
 
 @keyframes coinOut {
@@ -299,22 +417,40 @@ body {
 }
 
 .bottomGame.open {
-    animation: bottomOpen 0.5s;
-    animation-delay: 0.6s;
-    animation-fill-mode: forwards;
+    -webkit-animation: bottomOpen 0.5s;
+            animation: bottomOpen 0.5s;
+    -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes bottomOpen {
+    100%{
+        -webkit-transform: rotateX(10deg) translateZ(-40px) translateY(69px);
+                transform: rotateX(10deg) translateZ(-40px) translateY(69px);
+    }
 }
 
 @keyframes bottomOpen {
     100%{
-        transform: rotateX(10deg) translateZ(-40px) translateY(69px);
+        -webkit-transform: rotateX(10deg) translateZ(-40px) translateY(69px);
+                transform: rotateX(10deg) translateZ(-40px) translateY(69px);
     }
 }
 
 #winMessage {
     display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: absolute;
     top:0;
     left:0;

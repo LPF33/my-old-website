@@ -4,10 +4,19 @@
     left:0;
     width: 100%;
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: rgb(255, 255, 255);
     font-family: var(--main-font);
     z-index:15;
@@ -21,29 +30,46 @@
     background-color: black;
     margin-bottom: 3vh;
     border-radius: 1.5vh;
-    animation: orientation 2.5s infinite forwards;
+    -webkit-animation: orientation 2.5s infinite forwards;
+            animation: orientation 2.5s infinite forwards;
+}
+
+@-webkit-keyframes orientation{
+    70%{
+        -webkit-transform: rotateZ(90deg);
+                transform: rotateZ(90deg);
+    }
+    100% {
+        -webkit-transform: rotateZ(90deg);
+                transform: rotateZ(90deg);
+    }
 }
 
 @keyframes orientation{
     70%{
-        transform: rotateZ(90deg);
+        -webkit-transform: rotateZ(90deg);
+                transform: rotateZ(90deg);
     }
     100% {
-        transform: rotateZ(90deg);
+        -webkit-transform: rotateZ(90deg);
+                transform: rotateZ(90deg);
     }
 }
 
 #device-inner{
     width: 35vw;
     height: 32vh;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 #device-inner img{
     width: 35vw;
     height: 32vh;
-    object-fit: cover;
-    object-position: 0% 0%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 0% 0%;
+       object-position: 0% 0%;
 }
 
 #device-touch{
@@ -54,7 +80,9 @@
     position: absolute;
     bottom: 0.5vh;
     left:50%;
-    transform: translateX(-50%);    
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);    
 }
 
 #device-touch-inner{

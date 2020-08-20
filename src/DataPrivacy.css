@@ -5,7 +5,9 @@
     width: calc(var(--portrait-width) * 0.8);
     height: calc(var(--portrait-width) * 0.25);
     background: #ffffff;
-    box-shadow:  10px 10px 30px #d9d9d9, 
+    -webkit-box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+            box-shadow:  10px 10px 30px #d9d9d9, 
              -10px -10px 30px #ffffff;
     z-index:15;
 }
@@ -14,7 +16,9 @@
     width: calc(var(--portrait-width) * 0.7);
     height: calc(var(--portrait-width) * 0.15);
     background: #ffffff;
-    box-shadow:  inset 10px 10px 30px #d9d9d9, 
+    -webkit-box-shadow:  inset 10px 10px 30px #d9d9d9, 
+                inset -10px -10px 30px #ffffff;
+            box-shadow:  inset 10px 10px 30px #d9d9d9, 
                 inset -10px -10px 30px #ffffff;
 }
 

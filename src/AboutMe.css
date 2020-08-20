@@ -2,13 +2,25 @@
     position: absolute;
     left: 60%;
     top: -70vh;
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
     border-radius: 100%;
     z-index: 2;
 }
 
 .showAboutMe{
-    animation: showGames 2s linear 1 forwards;
+    -webkit-animation: showGames 2s linear 1 forwards;
+            animation: showGames 2s linear 1 forwards;
+}
+
+@-webkit-keyframes showAboutMe{
+    0%{
+        top:-50%;
+    }
+    100%{
+        top: 50%;
+    }
 }
 
 @keyframes showAboutMe{
@@ -25,7 +37,9 @@
     top: 50%;
     left: 50%;
     height: 7vw;
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
 }
 
 #aboutMeTitle h1{
@@ -39,7 +53,9 @@
     position: absolute;
     left: 1%;
     top: 100vh;
-    transform: translateY(-110%);
+    -webkit-transform: translateY(-110%);
+        -ms-transform: translateY(-110%);
+            transform: translateY(-110%);
     font-family: var(--main-font);
 }
 
@@ -47,7 +63,9 @@
     width: 30vw;
     height: 60vh;
     background: #ffffff;
-    box-shadow:  10px 10px 30px #d9d9d9, 
+    -webkit-box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+            box-shadow:  10px 10px 30px #d9d9d9, 
              -10px -10px 30px #ffffff;
 }
 
@@ -55,7 +73,9 @@
     width: 25vw;
     height: 55vh;
     background: #ffffff;
-    box-shadow:  inset 10px 10px 30px #d9d9d9, 
+    -webkit-box-shadow:  inset 10px 10px 30px #d9d9d9, 
+             inset -10px -10px 30px #ffffff;
+            box-shadow:  inset 10px 10px 30px #d9d9d9, 
              inset -10px -10px 30px #ffffff;
     padding: 10px;
     overflow: auto;

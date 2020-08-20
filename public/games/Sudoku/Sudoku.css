@@ -15,7 +15,8 @@
     margin: 0;
     padding: 0;
     border: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     font-family:'Sen', sans-serif;
 }
 
@@ -23,9 +24,16 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgb(240, 238, 114);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;    
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;    
 }
 
 p{
@@ -37,9 +45,14 @@ p{
     width: 100vw;
     height: 100vh;
     background-color: rgb(255, 255, 255);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     z-index:3;
 }
 
@@ -62,8 +75,11 @@ p{
     height: 100vh;
     background-color: rgb(255, 255, 255);
     display: none;
-    justify-content: space-around;
-    align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     z-index:3;
 }
 
@@ -80,7 +96,9 @@ p{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
     font-size: 1vw;
 }
 
@@ -101,8 +119,12 @@ p{
 }
 
 .manualflex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #helpSelectionNumber {
@@ -129,10 +151,16 @@ p{
 }
 
 #time {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     font-size: calc(var(--cell-width) / 2);
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #pause {
@@ -148,11 +176,21 @@ p{
 }
 
 #sudokuArea {
+    display: -ms-grid;
     display: grid;    
-    grid-template: repeat(9, var(--cell-width)) / repeat(9, var(--cell-width));
-    align-items: center;
-    justify-content: center;
-    user-select: none;
+    -ms-grid-rows : (var(--cell-width))[9];    
+    -ms-grid-columns : (var(--cell-width))[9];    
+        grid-template: repeat(9, var(--cell-width)) / repeat(9, var(--cell-width));
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .cell {
@@ -195,19 +233,33 @@ p{
 }
 
 .selectNumber {
+    display: -ms-grid;
     display: grid; 
-    grid-template: repeat(3, calc(var(--cell-width) / 2)) / repeat(3, calc(var(--cell-width) / 2)); 
-    transform: translate(calc(var(--cell-width) / -4),calc(var(--cell-width) / -4));
+    -ms-grid-rows : (calc(var(--cell-width) / 2))[3]; 
+    -ms-grid-columns : (calc(var(--cell-width) / 2))[3]; 
+        grid-template: repeat(3, calc(var(--cell-width) / 2)) / repeat(3, calc(var(--cell-width) / 2)); 
+    -webkit-transform: translate(calc(var(--cell-width) / -4),calc(var(--cell-width) / -4)); 
+        -ms-transform: translate(calc(var(--cell-width) / -4),calc(var(--cell-width) / -4)); 
+            transform: translate(calc(var(--cell-width) / -4),calc(var(--cell-width) / -4));
     color: black;
     position: relative;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     z-index:2; 
 }
 
 .selectNumber>div {    
+    display: -webkit-box;    
+    display: -ms-flexbox;    
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     background-color: var(--cell-choose);
     border: 0.1px dashed black;
     border-radius: 100%;
@@ -226,8 +278,11 @@ p{
 }
 
 .makeNote {
+    display: -ms-grid;
     display: grid; 
-    grid-template: repeat(3, calc(var(--cell-width) / 3)) / repeat(3, calc(var(--cell-width) / 3));
+    -ms-grid-rows : (calc(var(--cell-width) / 3))[3]; 
+    -ms-grid-columns : (calc(var(--cell-width) / 3))[3]; 
+        grid-template: repeat(3, calc(var(--cell-width) / 3)) / repeat(3, calc(var(--cell-width) / 3));
     color: black;
     line-height: calc(var(--cell-width) / 3);
     font-size: calc(var(--cell-width) / 3);
@@ -235,6 +290,8 @@ p{
 }
 
 #counterSection {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-top: 10px;
     position: relative;
@@ -267,8 +324,13 @@ p{
     position: absolute;
     top: 10%;
     left: calc(50% - 28vw);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 #buttons button {
@@ -288,11 +350,15 @@ p{
 }
 
 .cellwrong {
+    -webkit-transition: 1s background-color ease-in;
+    -o-transition: 1s background-color ease-in;
     transition: 1s background-color ease-in;
     background-color: rgb(240, 134, 134);
 }
 
 .cellcorrect {
+    -webkit-transition: 1s font-weight linear;
+    -o-transition: 1s font-weight linear;
     transition: 1s font-weight linear;
     color: var(--cell-correct);
     font-weight: bold;
@@ -304,9 +370,16 @@ p{
     height: 100%;
     background-color: rgba(255, 255, 255, 0.7);
     display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     z-index:3;
 }
 
@@ -319,15 +392,23 @@ p{
     }
 
     #startWindow, #pauseWindow {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     #buttons {
         position: absolute;
         top:80%;
         left: 50%;
-        transform: translateX(-50%);
-        flex-direction: row;        
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;        
     }
 
     #buttons button {

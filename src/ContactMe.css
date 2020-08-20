@@ -2,13 +2,25 @@
     position: absolute;
     left: 60%;
     top: -70vh;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     border-radius: 100%;
     z-index: 2;
 }
 
 .showContact{
-    animation: showContact 2s linear 1 forwards;
+    -webkit-animation: showContact 2s linear 1 forwards;
+            animation: showContact 2s linear 1 forwards;
+}
+
+@-webkit-keyframes showContact{
+    0%{
+        top:-50%;
+    }
+    100%{
+        top: 50%;
+    }
 }
 
 @keyframes showContact{
@@ -28,7 +40,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
     cursor: pointer;
 }
 
@@ -46,7 +60,9 @@
     position: absolute;
     left: 1%;
     top: 100vh;
-    transform: translateY(-110%);
+    -webkit-transform: translateY(-110%);
+        -ms-transform: translateY(-110%);
+            transform: translateY(-110%);
     font-family: var(--main-font);
 }
 
@@ -54,7 +70,9 @@
     width: 30vw;
     height: 60vh;
     background: #ffffff;
-    box-shadow:  10px 10px 30px #d9d9d9, 
+    -webkit-box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+            box-shadow:  10px 10px 30px #d9d9d9, 
              -10px -10px 30px #ffffff;
 }
 
@@ -62,7 +80,9 @@
     width: 25vw;
     height: 49vh;
     background: #ffffff;
-    box-shadow:  inset 10px 10px 30px #d9d9d9, 
+    -webkit-box-shadow:  inset 10px 10px 30px #d9d9d9, 
+             inset -10px -10px 30px #ffffff;
+            box-shadow:  inset 10px 10px 30px #d9d9d9, 
              inset -10px -10px 30px #ffffff;
     padding: 10px;
     overflow: auto;
@@ -95,8 +115,23 @@
 .fingerpoint{
     position: absolute;
     left: 50%;
-    transform: scale(1.5) translateX(-50%);
-    animation: finger 1.5s linear infinite forwards;
+    -webkit-transform: scale(1.5) translateX(-50%);
+        -ms-transform: scale(1.5) translateX(-50%);
+            transform: scale(1.5) translateX(-50%);
+    -webkit-animation: finger 1.5s linear infinite forwards;
+            animation: finger 1.5s linear infinite forwards;
+}
+
+@-webkit-keyframes finger{
+    0%{
+        bottom:-25px;
+    }
+    50%{
+        bottom:-5px;
+    }
+    100%{
+        bottom:-25px;
+    }
 }
 
 @keyframes finger{

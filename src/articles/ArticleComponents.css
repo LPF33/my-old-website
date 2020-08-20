@@ -38,7 +38,9 @@
 
 #articleMenuImg{
     position: absolute;    
-    transform: translateX(-110%);
+    -webkit-transform: translateX(-110%);    
+        -ms-transform: translateX(-110%);    
+            transform: translateX(-110%);
     width: 90vh;
     height: 90vh;
     border-radius: 100%;

@@ -2,13 +2,25 @@
     position: absolute;
     left: 60%;
     top: -70vh;
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
     border-radius: 100%;
     z-index: 2;
 }
 
 .showGames{
-    animation: showGames 2s linear 1 forwards;
+    -webkit-animation: showGames 2s linear 1 forwards;
+            animation: showGames 2s linear 1 forwards;
+}
+
+@-webkit-keyframes showGames{
+    0%{
+        top:-50%;
+    }
+    100%{
+        top: 50%;
+    }
 }
 
 @keyframes showGames{
@@ -24,21 +36,29 @@
     position: absolute;
     top: 92vh;
     left:60%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
     width: calc(var(--play-button) * 1.7);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 #prevButton{
     position: absolute;
     left: 50%;
-    transform: translateX(-200%);
+    -webkit-transform: translateX(-200%);
+        -ms-transform: translateX(-200%);
+            transform: translateX(-200%);
 }
 
 #nextButton{
     position: absolute;
     left: 50%;
-    transform: translateX(100%);  
+    -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+            transform: translateX(100%);  
 }
 
 .hidden{
@@ -49,7 +69,9 @@
     width: calc(var(--play-button) * 0.4);
     height: calc(var(--play-button) * 0.3);
     background: #ffffff;
-    box-shadow:  10px 10px 30px #d9d9d9, 
+    -webkit-box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+            box-shadow:  10px 10px 30px #d9d9d9, 
              -10px -10px 30px #ffffff;
 }
 
@@ -57,7 +79,9 @@
     width: calc(var(--play-button) * 0.3);
     height: calc(var(--play-button) * 0.2);
     background: #ffffff;
-    box-shadow:  inset 10px 10px 30px #d9d9d9, 
+    -webkit-box-shadow:  inset 10px 10px 30px #d9d9d9, 
+                inset -10px -10px 30px #ffffff;
+            box-shadow:  inset 10px 10px 30px #d9d9d9, 
                 inset -10px -10px 30px #ffffff;
 }
 
@@ -69,11 +93,15 @@
 .outerPlayButton {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
     width: calc(var(--play-button) * 0.7);
     height: calc(var(--play-button) * 0.3);
     background: #ffffff;
-    box-shadow:  10px 10px 30px #d9d9d9, 
+    -webkit-box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+            box-shadow:  10px 10px 30px #d9d9d9, 
              -10px -10px 30px #ffffff;
 }
 
@@ -81,7 +109,9 @@
     width: calc(var(--play-button) * 0.6);
     height: calc(var(--play-button) * 0.2);
     background: #ffffff;
-    box-shadow:  inset 10px 10px 30px #d9d9d9, 
+    -webkit-box-shadow:  inset 10px 10px 30px #d9d9d9, 
+                inset -10px -10px 30px #ffffff;
+            box-shadow:  inset 10px 10px 30px #d9d9d9, 
                 inset -10px -10px 30px #ffffff;
 }
 
@@ -126,7 +156,9 @@
     top: 50%;
     left: 50%;
     height: 7vw;
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
 }
 
 #gametitle h1{
@@ -143,7 +175,9 @@
     width: calc(var(--portrait-width) * 0.35);
     height: calc(var(--portrait-width) * 0.35); 
     background: #ffffff;
-    box-shadow:  3px 3px 6px #d9d9d9, 
+    -webkit-box-shadow:  3px 3px 6px #d9d9d9, 
+             -3px -3px 6px #ffffff;
+            box-shadow:  3px 3px 6px #d9d9d9, 
              -3px -3px 6px #ffffff; 
     border-radius: 100%;
     cursor: pointer;
@@ -158,7 +192,9 @@
     font-weight: bold;
     border-radius: 100%;
     background: #ffffff;
-    box-shadow:  inset 5px 5px 6px #d9d9d9, 
+    -webkit-box-shadow:  inset 5px 5px 6px #d9d9d9, 
+             inset -5px -5px 6px #ffffff;
+            box-shadow:  inset 5px 5px 6px #d9d9d9, 
              inset -5px -5px 6px #ffffff;
 }
 
@@ -180,11 +216,15 @@
     top:5vw;
     width: 40vw;
     height: 80vh;
+    -webkit-transition: ease-in 1s left;
+    -o-transition: ease-in 1s left;
     transition: ease-in 1s left;
     left:-40vw;
     background-color: white;
     background: #ffffff;
-    box-shadow:  10px 10px 30px #d9d9d9, 
+    -webkit-box-shadow:  10px 10px 30px #d9d9d9, 
+             -10px -10px 30px #ffffff;
+            box-shadow:  10px 10px 30px #d9d9d9, 
              -10px -10px 30px #ffffff;
     z-index:4;
 }
@@ -193,12 +233,23 @@
     width: 30vw;
     height: 70vh;
     background: #ffffff;
-    box-shadow:  inset 10px 10px 30px #d9d9d9, 
+    -webkit-box-shadow:  inset 10px 10px 30px #d9d9d9, 
                 inset -10px -10px 30px #ffffff;
+            box-shadow:  inset 10px 10px 30px #d9d9d9, 
+                inset -10px -10px 30px #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #info h1, #info p{
@@ -217,6 +268,8 @@
 }
 
 #info.showInfo{
+    -webkit-transition: ease-in 1s left;
+    -o-transition: ease-in 1s left;
     transition: ease-in 1s left;
     left:0;
 }

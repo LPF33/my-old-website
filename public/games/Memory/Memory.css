@@ -2,23 +2,35 @@
     margin:0;
     padding: 0;
     border:0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 body {
+    display: -ms-grid;
     display: grid;
     width: 100vw;
     height: 100vh;
-    grid-template: 1fr 90vh 1fr / 1fr 90vh 1fr;
+    -ms-grid-rows:1fr 90vh 1fr;
+    -ms-grid-columns:1fr 90vh 1fr;
+        grid-template: 1fr 90vh 1fr / 1fr 90vh 1fr;
     background-color: black;
     font-family: "Righteous", sans-serif;
 }
 
 .text {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     height: 100%;
 }
@@ -30,11 +42,18 @@ body {
     border: 1px solid rgb(97, 84, 84);
     font-size: 2vh;
     font-weight: bold;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     color: rgb(0, 0, 0);  
-    box-shadow: inset 0px 1px 3px rgb(44, 42, 42), inset -1px -1px 3px rgb(44, 42, 42),  inset 1px 0px 1px rgb(44, 42, 42);
+    -webkit-box-shadow: inset 0px 1px 3px rgb(44, 42, 42), inset -1px -1px 3px rgb(44, 42, 42),  inset 1px 0px 1px rgb(44, 42, 42);  
+            box-shadow: inset 0px 1px 3px rgb(44, 42, 42), inset -1px -1px 3px rgb(44, 42, 42),  inset 1px 0px 1px rgb(44, 42, 42);
 }
 
 #slider {
@@ -60,19 +79,31 @@ body {
     width:30px;
     height:30px;
     background-color: #ebf564;
-    box-shadow: inset 0px 2px 3px rgb(44, 42, 42), inset -2px -2px 3px rgb(44, 42, 42),  inset 2px 0px 3px rgb(44, 42, 42);
+    -webkit-box-shadow: inset 0px 2px 3px rgb(44, 42, 42), inset -2px -2px 3px rgb(44, 42, 42),  inset 2px 0px 3px rgb(44, 42, 42);
+            box-shadow: inset 0px 2px 3px rgb(44, 42, 42), inset -2px -2px 3px rgb(44, 42, 42),  inset 2px 0px 3px rgb(44, 42, 42);
     border: 1px solid rgb(97, 84, 84);
     border-radius: 10px;
     z-index:2;
 }
 
 #sliderText {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 #sliderText div:nth-child(1){
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .sliderText {
@@ -97,9 +128,16 @@ body {
 
 #memorySurface {
     z-index: 2;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
     grid-area: 2 / 2 / 3 / 3;
+    display: -ms-grid;
     display: grid;
-    grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+    -ms-grid-rows:1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr;
+    -ms-grid-columns:1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr;
+        grid-template: repeat(10, 1fr) / repeat(10, 1fr);
     grid-gap: 4px;
     border-radius: 10px;    
 }
@@ -107,9 +145,16 @@ body {
 #memoryPairs {
     z-index:1;
     background-color: rgb(0, 0, 0);
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
     grid-area: 2 / 2 / 3 / 3;
+    display: -ms-grid;
     display: grid;
-    grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+    -ms-grid-rows:1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr;
+    -ms-grid-columns:1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr 4px 1fr;
+        grid-template: repeat(10, 1fr) / repeat(10, 1fr);
     grid-gap: 4px;
     border-radius: 10px;
 }
@@ -124,6 +169,8 @@ body {
 .boxOut {
     background-color: rgb(0, 0, 0);
     opacity:0;
+    -webkit-transition: opacity 0.3s ease-out;
+    -o-transition: opacity 0.3s ease-out;
     transition: opacity 0.3s ease-out;
 }
 
@@ -141,10 +188,18 @@ body {
 }
 
 #right{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     height: 100%;
 }
@@ -163,8 +218,12 @@ body {
 }
 
 #rightTop {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-family: "Monoton", sans-serif;
 }
 #rightTop>div:nth-child(1){
@@ -193,8 +252,12 @@ body {
 }
 
 #rightMiddle {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 #rightMiddle>div:nth-child(1){
     background-color:#6bacd3;
@@ -211,7 +274,10 @@ body {
 /* Win game */
 #win {
     display: none;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -219,8 +285,12 @@ body {
     opacity: 0.8;
     z-index:20;
     font-size: 20vh;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 #winScore {
     font-size: 10vh;
@@ -242,11 +312,20 @@ body {
 
 @media screen and (orientation: portrait ) and (max-width:1024px){
     #device1 {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         position: fixed;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         width: 100%;
         height: 100%;
         background-color: rgb(110, 209, 248);
@@ -256,8 +335,12 @@ body {
     }
 
     .deviceTop {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 
     .deviceTop > div {
@@ -270,9 +353,15 @@ body {
         font-family: "Monoton", sans-serif;
         font-weight: bold;
         color: rgb(0, 0, 0);
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;         
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;         
     }
 
     .device2 {
@@ -347,7 +436,8 @@ body {
     }
 
     .sidebox {
-        box-shadow: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
         width: 30px;
         height: 30px;
     }
