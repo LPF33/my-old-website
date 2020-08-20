@@ -43,11 +43,11 @@ export default function AboutMe(){
                         <em>Coming next:</em>
                         <p>
                             A lot! <span role="img" aria-label="laughing">😁</span><br></br>
-                            TravelStories: StreetMap-App (Mapbox-API), Storyboard, MongoDB, Testing
+                            Multiplayer-Gaming: TypeScript+Testing
                         </p>
                         <br></br>
                         <em>Stack</em>
-                        <p>JavaScript ES6, TypeScript(starting), HTML5, CSS3, SASS, SQL, Node.js, React, Redux, Vue, jQuery, PostgreSQL, MongoDB, Git</p>
+                        <p>JavaScript ES6, TypeScript, HTML5, CSS3, SASS, SQL, Node.js, React, Redux, Vue, jQuery, PostgreSQL, MongoDB, Git</p>
                         <br></br>
                         <em>What I do next to coding?</em>
                         <p>
