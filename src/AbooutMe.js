@@ -35,14 +35,14 @@ export default function AboutMe(){
                         </p>
                         <br></br>
                         <em>What I do at the moment?</em>
-                        <p>Started learning php, get into TypeScript, do some brain training 
-                            on <a href="https://www.codewars.com" target="_blank" rel="noopener noreferrer">CodeWars</a> &amp; code,code,code! Try to get a routine to write some articles about
-                            current projects or to repeat what I've learnt.
+                        <p>Get into TypeScript, repeat what I've learnt, do some brain training 
+                            on <a href="https://www.codewars.com" target="_blank" rel="noopener noreferrer">CodeWars</a> &amp; code,code,code!
                         </p>
                         <br></br>
                         <em>Coming next:</em>
-                        <p>
-                            A lot! <span role="img" aria-label="laughing">😁</span><br></br>
+                        <p> 
+                            <span role="img" aria-label="gamepad">🎮</span>                            
+                            <br></br>
                             Multiplayer-Gaming: TypeScript+Testing
                         </p>
                         <br></br>
