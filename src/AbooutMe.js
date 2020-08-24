@@ -25,8 +25,7 @@ export default function AboutMe(){
                         <em>How my journey began?</em>
                         <p>Last year I jumped in at the deep end. I wanted to change my career and above all I 
                             was searching for something, that I do with passion.                             
-                            <br></br>I luckily found it! <br></br>
-                            The trip was uncertain, first it got me back into a job in customs, but I didn't give up my search. 
+                            <br></br>I luckily found it! <br></br> 
                             In short: Web Development, that's it!
                             To deepen my knowledge and to get experienced, supportive help,  
                             <br></br>I've registered for a 3-month Bootcamp with <a href="https://www.spiced-academy.com/" target="_blank" rel="noopener noreferrer">Spiced Academy</a>.<br></br>
