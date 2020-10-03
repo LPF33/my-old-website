@@ -172,11 +172,9 @@ var Game = /** @class */ (function (_super) {
         }
     };
     Game.prototype.touch = function (e) {
-        e.preventDefault();
         this.pointer(e.touches[0].pageX);
     };
     Game.prototype.mouse = function (e) {
-        e.preventDefault();
         this.pointer(e.clientX);
     };
     Game.prototype.pointer = function (posX) {
@@ -224,6 +222,10 @@ game.startScreen();
 window.addEventListener("keydown", game.keyDown.bind(game));
 window.addEventListener("keyup", game.keyUp.bind(game));
 window.addEventListener("mousemove", game.mouse.bind(game));
-window.addEventListener("touchmove", game.touch.bind(game));
-window.addEventListener("click", game.pointerClick.bind(game));
-window.addEventListener("touchstart", game.pointerClick.bind(game));
+window.addEventListener("touchmove", game.touch.bind(game), { passive: false });
+window.addEventListener("click", game.pointerClick.bind(game), {
+    passive: false,
+});
+window.addEventListener("touchstart", game.pointerClick.bind(game), {
+    passive: false,
+});

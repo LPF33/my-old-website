@@ -7,6 +7,10 @@
 }
 
 body {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
