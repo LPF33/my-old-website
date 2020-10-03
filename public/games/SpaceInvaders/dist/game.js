@@ -197,6 +197,7 @@ var Game = /** @class */ (function (_super) {
         }
     };
     Game.prototype.pointerClick = function (e) {
+        e.preventDefault();
         if (this.state === GameState.start) {
             this.state = GameState.play;
             this.countdown();
