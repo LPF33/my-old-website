@@ -7,9 +7,6 @@
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -19,4 +16,5 @@ body {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.87);
 }
