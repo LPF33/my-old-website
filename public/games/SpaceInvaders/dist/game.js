@@ -175,6 +175,7 @@ var Game = /** @class */ (function (_super) {
         this.pointer(e.touches[0].pageX);
     };
     Game.prototype.mouse = function (e) {
+        e.preventDefault();
         this.pointer(e.clientX);
     };
     Game.prototype.pointer = function (posX) {
@@ -196,7 +197,6 @@ var Game = /** @class */ (function (_super) {
         }
     };
     Game.prototype.pointerClick = function (e) {
-        e.preventDefault();
         if (this.state === GameState.start) {
             this.state = GameState.play;
             this.countdown();
