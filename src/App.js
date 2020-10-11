@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 import Main from "./Main";
 import ContactMe from "./ContactMe";
@@ -6,49 +6,56 @@ import Articles from "./Articles";
 import Games from "./Games";
 import ArticleMenu from "./ArticleMenu";
 import AboutMe from "./AbooutMe";
-import {DataPrivacy, DataPrivacyDE, DataPrivacyEN} from "./DataPrivacy";
+import { DataPrivacy, DataPrivacyDE, DataPrivacyEN } from "./DataPrivacy";
 import MobileOrientation from "./MobileOrientation";
 
-import {Route, Switch} from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
-export default function App() { 
-    
+export default function App() {
     const [orientation, setOrientation] = useState(true);
 
-    useEffect(() => {   
-        const checkOrientation= () => {
-            if(window.orientation === 0 || window.orientation === 180) {
-                setOrientation(false)
-            } else {
-                setOrientation(true)
+    useEffect(() => {
+        const checkOrientation = () => {
+            if (
+                "ontouchstart" in window ||
+                navigator.maxTouchPoints > 0 ||
+                navigator.msMaxTouchPoints > 0
+            ) {
+                if (
+                    window.screen.orientation.angle === 0 ||
+                    window.screen.orientation.angle === 180
+                ) {
+                    setOrientation(false);
+                } else {
+                    setOrientation(true);
+                }
             }
-        }
-        window.addEventListener("resize", checkOrientation);  
+        };
+        window.addEventListener("resize", checkOrientation);
         checkOrientation();
 
         return () => window.removeEventListener("resize", checkOrientation);
-    },[]);
-    
+    }, []);
 
     return (
         <div>
-            {!orientation && <MobileOrientation/>}    
-            {orientation &&
-                <Main />
-            } 
-            {orientation &&
-                <ArticleMenu />
-            }             
-            <DataPrivacy/>   
-                    
+            {!orientation && <MobileOrientation />}
+            {orientation && <Main />}
+            {orientation && <ArticleMenu />}
+            <DataPrivacy />
+
             <Switch>
-                {orientation && <Route exact path = "/contactMe" component = {ContactMe} />}
-                {orientation && <Route exact path = "/games" component = {Games} />}
-                <Route path = "/articles/:article" component = {Articles} />
-                {orientation && <Route exact path = "/aboutme" component = {AboutMe}/>  }              
-                <Route exact path = "/datenschutz" component = {DataPrivacyDE}/>
-                <Route exact path = "/datapolicy" component = {DataPrivacyEN}/>
-            </Switch>            
+                {orientation && (
+                    <Route exact path="/contactMe" component={ContactMe} />
+                )}
+                {orientation && <Route exact path="/games" component={Games} />}
+                <Route path="/articles/:article" component={Articles} />
+                {orientation && (
+                    <Route exact path="/aboutme" component={AboutMe} />
+                )}
+                <Route exact path="/datenschutz" component={DataPrivacyDE} />
+                <Route exact path="/datapolicy" component={DataPrivacyEN} />
+            </Switch>
         </div>
     );
 }
