@@ -21,9 +21,12 @@ export default function App() {
                 window.screen.mozOrientation ||
                 window.screen.msOrientation;
             if (
-                (screen.orientation.angle === 0 ||
-                    screen.orientation.angle === 180) &&
-                screen.orientation.type === "portrait-primary"
+                (screen &&
+                    screen.angle === 0 &&
+                    screen.type === "portrait-primary") ||
+                (screen &&
+                    screen.angle === 180 &&
+                    screen.type === "portrait-secondary")
             ) {
                 setOrientation(false);
             } else if (window.orientation === 0 || window.orientation === 180) {
