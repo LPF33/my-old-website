@@ -24,9 +24,7 @@ export default function App() {
                 (screen &&
                     screen.angle === 0 &&
                     screen.type === "portrait-primary") ||
-                (screen &&
-                    screen.angle === 180 &&
-                    screen.type === "portrait-secondary")
+                (screen && screen.angle === 180)
             ) {
                 setOrientation(false);
             } else if (window.orientation === 0 || window.orientation === 180) {
