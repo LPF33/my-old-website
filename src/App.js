@@ -16,19 +16,15 @@ export default function App() {
 
     useEffect(() => {
         const checkOrientation = () => {
+            console.log(window.screen);
             if (
-                "ontouchstart" in window ||
-                navigator.maxTouchPoints > 0 ||
-                navigator.msMaxTouchPoints > 0
+                (window.screen.orientation.angle === 0 ||
+                    window.screen.orientation.angle === 180) &&
+                window.screen.orientation.type === "portrait-primary"
             ) {
-                if (
-                    window.screen.orientation.angle === 0 ||
-                    window.screen.orientation.angle === 180
-                ) {
-                    setOrientation(false);
-                } else {
-                    setOrientation(true);
-                }
+                setOrientation(false);
+            } else {
+                setOrientation(true);
             }
         };
         window.addEventListener("resize", checkOrientation);
