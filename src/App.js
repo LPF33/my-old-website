@@ -16,12 +16,17 @@ export default function App() {
 
     useEffect(() => {
         const checkOrientation = () => {
-            console.log(window.screen);
+            const screen =
+                window.screen.orientation ||
+                window.screen.mozOrientation ||
+                window.screen.msOrientation;
             if (
-                (window.screen.orientation.angle === 0 ||
-                    window.screen.orientation.angle === 180) &&
-                window.screen.orientation.type === "portrait-primary"
+                (screen.orientation.angle === 0 ||
+                    screen.orientation.angle === 180) &&
+                screen.orientation.type === "portrait-primary"
             ) {
+                setOrientation(false);
+            } else if (window.orientation === 0 || window.orientation === 180) {
                 setOrientation(false);
             } else {
                 setOrientation(true);
