@@ -27,7 +27,10 @@ export default function App() {
                 (screen && screen.angle === 180)
             ) {
                 setOrientation(false);
-            } else if (window.orientation === 0 || window.orientation === 180) {
+            } else if (
+                window.orientation &&
+                (window.orientation === 0 || window.orientation === 180)
+            ) {
                 setOrientation(false);
             } else {
                 setOrientation(true);
