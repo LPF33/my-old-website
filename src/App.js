@@ -8,6 +8,7 @@ import ArticleMenu from "./ArticleMenu";
 import AboutMe from "./AbooutMe";
 import { DataPrivacy, DataPrivacyDE, DataPrivacyEN } from "./DataPrivacy";
 import MobileOrientation from "./MobileOrientation";
+import CodeMirrorComponent from "./CodeMirror";
 
 import { Route, Switch } from "react-router-dom";
 
@@ -58,6 +59,11 @@ export default function App() {
                 {orientation && (
                     <Route exact path="/aboutme" component={AboutMe} />
                 )}
+                <Route
+                    exact
+                    path="/codemirror"
+                    component={CodeMirrorComponent}
+                />
                 <Route exact path="/datenschutz" component={DataPrivacyDE} />
                 <Route exact path="/datapolicy" component={DataPrivacyEN} />
             </Switch>
