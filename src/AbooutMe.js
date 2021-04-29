@@ -23,7 +23,7 @@ export default function AboutMe() {
                     <div>
                         <em>How my journey began?</em>
                         <p>
-                            Last year I jumped in at the deep end. I wanted to
+                            In 2019 I've jumped in at the deep end. I wanted to
                             change my career and above all I was searching for
                             something, that I do with passion.
                             <br></br>I luckily found it! <br></br>
@@ -40,40 +40,30 @@ export default function AboutMe() {
                             .<br></br>
                             There is no other possiblity out there expect for
                             autodidaction to learn so fast so many skills. Great
-                            experience! I finished this Bootcamp in May, now I
-                            deepen my skills and I'm really happy about this
-                            career and life change.
+                            experience! I finished this Bootcamp in May 2020,
+                            afterwards I I deepened my skills and I'm really
+                            happy about this career and life change.
                         </p>
                         <br></br>
                         <em>What I do at the moment?</em>
                         <p>
-                            Started to learn mobile development with Java and
-                            Android, do some more TypeScript projects, do
-                            sometimes brain training on{" "}
+                            Last year in November I joind as an Assistant
+                            Teacher the Spiced Team!
+                            <br></br>
                             <a
-                                href="https://www.codewars.com"
+                                href="https://www.spiced-academy.com/en/about#about-staff-section"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                CodeWars
-                            </a>{" "}
-                            &amp; code,code,code!
-                        </p>
-                        <br></br>
-                        <em>Coming next:</em>
-                        <p>
-                            <span role="img" aria-label="gamepad">
-                                🎮
-                            </span>
-                            <br></br>
-                            My first app!
+                                Spiced Academy Staff
+                            </a>
                         </p>
                         <br></br>
                         <em>Stack</em>
                         <p>
-                            JavaScript ES6, TypeScript, (Java), HTML5, CSS3,
-                            SASS, SQL, Node.js, React, Redux, Vue, jQuery,
-                            PostgreSQL, MongoDB, Git
+                            JavaScript ES6, TypeScript, HTML5, CSS3, SASS, SQL,
+                            Node.js, React, Redux, Vue, jQuery, PostgreSQL,
+                            MongoDB, Git
                         </p>
                         <br></br>
                         <em>What I do next to coding?</em>
@@ -103,7 +93,7 @@ export default function AboutMe() {
                                 🌲🌞
                             </span>
                             <br></br>
-                            Enjoy the sun in nature while walking!
+                            Enjoy the sun in nature while walking or kayaking!
                         </p>
                     </div>
                 </div>
