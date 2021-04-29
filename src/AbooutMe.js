@@ -41,15 +41,14 @@ export default function AboutMe() {
                             There is no other possiblity out there expect for
                             autodidaction to learn so fast so many skills. Great
                             experience! I finished this Bootcamp in May 2020,
-                            afterwards I I deepened my skills and I'm really
-                            happy about this career and life change.
+                            afterwards I deepened my skills and I'm really happy
+                            about this career and life change.
                         </p>
                         <br></br>
                         <em>What I do at the moment?</em>
                         <p>
-                            Last year in November I joind as an Assistant
-                            Teacher the Spiced Team!
-                            <br></br>
+                            Last year in November I joined the Spiced Team as an
+                            Assistant Teacher!<br></br>
                             <a
                                 href="https://www.spiced-academy.com/en/about#about-staff-section"
                                 target="_blank"
